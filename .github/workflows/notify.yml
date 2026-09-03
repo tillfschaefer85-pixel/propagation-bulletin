@@ -27,8 +27,16 @@ jobs:
     steps:
       - name: Zeitfenster pruefen
         id: guard
+        # Von Hand gestartete Laeufe gehen immer durch. Der Waechter
+        # existiert nur, um die falsche der beiden Cron-Zeilen
+        # abzufangen - wer selbst auf "Run workflow" klickt, meint es so,
+        # egal wie spaet es ist. Ohne diese Ausnahme tut ein Testlauf
+        # ausserhalb des Zeitfensters gar nichts und meldet trotzdem Erfolg.
         run: |
-          if python3 -c "
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "Von Hand gestartet - Zeitfenster wird nicht geprueft."
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          elif python3 -c "
           import sys
           from datetime import datetime
           from zoneinfo import ZoneInfo
