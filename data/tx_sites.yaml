@@ -1,0 +1,116 @@
+# Sendestandort-Koordinaten fuer EiBi-Eintraege.
+#
+# EiBi liefert je Sendung nur einen Standort-CODE (Feld 8, z.B. "n" fuer
+# Nauen), keine Koordinate. Diese Datei bildet "<ITU-Code>-<Site-Code>"
+# auf Lat/Lon ab. Alle Werte stammen woertlich aus der offiziellen
+# EiBi-README (http://www.eibispace.de/dx/README.TXT, Abschnitt IV,
+# "Transmitter site codes") und wurden von Grad/Minuten/Sekunden in
+# Dezimalgrad umgerechnet - keine geschaetzten oder erfundenen Werte.
+#
+# Deckt bewusst nur Europa plus HCJB Ecuador ab - das sind die Sender,
+# die bei einem Empfaenger in Bergheim am haeufigsten und am
+# verlaesslichsten drankommen. Bekannte, noch fehlende grosse Bloecke:
+# USA (WRMI, WTWW, WBCQ - alle tauchten schon im Testlauf auf), Russland,
+# China, Japan, Korea, der Grossteil von Afrika, Asien und Suedamerika
+# ausserhalb Ecuadors. Fehlt ein Standort hier, wird der betroffene
+# EiBi-Eintrag beim Bau uebersprungen und mitgezaehlt statt mit einer
+# geratenen Koordinate weiterzurechnen - die Tabelle waechst dann, wenn
+# ein uebersprungener Sender haeufig auftaucht.
+#
+# Ein leerer Standort-Code in EiBi (Feld 8) bedeutet laut README entweder
+# "nur ein Sender im Land" oder "Standort unbekannt" - beides wird hier
+# nicht geraten, sondern ebenfalls uebersprungen.
+
+sites:
+  # Deutschland
+  D-b:  {lat: 49.6883, lon: 8.4922}    # Biblis
+  D-bl: {lat: 52.5167, lon: 13.3833}   # Berlin
+  D-d:  {lat: 49.3167, lon: 11.3833}   # Dillberg
+  D-jr: {lat: 54.6292, lon: 13.3739}   # Juliusruh
+  D-k:  {lat: 50.4781, lon: 6.5231}    # Kall-Krekel
+  D-mf: {lat: 50.0156, lon: 9.0119}    # Mainflingen
+  D-n:  {lat: 52.6486, lon: 12.9092}   # Nauen
+  D-r:  {lat: 48.6,    lon: 11.55}     # Rohrbach (Channel 292)
+  D-w:  {lat: 48.0869, lon: 10.695}    # Wertachtal
+  D-wa: {lat: 52.6667, lon: 9.7667}    # Winsen (Aller)
+
+  # Frankreich
+  F-a:  {lat: 47.1667, lon: 2.2}       # Allouis
+  F-i:  {lat: 46.9333, lon: 1.9}       # Issoudun
+  F-p:  {lat: 48.8667, lon: 2.3}       # Paris
+  F-r:  {lat: 48.1,    lon: -1.6833}   # Rennes
+  F-wu: {lat: 46.7167, lon: 1.2333}    # Rosnay (HWU)
+
+  # Vereinigtes Koenigreich
+  G-an: {lat: 54.9111, lon: -3.2806}   # Anthorn
+  G-d:  {lat: 52.3,    lon: -2.1}      # Droitwich
+  G-lo: {lat: 51.5,    lon: -0.1833}   # London
+  G-o:  {lat: 52.1,    lon: 1.5833}    # Orfordness
+  G-s:  {lat: 54.7333, lon: -2.9}      # Skelton
+  G-w:  {lat: 52.3167, lon: -2.7167}   # Woofferton
+
+  # Italien
+  I-r:  {lat: 41.8,    lon: 12.5167}   # Roma
+  I-re: {lat: 41.9167, lon: 12.4833}   # Rome (Vatikan-Umfeld)
+
+  # Niederlande
+  HOL-e: {lat: 52.4333, lon: 5.8667}   # Elburg
+
+  # Rumaenien
+  ROU-b: {lat: 44.5667, lon: 26.0833}  # Bukarest
+  ROU-c: {lat: 44.1,    lon: 28.6167}  # Constanta
+  ROU-g: {lat: 46.75,   lon: 26.6833}  # Galbeni
+  ROU-s: {lat: 44.6333, lon: 27.0833}  # Saftica
+  ROU-t: {lat: 44.75,   lon: 26.0833}  # Tiganesti
+
+  # Ungarn
+  HNG-b:  {lat: 47.5,    lon: 19.05}   # Budapest
+  HNG-lh: {lat: 47.3667, lon: 19.0}    # Lakihegy
+
+  # Polen
+  POL-b:  {lat: 52.25,   lon: 20.8333} # Babice
+  POL-sk: {lat: 53.0203, lon: 18.2622} # Solec Kujawski
+  POL-u:  {lat: 54.5825, lon: 16.8367} # Ustka
+
+  # Tschechien
+  CZE-p:  {lat: 50.0333, lon: 14.4833} # Praha
+  CZE-pl: {lat: 50.0786, lon: 14.8869} # Praha-Liblice
+  CZE-kv: {lat: 50.2394, lon: 12.8239} # Karlovy Vary
+  CZE-tr: {lat: 49.0,    lon: 14.7667} # Trebon
+
+  # Bulgarien
+  BUL-p:  {lat: 42.3833, lon: 24.8667} # Plovdiv-Padarsko
+  BUL-s:  {lat: 42.8167, lon: 23.2167} # Sofia-Kostinbrod
+  BUL-sl: {lat: 43.1833, lon: 26.9667} # Salmanovo
+
+  # Spanien
+  E-ma: {lat: 40.4667, lon: -3.6667}   # Madrid
+  E-n:  {lat: 39.95,   lon: -3.4333}   # Noblejas
+
+  # Belgien
+  BEL-o: {lat: 51.1833, lon: 2.8}      # Oostende
+  BEL-r: {lat: 51.0792, lon: 3.3347}   # Ruiselede
+
+  # Daenemark
+  DNK-a: {lat: 56.15,   lon: 10.2167}  # Aarhus-Morslet
+  DNK-k: {lat: 55.6764, lon: 11.0694}  # Kalundborg
+
+  # Finnland
+  FIN-he: {lat: 60.15,   lon: 24.7333} # Helsinki
+  FIN-p:  {lat: 61.4667, lon: 21.5833} # Pori
+  FIN-mh: {lat: 60.1,    lon: 19.9333} # Mariehamn (Aland)
+
+  # Irland
+  IRL-s: {lat: 52.7444, lon: -8.9269}  # Shannon
+
+  # Albanien
+  ALB-f: {lat: 41.3667, lon: 19.5}     # Fllake (Durres)
+  ALB-s: {lat: 41.3333, lon: 19.55}    # Shijiak
+  ALB-c: {lat: 41.0,    lon: 20.0}     # Cerrik
+
+  # Ecuador (HCJB - World Radio Missionary Fellowship)
+  EQA-a: {lat: -1.2167, lon: -78.6167} # Ambato
+  EQA-c: {lat: -0.1833, lon: -78.5333} # Pico Pichincha
+  EQA-p: {lat: -0.2333, lon: -78.3333} # Pifo
+  EQA-s: {lat: -3.7,    lon: -79.3}    # Saraguro
+  EQA-t: {lat: -1.0,    lon: -77.8}    # Tena

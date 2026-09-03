@@ -1,0 +1,60 @@
+name: Weltraumwetter auffrischen
+
+# Legt den aktuellen Kp-Wert alle drei Stunden als Datei im Repository
+# ab. Die Seite versucht zuerst den Direktabruf bei der NOAA und nimmt
+# diese Datei nur, wenn der Browser den fremden Abruf blockiert - dann
+# aber ohne dass Du davon etwas merkst.
+#
+# Drei Stunden sind kein willkuerliches Intervall: der planetare
+# Kp-Index wird selbst nur dreistuendlich bestimmt. Haeufiger abzufragen
+# wuerde nur Commits erzeugen, keine neuen Werte.
+#
+# Kein Torwaechter wie bei den anderen Laeufen: hier gibt es keine feste
+# Ortszeit, die getroffen werden muesste.
+
+on:
+  schedule:
+    - cron: "10 */3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bulletin-spaceweather
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Abhaengigkeiten installieren
+        run: pip install -r requirements.txt
+
+      - name: Schnappschuss holen
+        run: PYTHONPATH=src python -m bulletin.spaceweather
+
+      - name: Ergebnis committen
+        run: |
+          git config user.name "bulletin-bot"
+          git config user.email "bulletin-bot@users.noreply.github.com"
+          git add docs/space-weather.json
+          if git diff --staged --quiet; then
+            echo "Unveraendert - nichts zu committen."
+          else
+            git commit -m "Weltraumwetter $(date -u +%FT%RZ)"
+            # Siehe build.yml: der Bau-Lauf schreibt in dasselbe
+            # Repository, Ueberschneidungen sind moeglich.
+            for attempt in 1 2 3; do
+              if git push; then break; fi
+              echo "Push abgelehnt, Versuch $attempt - hole Aenderungen und versuche erneut."
+              git pull --rebase origin "${GITHUB_REF_NAME}"
+              sleep 5
+            done
+          fi

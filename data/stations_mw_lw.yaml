@@ -1,0 +1,37 @@
+# Handgepflegte Mittel- und Langwellenliste.
+#
+# Diese Datei wird bewusst nicht automatisiert befuellt (siehe die
+# Nutzungsbedingungen von MWLIST). Trag hier ein, was Du am TEF6686
+# tatsaechlich hoerst oder was Du gezielt suchen willst - mit Deinen
+# eigenen Erfahrungswerten, nicht nur trockenen Datenbankwerten.
+#
+# Felder:
+#   id               eindeutig, z.B. "mw-<kHz>-<ort>"
+#   name             Sendername
+#   freq_khz         148.5 bis 1710 (LW oder MW)
+#   lat, lon         Standort des Senders (Grad)
+#   power_kw         Sendeleistung
+#   language         de | en | fr | nl  (oder weglassen, wenn unbekannt/anders)
+#   rarity_baseline  0.0 = allgegenwaertiges Dickschiff, 1.0 = sehr selten/schwierig
+#   notes            frei, z.B. Deine eigenen Empfangsnotizen
+
+stations:
+  - id: mw-198-droitwich
+    name: "BBC Radio 4 (Droitwich)"
+    freq_khz: 198
+    lat: 52.2956
+    lon: -2.1069
+    power_kw: 500
+    language: en
+    rarity_baseline: 0.15
+    notes: "Langlebiger Nordwest-Klassiker, nachts fast immer da."
+
+  # - id: mw-1008-flevoland
+  #   name: "..."
+  #   freq_khz: 1008
+  #   lat: 52.3906
+  #   lon: 5.4433
+  #   power_kw: 400
+  #   language: nl
+  #   rarity_baseline: 0.35
+  #   notes: "..."

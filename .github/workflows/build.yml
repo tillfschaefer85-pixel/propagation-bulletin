@@ -1,0 +1,99 @@
+name: Bulletin bauen
+
+# Der Morgenlauf. Rechnet den planbaren Teil (Sendeplaene, Grauzone,
+# Sonnenstaende, Bewertung je Kp-Stufe) und committet das Ergebnis nach
+# docs/ - der Commit IST die Veroeffentlichung, weil GitHub Pages von
+# dort ausliefert.
+#
+# Warum zwei Cron-Zeilen: Cron laeuft in UTC und kennt keine Sommerzeit.
+# 03:15 UTC entspricht 05:15 Sommerzeit, 04:15 UTC entspricht 05:15
+# Winterzeit. Welche der beiden tatsaechlich durchlaeuft, entscheidet
+# der Torwaechter im Job - sonst liefe der Bau das halbe Jahr zur
+# falschen Stunde und in den Umstellungswochen zweimal.
+
+on:
+  schedule:
+    - cron: "15 3 * * *"   # 05:15 deutscher Sommerzeit
+    - cron: "15 4 * * *"   # 05:15 deutscher Winterzeit
+  workflow_dispatch:       # zum Ausprobieren von Hand, ohne auf morgen zu warten
+
+# Der Job schreibt in sein eigenes Repository.
+permissions:
+  contents: write
+
+# Zwei gleichzeitige Baulaeufe wuerden sich beim Push gegenseitig
+# abschiessen. Der laufende darf zu Ende laufen.
+concurrency:
+  group: bulletin-build
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Zeitfenster pruefen
+        id: guard
+        run: |
+          if python3 -c "
+          import sys
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+          now = datetime.now(ZoneInfo('Europe/Berlin'))
+          delta = ((now.hour * 60 + now.minute) - (5 * 60 + 15)) % (24 * 60)
+          print(f'Ortszeit {now:%H:%M}, Abstand zum Ziel: {delta} min')
+          sys.exit(0 if delta <= 45 else 1)
+          "; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Falsche Cron-Zeile fuer die aktuelle Zeitzone - uebersprungen."
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Repository auschecken
+        if: steps.guard.outputs.run == 'true'
+        uses: actions/checkout@v4
+
+      - name: Python einrichten
+        if: steps.guard.outputs.run == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Abhaengigkeiten installieren
+        if: steps.guard.outputs.run == 'true'
+        run: pip install -r requirements.txt
+
+      - name: Tests laufen lassen
+        if: steps.guard.outputs.run == 'true'
+        # Bewusst VOR dem Bau: lieber ein Tag ohne frisches Bulletin als
+        # ein Bulletin, das aus kaputtem Code entstanden ist.
+        run: PYTHONPATH=src python -m unittest discover -s tests
+
+      - name: Bulletin bauen
+        if: steps.guard.outputs.run == 'true'
+        run: PYTHONPATH=src python -m bulletin.build
+
+      - name: Ergebnis committen
+        if: steps.guard.outputs.run == 'true'
+        run: |
+          git config user.name "bulletin-bot"
+          git config user.email "bulletin-bot@users.noreply.github.com"
+          git add docs/
+          # Ohne diese Pruefung scheitert der Lauf an Tagen, an denen sich
+          # tatsaechlich nichts geaendert hat.
+          if git diff --staged --quiet; then
+            echo "Keine Aenderung - nichts zu committen."
+          else
+            git commit -m "Bulletin fuer $(TZ=Europe/Berlin date +%F)"
+            # Der Weltraumwetter-Lauf schreibt in dasselbe Repository und
+            # kann sich mit diesem hier ueberschneiden. Ohne Rebase
+            # scheitert der zweite Push mit "non-fast-forward" - und der
+            # Lauf faellt aus einem Grund aus, der nichts mit dem Bulletin
+            # zu tun hat.
+            for attempt in 1 2 3; do
+              if git push; then break; fi
+              echo "Push abgelehnt, Versuch $attempt - hole Aenderungen und versuche erneut."
+              git pull --rebase origin "${GITHUB_REF_NAME}"
+              sleep 5
+            done
+          fi

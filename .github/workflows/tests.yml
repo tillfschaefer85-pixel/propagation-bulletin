@@ -1,0 +1,64 @@
+name: Tests
+
+# Laeuft bei jeder Aenderung. Der eigentliche Wert liegt in den
+# Zeitzonen- und Saisontests: die Fehler, die dieses Projekt kaputt
+# machen, zeigen sich sonst erst Monate spaeter an einem Umstellungstag.
+
+on:
+  push:
+    branches: [main]
+    # Aenderungen an den generierten Dateien stammen vom Bau-Job selbst -
+    # die erneut zu testen ist reine Beschaeftigung und laesst den
+    # Bau-Commit unnoetig einen zweiten Lauf ausloesen.
+    paths-ignore:
+      - "docs/bulletin.json"
+      - "docs/stations.json"
+      - "docs/space-weather.json"
+      - "docs/archive/**"
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Abhaengigkeiten installieren
+        run: pip install -r requirements.txt
+
+      - name: Tests
+        run: PYTHONPATH=src python -m unittest discover -s tests -v
+
+      - name: Node einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Tests der Seite
+        # Laeuft gegen die eingecheckten docs/-Dateien, nicht gegen frisch
+        # erzeugte: CI soll nicht rot werden, nur weil EiBi gerade nicht
+        # erreichbar ist. Die Dateien erneuert der Bau-Job taeglich, sie
+        # sind also formataktuell.
+        run: node --test tests/frontend.test.js
+
+      - name: Datendateien validieren
+        # Ein Tippfehler in stations_mw_lw.yaml oder tx_sites.yaml soll
+        # hier auffallen und nicht erst morgens um fuenf im Bau-Job.
+        run: |
+          PYTHONPATH=src python -c "
+          from bulletin.sources.mwlw import load_stations
+          from bulletin.sources.tx_sites import load_tx_sites
+          from bulletin.physics.propagation import Weights
+          stations = load_stations('data/stations_mw_lw.yaml')
+          sites = load_tx_sites('data/tx_sites.yaml')
+          Weights.load('data/weights.yaml')
+          print(f'{len(stations)} MW/LW-Stationen, {len(sites)} Sendestandorte, Gewichte in Ordnung')
+          "

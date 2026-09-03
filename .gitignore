@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.venv/
+
+# Heruntergeladene Quelldateien (EiBi-Saisondatei, SWPC-Antworten).
+# Reiner Ausfallschutz, gehoert nicht ins Repository.
+data/cache/

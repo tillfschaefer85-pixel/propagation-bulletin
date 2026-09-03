@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#131a26">
+<title>Empfang heute Abend</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Farbwelt einer beleuchteten Analogskala: tiefes Nachtblau, Bernstein
+   fuer das Signal. Dunkel ist hier kein Stilmittel, sondern zweckmaessig -
+   die Seite wird abends im halbdunklen Zimmer neben dem Empfaenger gelesen. */
+:root {
+  --night: #131a26;
+  --panel: #1b2433;
+  --panel-edge: #2a3548;
+  --dial: #f2b53f;
+  --dial-dim: #8a6a25;
+  --ink: #e8e6df;
+  --muted: #8b95a8;
+  --alert: #e2714f;
+  --greyline: #6fb3c4;
+  --scale-max: 1000px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: var(--night);
+  color: var(--ink);
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  padding: 1.25rem 1.1rem 4rem;
+  max-width: 46rem;
+  margin: 0 auto;
+}
+
+.num {
+  font-family: "IBM Plex Sans Condensed", "IBM Plex Sans", system-ui, sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Kopf ---------- */
+
+.masthead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  border-bottom: 1px solid var(--panel-edge);
+  padding-bottom: .7rem;
+}
+
+.masthead h1 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.masthead time {
+  color: var(--muted);
+  font-size: .92rem;
+}
+
+.banner {
+  margin-top: .9rem;
+  padding: .7rem .85rem;
+  border-left: 3px solid var(--alert);
+  background: rgba(226, 113, 79, .1);
+  font-size: .93rem;
+}
+
+.banner:empty { display: none; }
+
+/* ---------- Skala ---------- */
+
+.dial {
+  margin: 1.6rem 0 .4rem;
+}
+
+.dial svg { width: 100%; height: 108px; display: block; }
+
+.dial-band { fill: none; stroke: var(--panel-edge); stroke-width: 1; }
+.dial-tick line { stroke: var(--dial); stroke-width: 2.5; stroke-linecap: round; }
+.dial-tick.is-quiet line { stroke: var(--dial-dim); }
+.dial-tick text { fill: var(--muted); font-size: 9px; }
+.dial-axis text { fill: var(--muted); font-size: 10px; }
+.dial-axis line { stroke: var(--panel-edge); }
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Ein einziger orchestrierter Moment: die Skala geht an wie ein
+     Geraet, das warm wird. Danach bewegt sich nichts mehr von selbst. */
+  .dial-tick { animation: warmup .5s ease-out backwards; }
+}
+
+@keyframes warmup {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ---------- Kp-Regler ---------- */
+
+.kp {
+  margin: 1.4rem 0 1.8rem;
+  padding: .9rem 1rem 1.1rem;
+  background: var(--panel);
+  border: 1px solid var(--panel-edge);
+  border-radius: 4px;
+}
+
+.kp-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: .8rem;
+  margin-bottom: .5rem;
+}
+
+.kp-head label { font-size: .95rem; }
+.kp-value { font-size: 1.5rem; font-weight: 600; }
+.kp-source { color: var(--muted); font-size: .85rem; }
+
+.kp input[type="range"] {
+  width: 100%;
+  accent-color: var(--dial);
+}
+
+.kp input[type="range"]:focus-visible {
+  outline: 2px solid var(--dial);
+  outline-offset: 4px;
+}
+
+/* ---------- Stationen ---------- */
+
+h2 {
+  font-size: .98rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin: 2rem 0 .6rem;
+  padding-bottom: .35rem;
+  border-bottom: 1px solid var(--panel-edge);
+}
+
+.station {
+  display: grid;
+  grid-template-columns: 5.4rem 1fr;
+  gap: .1rem .9rem;
+  padding: .8rem 0;
+  border-bottom: 1px solid rgba(42, 53, 72, .55);
+}
+
+.station.is-dead { opacity: .45; }
+
+.freq {
+  grid-row: span 3;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: right;
+  line-height: 1.15;
+}
+
+.freq span {
+  display: block;
+  font-size: .72rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.name { font-weight: 500; }
+
+.when { color: var(--muted); font-size: .92rem; }
+.when .now { color: var(--dial); }
+
+.meter {
+  margin-top: .35rem;
+  height: 4px;
+  background: var(--panel-edge);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.meter i { display: block; height: 100%; background: var(--dial); }
+
+.aside {
+  margin-top: .3rem;
+  font-size: .87rem;
+  color: var(--greyline);
+}
+
+.bearing {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  color: var(--muted);
+  font-size: .87rem;
+}
+
+.bearing svg { width: 15px; height: 15px; }
+.bearing circle { fill: none; stroke: var(--panel-edge); }
+.bearing line { stroke: var(--dial); stroke-width: 1.6; stroke-linecap: round; }
+
+.empty, .loading {
+  padding: 2rem 0;
+  color: var(--muted);
+}
+
+footer {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--panel-edge);
+  color: var(--muted);
+  font-size: .84rem;
+}
+
+footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <h1>Empfang heute Abend</h1>
+  <time id="bulletin-date"></time>
+</header>
+
+<div class="banner" id="banner" role="status"></div>
+
+<section class="dial" id="dial" aria-label="Bandskala mit den Stationen des Abends"></section>
+
+<section class="kp">
+  <div class="kp-head">
+    <label for="kp-slider">Geomagnetische Lage</label>
+    <span class="kp-value num" id="kp-value">–</span>
+  </div>
+  <input type="range" id="kp-slider" min="0" max="9" step="1" value="2"
+         aria-describedby="kp-source">
+  <div class="kp-source" id="kp-source">Wird geladen …</div>
+</section>
+
+<main id="lists">
+  <p class="loading">Bulletin wird geladen …</p>
+</main>
+
+<footer id="footer"></footer>
+
+<script src="app.js"></script>
+</body>
+</html>

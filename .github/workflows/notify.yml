@@ -1,0 +1,69 @@
+name: Push verschicken
+
+# Der Abendlauf um 20:30 Ortszeit. Liest nur das fertige Bulletin, holt
+# den aktuellen Kp-Wert und verschickt eine Nachricht - kein Commit,
+# keine Rechnung, Laufzeit unter zehn Sekunden.
+#
+# Zwei Cron-Zeilen aus demselben Grund wie beim Bau: 18:30 UTC ist
+# 20:30 Sommerzeit, 19:30 UTC ist 20:30 Winterzeit.
+
+on:
+  schedule:
+    - cron: "30 18 * * *"  # 20:30 deutscher Sommerzeit
+    - cron: "30 19 * * *"  # 20:30 deutscher Winterzeit
+  workflow_dispatch:
+
+# Nur lesen. Dieser Lauf hat keinen Grund, irgendetwas zu veraendern.
+permissions:
+  contents: read
+
+concurrency:
+  group: bulletin-notify
+  cancel-in-progress: false
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Zeitfenster pruefen
+        id: guard
+        run: |
+          if python3 -c "
+          import sys
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+          now = datetime.now(ZoneInfo('Europe/Berlin'))
+          delta = ((now.hour * 60 + now.minute) - (20 * 60 + 30)) % (24 * 60)
+          print(f'Ortszeit {now:%H:%M}, Abstand zum Ziel: {delta} min')
+          sys.exit(0 if delta <= 45 else 1)
+          "; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Falsche Cron-Zeile fuer die aktuelle Zeitzone - uebersprungen."
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Repository auschecken
+        if: steps.guard.outputs.run == 'true'
+        uses: actions/checkout@v4
+
+      - name: Python einrichten
+        if: steps.guard.outputs.run == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Abhaengigkeiten installieren
+        if: steps.guard.outputs.run == 'true'
+        run: pip install -r requirements.txt
+
+      - name: Push verschicken
+        if: steps.guard.outputs.run == 'true'
+        env:
+          # NTFY_TOPIC ist faktisch das Passwort - bei ntfy gibt es keine
+          # Anmeldung, wer den Namen kennt, liest mit. Deshalb als Secret
+          # und nicht als Variable, und bitte nichts Erratbares.
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          NTFY_TOKEN: ${{ secrets.NTFY_TOKEN }}
+          PAGE_URL: ${{ vars.PAGE_URL }}
+        run: PYTHONPATH=src python -m bulletin.notify

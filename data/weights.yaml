@@ -1,0 +1,88 @@
+# Stellschrauben der Bewertung.
+#
+# Diese Datei gehoert bewusst nicht in den Code: Nachjustieren soll eine
+# Datenaenderung sein, kein Deployment. Alle Werte sind Startwerte einer
+# Heuristik und keine gemessenen Konstanten - sie duerfen und sollen sich
+# aendern, sobald das Logbuch genug Abende gesehen hat.
+
+common:
+  # Entfernungsabhaengiger Abfall des Feldstaerke-Ersatzwerts.
+  distance_exponent: 1.4
+  reference_km: 500.0
+  field_log_scale: 3.5
+
+  # Untergrenze der Entfernung, damit der Ersatzwert bei sehr nahen
+  # Sendern nicht ins Unendliche laeuft. Unterhalb dieser Distanz ist
+  # das Signal ohnehin voll da, eine feinere Abstufung waere Schein.
+  near_field_km: 15.0
+
+  # Geomagnetische Stoerung: unterhalb von 45 Grad Breite kaum Wirkung,
+  # ab 60 Grad voll. Je Kp-Stufe 8 Prozent Abschlag auf exponierten Wegen.
+  kp_latitude_start: 45.0
+  kp_latitude_full: 60.0
+  kp_penalty_per_step: 0.08
+
+mw_lw:
+  # Unterhalb von 70 Prozent Dunkelheit auf der Strecke passiert nichts,
+  # ab 95 Prozent ist das Tor ganz offen.
+  darkness_gate_low: 0.70
+  darkness_gate_high: 0.95
+
+  # Bis hierhin traegt die Bodenwelle auch am hellen Tag.
+  groundwave_km: 300.0
+
+  # Sommerliches Gewitterrauschen: im Juli bis zu 35 Prozent Abschlag.
+  summer_noise_depth: 0.35
+
+  weight_field: 0.55
+  weight_darkness: 0.25
+  weight_quiet: 0.20
+
+sw:
+  # Sprunggeometrie
+  max_hop_km: 3500.0
+  reflection_height_km: 300.0
+  hop_loss_factor: 0.75
+  skip_zone_km: 400.0
+
+  # Grenzfrequenz der F2-Schicht aus dem solaren Flux
+  fof2_base_mhz: 2.0
+  fof2_per_sqrt_flux: 0.62
+  # Nachtwert der Grenzfrequenz, kalibriert an einem bekannten Fall:
+  # Channel 292 auf 6070 kHz ist abends im Rheinland zuverlaessig da.
+  fof2_night_ratio: 0.70
+
+  # Absorption der D-Schicht
+  luf_day_mhz: 7.0
+  luf_night_mhz: 2.2
+
+  # Optimale Arbeitsfrequenz und weicher Auslauf oberhalb der MUF
+  owf_ratio: 0.85
+  muf_tail_ratio: 1.05
+
+  # Richtwirkung der Sendeantenne
+  beamwidth_deg: 60.0
+  sidelobe_floor: 0.25
+
+  weight_field: 0.40
+  weight_window: 0.40
+  weight_aiming: 0.20
+
+  # EiBi liefert keine Sendeleistung. Platzhalter, bis wir sie stationsweise
+  # ergaenzen (z.B. ueber die grossen, gut dokumentierten Relais-Sender).
+  assumed_power_kw: 100.0
+
+ranking:
+  # Wie stark die Seltenheit die Hauptliste umsortiert.
+  # 0 = reine Empfangbarkeit, 1 = volle Gewichtung der Seltenheit.
+  rarity_exponent: 0.6
+
+  # Wie viele Stationen jede Liste im Bulletin maximal zeigt.
+  main_list_size: 20
+  dx_block_size: 12
+
+notify:
+  # Unterhalb dieser Punktzahl (bei der aktuellen Kp-Stufe) gilt der Abend
+  # als eher ruhig - die Push-Nachricht wird dann zurueckhaltender
+  # formuliert, statt falschen Enthusiasmus zu simulieren.
+  quiet_evening_threshold: 25.0
