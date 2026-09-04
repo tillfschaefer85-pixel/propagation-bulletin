@@ -30,7 +30,7 @@ function kpBucket(kp) {
 /** Frequenz so schreiben, wie man sie am Geraet einstellt. */
 function formatFrequency(khz) {
   if (khz < 30000) return { value: String(Math.round(khz)), unit: "kHz" };
-  return { value: (khz / 1000).toFixed(3), unit: "MHz" };
+  return { value: num(khz / 1000, 3), unit: "MHz" };
 }
 
 /**
@@ -56,10 +56,121 @@ function timingPhrase(slotHhmm, now) {
   return { text: `jetzt (${slotHhmm})`, current: true };
 }
 
-/** Position einer Frequenz auf der logarithmischen Skala, 0 bis 1. */
+/** Position einer Frequenz auf einer durchgehenden logarithmischen Skala, 0 bis 1. */
 function dialPosition(khz, min = 150, max = 30000) {
   const clamped = Math.max(min, Math.min(max, khz));
   return (Math.log10(clamped) - Math.log10(min)) / (Math.log10(max) - Math.log10(min));
+}
+
+/**
+ * Teilt die heutigen Frequenzen in belegte Abschnitte.
+ *
+ * Eine durchgehende Skala von 150 kHz bis 30 MHz verschenkt zwei Drittel
+ * ihrer Breite an Bereiche, in denen an den meisten Abenden nichts liegt -
+ * und quetscht dafuer alles zwischen 3 und 11 MHz zusammen. Diese Funktion
+ * sucht deshalb die tatsaechlich belegten Bereiche und laesst die Luecken
+ * dazwischen zusammenschrumpfen.
+ *
+ * gapDecades: ab welchem Abstand (in Dekaden) eine Luecke als Bruch gilt.
+ * padDecades: wieviel Luft links und rechts um einen Abschnitt bleibt.
+ */
+function frequencySegments(frequencies, { gapDecades = 0.12, padDecades = 0.03 } = {}) {
+  const sorted = [...new Set(frequencies)].filter((f) => f > 0).sort((a, b) => a - b);
+  if (!sorted.length) return [];
+
+  const segments = [];
+  let start = sorted[0];
+  let previous = sorted[0];
+
+  for (const freq of sorted.slice(1)) {
+    if (Math.log10(freq) - Math.log10(previous) > gapDecades) {
+      segments.push({ min: start, max: previous });
+      start = freq;
+    }
+    previous = freq;
+  }
+  segments.push({ min: start, max: previous });
+
+  // Ein Abschnitt mit nur einer Frequenz haette die Breite null - er bekommt
+  // etwas Luft, damit sein Strich nicht auf einer Kante klebt.
+  return segments.map((seg) => {
+    const lo = Math.log10(seg.min) - padDecades;
+    const hi = Math.log10(seg.max) + padDecades;
+    return { min: 10 ** lo, max: 10 ** hi, span: hi - lo };
+  });
+}
+
+/**
+ * Verteilt die Abschnitte auf die verfuegbare Breite.
+ *
+ * Jeder Abschnitt bekommt Platz nach seiner logarithmischen Ausdehnung,
+ * aber mindestens einen Mindestanteil - sonst wuerde ein einzelner
+ * Langwellensender zu einem unsichtbaren Strich am Rand.
+ */
+function layoutSegments(segments, width, { gapPx = 26, minShare = 0.12 } = {}) {
+  if (!segments.length) return [];
+
+  const usable = width - gapPx * (segments.length - 1);
+  const totalSpan = segments.reduce((sum, seg) => sum + seg.span, 0) || 1;
+
+  let shares = segments.map((seg) => seg.span / totalSpan);
+  // Mindestanteil durchsetzen und den Rest proportional nachziehen
+  const floor = Math.min(minShare, 1 / segments.length);
+  const lifted = shares.map((share) => Math.max(share, floor));
+  const scale = 1 / lifted.reduce((a, b) => a + b, 0);
+
+  let x = 0;
+  return segments.map((seg, i) => {
+    const w = usable * lifted[i] * scale;
+    const placed = { ...seg, x, width: w };
+    x += w + gapPx;
+    return placed;
+  });
+}
+
+/**
+ * Fasst benachbarte Abschnitte zusammen, die denselben Bandnamen tragen.
+ *
+ * Ohne das stünde "Mittelwelle" zweimal nebeneinander, nur weil zwischen
+ * 1008 und 1485 kHz zufällig eine Lücke liegt - für den Leser sieht das
+ * nach einem Fehler aus, nicht nach einer Information.
+ */
+function mergeSameBand(segments, labelFor) {
+  const merged = [];
+  for (const seg of segments) {
+    const last = merged[merged.length - 1];
+    if (last && labelFor(last.min) === labelFor(seg.min)) {
+      const lo = Math.log10(last.min);
+      const hi = Math.log10(seg.max);
+      merged[merged.length - 1] = { min: last.min, max: seg.max, span: hi - lo };
+    } else {
+      merged.push({ ...seg });
+    }
+  }
+  return merged;
+}
+
+/** Bildet eine Frequenz auf ihre X-Position im gestauchten Layout ab. */
+function positionInSegments(khz, placed) {
+  for (const seg of placed) {
+    if (khz >= seg.min && khz <= seg.max) {
+      const t = (Math.log10(khz) - Math.log10(seg.min)) / (Math.log10(seg.max) - Math.log10(seg.min));
+      return seg.x + t * seg.width;
+    }
+  }
+  return null;
+}
+
+/** Bandname zu einer Frequenz - fuer die Beschriftung der Abschnitte. */
+function bandLabel(khz) {
+  if (khz < 300) return "Langwelle";
+  if (khz <= 1710) return "Mittelwelle";
+  const meters = Math.round(300000 / khz);
+  // Auf das naechstliegende Rundfunkband runden, damit "49 m" dasteht
+  // und nicht "48 m" nur weil der Sender am Bandrand liegt.
+  const bands = [120, 90, 75, 60, 49, 41, 31, 25, 22, 19, 16, 15, 13, 11];
+  const nearest = bands.reduce((a, b) => (Math.abs(b - meters) < Math.abs(a - meters) ? b : a));
+  return Math.abs(nearest - meters) <= 4 ? `${nearest} m` : `${meters} m`;
 }
 
 /** Die Eintraege einer Liste, nach Punktzahl der gewaehlten Kp-Stufe sortiert. */
@@ -73,6 +184,87 @@ function entriesForBucket(bulletin, stations, kind, bucket) {
     }))
     .sort((a, b) => b.slot.score - a.slot.score);
 }
+
+/** Deutsche Zahlschreibweise: Komma statt Punkt. */
+function num(value, digits = 1) {
+  return value.toFixed(digits).replace(".", ",");
+}
+
+/** Einordnung des Kp-Werts in Worte. */
+function kpDescription(kp) {
+  if (kp <= 1) return { label: "sehr ruhig", text: "Beste Bedingungen. Auch weite Wege über den Norden tragen." };
+  if (kp <= 2) return { label: "ruhig", text: "Normallage. Nichts steht der Ausbreitung im Weg." };
+  if (kp <= 3) return { label: "leicht unruhig", text: "Kaum spürbar. Sehr weite Nordwege können etwas schwächeln." };
+  if (kp <= 4) return { label: "unruhig", text: "Nordwege werden merklich schlechter, Südwege bleiben stabil." };
+  if (kp <= 5) return { label: "Sturm", text: "Geomagnetischer Sturm. Wege über hohe Breiten brechen weitgehend weg." };
+  if (kp <= 6) return { label: "starker Sturm", text: "Auch mittlere Breiten leiden. Dafür kann Polarlicht sichtbar werden." };
+  return { label: "schwerer Sturm", text: "Weiträumige Ausfälle auf Kurzwelle. Mittelwelle über Süden bleibt am ehesten." };
+}
+
+/**
+ * Erklärt in einem Satz, warum eine Station heute oben oder unten steht.
+ *
+ * Ergänzt die Einzelwerte, ersetzt sie aber nicht: die Zahlen sind
+ * ehrlicher, der Satz ist abends schneller zu erfassen.
+ */
+function scoreExplanation(slot, station) {
+  const c = slot.components || {};
+  const freqMhz = station.freq_khz / 1000;
+
+  if (slot.score <= 0) {
+    if (station.band_class === "sw" && c.muf_mhz !== undefined) {
+      if (freqMhz > c.muf_mhz) {
+        return `Die Frequenz liegt über der höchsten heute nutzbaren (${num(c.muf_mhz)} MHz) — die Welle geht ins All statt zurückzukommen.`;
+      }
+      if (freqMhz < c.luf_mhz) {
+        return `Die Frequenz liegt unter der niedrigsten heute brauchbaren (${num(c.luf_mhz)} MHz) — die Absorption frisst das Signal.`;
+      }
+    }
+    if (c.darkness !== undefined && c.darkness < 0.7) {
+      return "Die Strecke liegt noch zu weitgehend im Tageslicht — auf diesen Bändern trägt die Raumwelle erst in der Dunkelheit.";
+    }
+    return "Heute Abend außerhalb dessen, was die Ausbreitung hergibt.";
+  }
+
+  const reasons = [];
+  if (station.band_class === "sw" && c.owf_mhz !== undefined) {
+    const distance = Math.abs(freqMhz - c.owf_mhz);
+    if (distance < 1.0) reasons.push("die Frequenz liegt fast genau im günstigsten Bereich");
+    else if (freqMhz < c.owf_mhz) reasons.push(`die Frequenz liegt im nutzbaren Fenster (${num(c.luf_mhz)}–${num(c.muf_mhz)} MHz)`);
+    else reasons.push("die Frequenz liegt am oberen Rand des nutzbaren Fensters");
+  }
+  if (c.darkness !== undefined) {
+    if (c.darkness >= 0.99) reasons.push("die Strecke liegt vollständig im Dunkeln");
+    else if (c.darkness >= 0.7) reasons.push(`die Strecke liegt zu ${Math.round(c.darkness * 100)} % im Dunkeln`);
+  }
+  if (c.field !== undefined) {
+    if (c.field >= 0.8) reasons.push("Leistung und Entfernung sprechen deutlich dafür");
+    else if (c.field <= 0.35) reasons.push("Leistung und Entfernung sprechen eher dagegen");
+  }
+  if (c.geomagnetic !== undefined && c.geomagnetic < 0.85) {
+    reasons.push(`die geomagnetische Störung kostet auf diesem Weg rund ${Math.round((1 - c.geomagnetic) * 100)} %`);
+  }
+  if (c.aiming !== undefined && c.aiming < 0.6) {
+    reasons.push("die Sendeantenne strahlt in eine andere Richtung");
+  }
+
+  if (!reasons.length) return "Solide Bedingungen ohne besonderen Ausschlag in eine Richtung.";
+  const head = reasons[0][0].toUpperCase() + reasons[0].slice(1);
+  return reasons.length === 1 ? head + "." : head + ", " + reasons.slice(1).join(", ") + ".";
+}
+
+/** Beschriftungen für die Einzelwerte im Detailfenster. */
+const COMPONENT_LABELS = {
+  darkness: ["Dunkelanteil der Strecke", (v) => `${Math.round(v * 100)} %`],
+  field: ["Feldstärke-Schätzung", (v) => `${Math.round(v * 100)} von 100`],
+  geomagnetic: ["Geomagnetischer Abschlag", (v) => `${Math.round((1 - v) * 100)} % Verlust`],
+  aiming: ["Ausrichtung der Sendeantenne", (v) => (v >= 0.99 ? "ungerichtet oder auf uns" : `${Math.round(v * 100)} % der Hauptkeule`)],
+  muf_mhz: ["Höchste nutzbare Frequenz", (v) => `${num(v, 2)} MHz`],
+  owf_mhz: ["Günstigste Arbeitsfrequenz", (v) => `${num(v, 2)} MHz`],
+  luf_mhz: ["Niedrigste brauchbare Frequenz", (v) => `${num(v, 2)} MHz`],
+  hops: ["Sprünge an der Ionosphäre", (v) => `${v}`],
+  seasonal_noise: ["Jahreszeitliches Rauschen", (v) => `${Math.round((1 - v) * 100)} % Abschlag`],
+};
 
 /** Ist das Bulletin von heute? */
 function isCurrent(bulletinDate, now) {
@@ -89,6 +281,135 @@ const state = {
   liveKp: null,
   kpNote: "",
 };
+
+/* ---------- Detailfenster ---------- */
+
+const LANGUAGE_NAMES = { de: "Deutsch", en: "Englisch", fr: "Französisch", nl: "Niederländisch" };
+
+function closeModal() {
+  const existing = document.getElementById("modal");
+  if (existing) existing.remove();
+  document.body.classList.remove("modal-open");
+}
+
+/**
+ * Öffnet ein Overlay. Bewusst schlicht gehalten: schliessen per Knopf,
+ * per Klick auf den Hintergrund und per Escape - wer eines davon vergisst,
+ * baut eine Falle für den, der gerade einhändig am Radio sitzt.
+ */
+function openModal(title, buildBody) {
+  closeModal();
+
+  const overlay = el("div", "modal-overlay");
+  overlay.id = "modal";
+  overlay.setAttribute("role", "dialog");
+  overlay.setAttribute("aria-modal", "true");
+  overlay.setAttribute("aria-label", title);
+
+  const sheet = el("div", "modal-sheet");
+  const head = el("div", "modal-head");
+  head.appendChild(el("h3", null, title));
+
+  const close = el("button", "modal-close", "\u00d7");
+  close.setAttribute("aria-label", "Schließen");
+  close.addEventListener("click", closeModal);
+  head.appendChild(close);
+  sheet.appendChild(head);
+
+  const body = el("div", "modal-body");
+  buildBody(body);
+  sheet.appendChild(body);
+
+  overlay.appendChild(sheet);
+  overlay.addEventListener("click", (event) => {
+    if (event.target === overlay) closeModal();
+  });
+  document.body.appendChild(overlay);
+  document.body.classList.add("modal-open");
+  close.focus();
+}
+
+function defRow(parent, term, value) {
+  const row = el("div", "def-row");
+  row.appendChild(el("span", "def-term", term));
+  row.appendChild(el("span", "def-value", value));
+  parent.appendChild(row);
+}
+
+function openKpInfo() {
+  openModal("Geomagnetische Lage", (body) => {
+    const description = kpDescription(state.bucket);
+    body.appendChild(
+      el("p", null,
+        `Der Kp-Index misst, wie stark das Erdmagnetfeld gerade gestört ist — auf einer Skala von 0 bis 9. ` +
+        `Er wird alle drei Stunden weltweit aus Messstationen bestimmt.`)
+    );
+    body.appendChild(
+      el("p", null,
+        `Für den Empfang zählt das, weil Störungen vor allem Funkwege über hohe Breiten treffen: ` +
+        `Was über Skandinavien oder Grönland läuft, bricht zuerst weg, während Wege nach Süden ` +
+        `weitgehend unbeeindruckt bleiben.`)
+    );
+
+    const now = el("div", "kp-now");
+    now.appendChild(el("strong", null, `Aktuell Kp ${state.bucket} — ${description.label}`));
+    now.appendChild(el("div", null, description.text));
+    body.appendChild(now);
+
+    body.appendChild(
+      el("p", "modal-aside",
+        `Der Regler verändert nicht die Messung, sondern zeigt, wie die Rangfolge bei einer anderen Lage aussähe. ` +
+        `Für jede Stufe von 0 bis 9 wurde heute früh ein eigenes Ergebnis vorberechnet.`)
+    );
+  });
+}
+
+function openStationDetail(row) {
+  const { entry, station, slot } = row;
+  openModal(station.name, (body) => {
+    const freq = formatFrequency(station.freq_khz);
+    defRow(body, "Frequenz", `${freq.value} ${freq.unit}`);
+    if (station.language) defRow(body, "Sprache", LANGUAGE_NAMES[station.language] || station.language);
+    if (station.site_name) defRow(body, "Sendestandort", station.site_name);
+    defRow(body, "Entfernung", `${Math.round(station.distance_km)} km`);
+    defRow(body, "Peilung", `${Math.round(station.bearing_deg)}\u00b0`);
+    if (station.null_bearings_deg) {
+      defRow(body, "Loop-Nullstellen",
+        station.null_bearings_deg.map((d) => `${Math.round(d)}\u00b0`).join(" und "));
+    }
+    if (station.power_kw) defRow(body, "Sendeleistung", `${station.power_kw} kW`);
+
+    body.appendChild(el("h4", null, "Bewertung"));
+    defRow(body, "Punktzahl", `${num(slot.score)} von 100`);
+    defRow(body, "Bestes Fenster", slot.t);
+
+    const explanation = el("p", "modal-explain", scoreExplanation(slot, station));
+    body.appendChild(explanation);
+
+    const components = slot.components || {};
+    const known = Object.keys(COMPONENT_LABELS).filter((k) => components[k] !== undefined);
+    if (known.length) {
+      const list = el("div", "def-list");
+      for (const key of known) {
+        const [label, format] = COMPONENT_LABELS[key];
+        defRow(list, label, format(components[key]));
+      }
+      body.appendChild(list);
+    }
+
+    if (entry.rarity) {
+      body.appendChild(el("h4", null, "Seltenheit"));
+      defRow(body, "Grundwert", `${Math.round(entry.rarity.baseline * 100)} von 100`);
+      if (entry.rarity.reason) defRow(body, "Heute", entry.rarity.reason);
+    }
+
+    body.appendChild(
+      el("p", "modal-aside",
+        "Die Punktzahl ist eine Rangfolge, keine Feldstärkevorhersage — sie beantwortet, " +
+        "was heute Abend oben steht, nicht wieviel Mikrovolt ankommen.")
+    );
+  });
+}
 
 /* ---------- Aufbau der Anzeige ---------- */
 
@@ -110,18 +431,13 @@ function renderDial() {
 
   if (!rows.length) return;
 
-  const W = 1000;
-  const H = 108;
-  const baseline = 74;
-  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
-  svg.setAttribute("preserveAspectRatio", "none");
-  svg.setAttribute("role", "img");
-  svg.setAttribute(
-    "aria-label",
-    `${rows.length} empfangbare Stationen zwischen Langwelle und 30 Megahertz`
-  );
-
+  // Die Zeichenflaeche wird in echten Pixeln aufgespannt, nicht in
+  // gestreckten Einheiten: preserveAspectRatio="none" hatte die Schrift
+  // horizontal auf ein Drittel gequetscht, weil das viewBox-Verhaeltnis
+  // nicht zum Kasten passte.
+  const W = Math.max(280, Math.round(host.clientWidth || 360));
+  const H = 150;
+  const baseline = 96;
   const ns = "http://www.w3.org/2000/svg";
   const make = (tag, attrs) => {
     const n = document.createElementNS(ns, tag);
@@ -129,23 +445,69 @@ function renderDial() {
     return n;
   };
 
-  const axis = make("g", { class: "dial-axis" });
-  axis.appendChild(make("line", { x1: 0, y1: baseline, x2: W, y2: baseline }));
-  for (const [khz, label] of [[200, "LW"], [1000, "MW"], [6000, "49 m"], [15000, "19 m"]]) {
-    const x = dialPosition(khz) * W;
-    const t = make("text", { x: Math.min(x, W - 30), y: baseline + 18 });
-    t.textContent = label;
-    axis.appendChild(t);
-  }
-  svg.appendChild(axis);
+  const svg = make("svg", {
+    viewBox: `0 0 ${W} ${H}`,
+    role: "img",
+    "aria-label": `${rows.length} empfangbare Stationen, nach Bändern gruppiert`,
+  });
+
+  // Nur die tatsaechlich belegten Bereiche bekommen Platz. Zwischen den
+  // Abschnitten steht eine Bruchstelle statt leerer Skala.
+  const placed = layoutSegments(
+    mergeSameBand(frequencySegments(rows.map((r) => r.station.freq_khz)), bandLabel),
+    W,
+    { gapPx: 18 }
+  );
 
   const best = Math.max(...rows.map((r) => r.slot.score));
+
+  placed.forEach((seg, index) => {
+    const g = make("g", { class: "dial-axis" });
+    g.appendChild(make("line", { x1: seg.x, y1: baseline, x2: seg.x + seg.width, y2: baseline }));
+
+    // Beschriftung: Bandname und der abgedeckte Frequenzbereich
+    const inSeg = rows.filter((r) => r.station.freq_khz >= seg.min && r.station.freq_khz <= seg.max);
+    const lo = Math.min(...inSeg.map((r) => r.station.freq_khz));
+    const hi = Math.max(...inSeg.map((r) => r.station.freq_khz));
+    const mid = seg.x + seg.width / 2;
+
+    const name = make("text", { x: mid, y: baseline + 26, "text-anchor": "middle", class: "dial-band-name" });
+    name.textContent = bandLabel(lo);
+    g.appendChild(name);
+
+    const range = make("text", { x: mid, y: baseline + 44, "text-anchor": "middle", class: "dial-band-range" });
+    range.textContent = lo === hi ? `${Math.round(lo)} kHz` : `${Math.round(lo)}–${Math.round(hi)} kHz`;
+    g.appendChild(range);
+
+    svg.appendChild(g);
+
+    // Bruchstelle zwischen zwei Abschnitten
+    if (index > 0) {
+      const prev = placed[index - 1];
+      const bx = (prev.x + prev.width + seg.x) / 2;
+      const brk = make("g", { class: "dial-break" });
+      brk.appendChild(make("path", { d: `M${bx - 5} ${baseline + 6} l6 -12 M${bx + 1} ${baseline + 6} l6 -12` }));
+      svg.appendChild(brk);
+    }
+  });
+
   rows.forEach((row, i) => {
-    const x = dialPosition(row.station.freq_khz) * W;
-    const height = 10 + 44 * (row.slot.score / (best || 1));
+    const x = positionInSegments(row.station.freq_khz, placed);
+    if (x === null) return;
+    const height = 14 + 60 * (row.slot.score / (best || 1));
     const g = make("g", { class: `dial-tick${row.slot.score < 25 ? " is-quiet" : ""}` });
-    g.style.animationDelay = `${Math.min(i * 45, 600)}ms`;
+    g.style.animationDelay = `${Math.min(i * 40, 500)}ms`;
     g.appendChild(make("line", { x1: x, y1: baseline, x2: x, y2: baseline - height }));
+
+    // Grosszuegige, unsichtbare Trefferflaeche: ein 3 px breiter Strich
+    // laesst sich mit dem Finger nicht treffen.
+    const hit = make("rect", {
+      x: x - 14, y: baseline - height - 8, width: 28, height: height + 16,
+      fill: "transparent", style: "cursor:pointer",
+    });
+    hit.addEventListener("click", () => openStationDetail(row));
+    g.appendChild(hit);
+
     svg.appendChild(g);
   });
 
@@ -181,6 +543,16 @@ function bearingIndicator(deg) {
 function renderStation(row, now) {
   const { entry, station, slot } = row;
   const node = el("article", `station${slot.score <= 0 ? " is-dead" : ""}`);
+  node.tabIndex = 0;
+  node.setAttribute("role", "button");
+  node.setAttribute("aria-label", `${station.name}, Details öffnen`);
+  node.addEventListener("click", () => openStationDetail(row));
+  node.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      openStationDetail(row);
+    }
+  });
 
   const freq = formatFrequency(station.freq_khz);
   const freqNode = el("div", "freq num", freq.value);
@@ -352,6 +724,15 @@ async function start() {
   }
   renderAll();
 
+  document.getElementById("kp-info").addEventListener("click", openKpInfo);
+
+  // Die Skala rechnet in echten Pixeln - beim Drehen des Geräts muss sie neu.
+  let resizeTimer = null;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(renderDial, 150);
+  });
+
   document.getElementById("kp-slider").addEventListener("input", (event) => {
     state.bucket = Number(event.target.value);
     if (state.liveKp !== null && state.bucket !== kpBucket(state.liveKp)) {
@@ -365,12 +746,24 @@ async function start() {
 
 if (typeof document !== "undefined") {
   document.addEventListener("DOMContentLoaded", start);
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeModal();
+  });
 }
 
 if (typeof module !== "undefined") {
   module.exports = {
     kpBucket,
+    num,
     kpNoteFor,
+    kpDescription,
+    scoreExplanation,
+    frequencySegments,
+    layoutSegments,
+    mergeSameBand,
+    positionInSegments,
+    bandLabel,
+    COMPONENT_LABELS,
     formatFrequency,
     timingPhrase,
     dialPosition,

@@ -75,6 +75,7 @@ class ResolvedStation:
     source: str
     rarity_baseline_hint: float | None  # nur bei mwlw bekannt
     slots: list[datetime]
+    site_name: str | None = None
 
 
 def _slug(text: str) -> str:
@@ -116,14 +117,15 @@ def resolve_eibi_broadcasts(
     zusammengefuehrt - sonst stuende derselbe Sender zweimal im Bulletin.
     """
     active_by_id: dict[str, list[datetime]] = {}
-    meta_by_id: dict[str, tuple[Broadcast, "Link"]] = {}
+    meta_by_id: dict[str, tuple[Broadcast, "Link", str | None]] = {}
     skipped = 0
 
     for b in broadcasts:
-        tx = tx_sites.lookup(b.itu, b.transmitter_site)
-        if tx is None:
+        site = tx_sites.lookup_site(b.itu, b.transmitter_site)
+        if site is None:
             skipped += 1
             continue
+        tx = site.point
         active = on_air_slots(b, slots)
         if not active:
             continue
@@ -139,7 +141,7 @@ def resolve_eibi_broadcasts(
         # Reihenfolge und Duplikate spielen fuer die spaetere Bewertung
         # keine Rolle - best_slot_by_kp geht ohnehin jeden Slot einzeln durch.
         active_by_id[link.station_id] = existing + [s for s in active if s not in existing]
-        meta_by_id[link.station_id] = (b, link)
+        meta_by_id[link.station_id] = (b, link, site.name)
 
     resolved = [
         ResolvedStation(
@@ -152,8 +154,9 @@ def resolve_eibi_broadcasts(
             source="eibi",
             rarity_baseline_hint=None,
             slots=sorted(active_by_id[station_id]),
+            site_name=site_name,
         )
-        for station_id, (b, link) in meta_by_id.items()
+        for station_id, (b, link, site_name) in meta_by_id.items()
     ]
     return resolved, skipped
 
@@ -241,6 +244,7 @@ def _station_meta(rs: ResolvedStation) -> StationMeta:
     return StationMeta(
         station_id=rs.station_id,
         name=rs.name,
+        site_name=rs.site_name,
         band_class=rs.band_class,
         freq_khz=rs.freq_khz,
         language=rs.language,

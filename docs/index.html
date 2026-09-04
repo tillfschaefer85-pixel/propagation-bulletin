@@ -70,6 +70,7 @@ body {
 .masthead time {
   color: var(--muted);
   font-size: .92rem;
+  white-space: nowrap;
 }
 
 .banner {
@@ -223,6 +224,153 @@ footer {
 }
 
 footer a { color: var(--muted); }
+
+/* ---------- Skala: Beschriftung gross genug fuers Handy ---------- */
+
+.dial svg { width: 100%; height: 150px; display: block; overflow: visible; }
+
+.dial-band-name {
+  fill: var(--ink);
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 21px;
+  font-weight: 500;
+}
+
+.dial-band-range {
+  fill: var(--muted);
+  font-family: "IBM Plex Sans Condensed", system-ui, sans-serif;
+  font-size: 17px;
+}
+
+.dial-break path { stroke: var(--panel-edge); stroke-width: 2; fill: none; }
+
+/* ---------- i-Icon ---------- */
+
+.kp-title { display: inline-flex; align-items: center; gap: .5rem; }
+
+.info {
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 50%;
+  border: 1px solid var(--muted);
+  background: transparent;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: .8rem;
+  font-style: italic;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+
+.info:hover, .info:focus-visible { border-color: var(--dial); color: var(--dial); }
+
+/* ---------- Detailfenster ---------- */
+
+body.modal-open { overflow: hidden; }
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 11, 17, .72);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 50;
+  padding: 1rem .6rem 0;
+}
+
+@media (min-width: 40rem) {
+  .modal-overlay { align-items: center; padding: 2rem; }
+}
+
+.modal-sheet {
+  background: var(--panel);
+  border: 1px solid var(--panel-edge);
+  border-radius: 8px 8px 0 0;
+  width: 100%;
+  max-width: 34rem;
+  max-height: 86vh;
+  overflow-y: auto;
+  padding: 1.1rem 1.15rem 1.6rem;
+}
+
+@media (min-width: 40rem) { .modal-sheet { border-radius: 8px; } }
+
+.modal-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: .9rem;
+}
+
+.modal-head h3 { margin: 0; font-size: 1.2rem; font-weight: 600; color: var(--ink); }
+
+.modal-close {
+  background: transparent;
+  border: 0;
+  color: var(--muted);
+  font-size: 1.7rem;
+  line-height: 1;
+  padding: 0 .2rem;
+  cursor: pointer;
+}
+
+.modal-close:hover, .modal-close:focus-visible { color: var(--ink); }
+
+.modal-body p { margin: 0 0 .8rem; font-size: .95rem; }
+
+.modal-body h4 {
+  margin: 1.3rem 0 .5rem;
+  font-size: .88rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: none;
+  border-bottom: 1px solid var(--panel-edge);
+  padding-bottom: .3rem;
+}
+
+.def-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: .32rem 0;
+  font-size: .93rem;
+  border-bottom: 1px solid rgba(42, 53, 72, .5);
+}
+
+.def-term { color: var(--muted); }
+.def-value { text-align: right; font-variant-numeric: tabular-nums; }
+
+.modal-explain {
+  margin: .9rem 0 .8rem;
+  padding: .7rem .85rem;
+  background: rgba(242, 181, 63, .09);
+  border-left: 3px solid var(--dial);
+  font-size: .93rem;
+}
+
+.modal-aside {
+  margin-top: 1.1rem;
+  color: var(--muted);
+  font-size: .85rem;
+  line-height: 1.45;
+}
+
+.kp-now {
+  margin: 1rem 0;
+  padding: .75rem .85rem;
+  background: rgba(242, 181, 63, .09);
+  border-left: 3px solid var(--dial);
+  font-size: .95rem;
+}
+
+.kp-now strong { color: var(--dial); display: block; margin-bottom: .25rem; }
+
+/* Anklickbare Stationszeile */
+.station { cursor: pointer; }
+.station:focus-visible { outline: 2px solid var(--dial); outline-offset: 3px; }
 </style>
 </head>
 <body>
@@ -238,7 +386,10 @@ footer a { color: var(--muted); }
 
 <section class="kp">
   <div class="kp-head">
-    <label for="kp-slider">Geomagnetische Lage</label>
+    <span class="kp-title">
+      <label for="kp-slider">Geomagnetische Lage</label>
+      <button type="button" class="info" id="kp-info" aria-label="Was bedeutet das?">i</button>
+    </span>
     <span class="kp-value num" id="kp-value">–</span>
   </div>
   <input type="range" id="kp-slider" min="0" max="9" step="1" value="2"

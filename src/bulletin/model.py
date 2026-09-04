@@ -43,6 +43,7 @@ class StationMeta:
     bearing_deg: float
     power_kw: float
     source: Literal["eibi", "mwlw"]
+    site_name: str | None = None
     null_bearings_deg: tuple[float, float] | None = None
     hints: tuple[str, ...] = ()
 
