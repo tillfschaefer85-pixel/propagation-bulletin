@@ -11,6 +11,7 @@
       "bearing_deg": 108.0,
       "power_kw": 100.0,
       "source": "eibi",
+      "site_name": "Tiganesti",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -24,6 +25,7 @@
       "bearing_deg": 108.0,
       "power_kw": 100.0,
       "source": "eibi",
+      "site_name": "Tiganesti",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -37,6 +39,7 @@
       "bearing_deg": 99.9,
       "power_kw": 100.0,
       "source": "eibi",
+      "site_name": "Galbeni",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -50,6 +53,7 @@
       "bearing_deg": 99.9,
       "power_kw": 100.0,
       "source": "eibi",
+      "site_name": "Galbeni",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -63,6 +67,7 @@
       "bearing_deg": 286.6,
       "power_kw": 100.0,
       "source": "eibi",
+      "site_name": "Shannon",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -76,6 +81,7 @@
       "bearing_deg": 286.6,
       "power_kw": 100.0,
       "source": "eibi",
+      "site_name": "Shannon",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -89,6 +95,7 @@
       "bearing_deg": 286.6,
       "power_kw": 100.0,
       "source": "eibi",
+      "site_name": "Shannon",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -102,6 +109,7 @@
       "bearing_deg": 286.6,
       "power_kw": 100.0,
       "source": "eibi",
+      "site_name": "Shannon",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -115,6 +123,7 @@
       "bearing_deg": 286.6,
       "power_kw": 100.0,
       "source": "eibi",
+      "site_name": "Shannon",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -128,6 +137,7 @@
       "bearing_deg": 286.6,
       "power_kw": 100.0,
       "source": "eibi",
+      "site_name": "Shannon",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -141,6 +151,7 @@
       "bearing_deg": 286.6,
       "power_kw": 100.0,
       "source": "eibi",
+      "site_name": "Shannon",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -154,6 +165,7 @@
       "bearing_deg": 286.6,
       "power_kw": 100.0,
       "source": "eibi",
+      "site_name": "Shannon",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -167,6 +179,7 @@
       "bearing_deg": 286.6,
       "power_kw": 100.0,
       "source": "eibi",
+      "site_name": "Shannon",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -180,6 +193,7 @@
       "bearing_deg": 286.6,
       "power_kw": 100.0,
       "source": "eibi",
+      "site_name": "Shannon",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -193,6 +207,7 @@
       "bearing_deg": 99.9,
       "power_kw": 100.0,
       "source": "eibi",
+      "site_name": "Galbeni",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -206,6 +221,7 @@
       "bearing_deg": 99.9,
       "power_kw": 100.0,
       "source": "eibi",
+      "site_name": "Galbeni",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -219,6 +235,7 @@
       "bearing_deg": 286.6,
       "power_kw": 100.0,
       "source": "eibi",
+      "site_name": "Shannon",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -232,6 +249,7 @@
       "bearing_deg": 286.6,
       "power_kw": 100.0,
       "source": "eibi",
+      "site_name": "Shannon",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -245,6 +263,7 @@
       "bearing_deg": 108.0,
       "power_kw": 100.0,
       "source": "eibi",
+      "site_name": "Tiganesti",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -258,6 +277,7 @@
       "bearing_deg": 286.6,
       "power_kw": 100.0,
       "source": "eibi",
+      "site_name": "Shannon",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -271,6 +291,7 @@
       "bearing_deg": 106.9,
       "power_kw": 100.0,
       "source": "eibi",
+      "site_name": "Saftica",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -284,6 +305,7 @@
       "bearing_deg": 99.9,
       "power_kw": 100.0,
       "source": "eibi",
+      "site_name": "Galbeni",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -297,6 +319,7 @@
       "bearing_deg": 216.4,
       "power_kw": 100.0,
       "source": "eibi",
+      "site_name": "Noblejas",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -310,6 +333,7 @@
       "bearing_deg": 286.6,
       "power_kw": 100.0,
       "source": "eibi",
+      "site_name": "Shannon",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -323,6 +347,7 @@
       "bearing_deg": 286.6,
       "power_kw": 100.0,
       "source": "eibi",
+      "site_name": "Shannon",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -336,6 +361,7 @@
       "bearing_deg": 216.4,
       "power_kw": 100.0,
       "source": "eibi",
+      "site_name": "Noblejas",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -349,6 +375,7 @@
       "bearing_deg": 99.9,
       "power_kw": 100.0,
       "source": "eibi",
+      "site_name": "Galbeni",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -362,6 +389,7 @@
       "bearing_deg": 286.6,
       "power_kw": 100.0,
       "source": "eibi",
+      "site_name": "Shannon",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -375,6 +403,7 @@
       "bearing_deg": 153.9,
       "power_kw": 100.0,
       "source": "eibi",
+      "site_name": "Roma",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -388,6 +417,7 @@
       "bearing_deg": 286.6,
       "power_kw": 100.0,
       "source": "eibi",
+      "site_name": "Shannon",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -401,6 +431,7 @@
       "bearing_deg": 286.6,
       "power_kw": 100.0,
       "source": "eibi",
+      "site_name": "Shannon",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -414,6 +445,7 @@
       "bearing_deg": 153.9,
       "power_kw": 100.0,
       "source": "eibi",
+      "site_name": "Roma",
       "null_bearings_deg": null,
       "hints": []
     }
