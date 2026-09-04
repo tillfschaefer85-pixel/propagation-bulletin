@@ -58,6 +58,11 @@ automatisch aus dem Sendeplan kommt.
 Europa und HCJB Ecuador ab. Ein Sender ohne Eintrag wird übersprungen und
 im Log mitgezählt — kommt derselbe häufig vor, lohnt sich ein Eintrag.
 
+`data/broadcast_bands.yaml` — welche Frequenzbereiche als Rundfunk gelten.
+EiBi führt auch Flug- und Seefunk; der Filter hält sie draußen. `enabled:
+false` schaltet ihn ab, einzelne Bänder lassen sich ergänzen — etwa der
+Piratenbereich um 6200–6400 kHz.
+
 `data/weights.yaml` — alle Stellschrauben der Bewertung. Startwerte einer
 Heuristik, ausdrücklich zum Nachjustieren gedacht. Änderungen hier sind
 Datenänderungen, kein Deployment.

@@ -1,0 +1,49 @@
+# Rundfunkbänder — Grundlage für den Filter gegen Nicht-Rundfunk.
+#
+# EiBi führt nicht nur Rundfunk, sondern auch Flugfunk, Seefunk,
+# Zeitzeichen und andere Dienste. "Shannon Aeradio" auf 10021 kHz ist
+# Flugfunk und stand nur deshalb in der Hauptliste, weil der Eintrag als
+# englischsprachig geführt wird.
+#
+# Statt an EiBis Kennzeichnung zu raten, entscheidet hier die Frequenz:
+# Rundfunk hat international zugeteilte Bänder, alles andere liegt
+# ausserhalb. Das ist überprüfbar und ändert sich selten.
+#
+# enabled: false schaltet den Filter komplett ab - dann steht wieder
+# alles in der Liste, auch Flug- und Seefunk.
+enabled: true
+
+bands:
+  # Lang- und Mittelwelle: durchgehende Rundfunkbereiche (ITU-Region 1)
+  - {name: "Langwelle", min: 148.5, max: 283.5}
+  - {name: "Mittelwelle", min: 526.5, max: 1710}
+
+  # Tropenbänder
+  - {name: "120 m", min: 2300, max: 2495}
+  - {name: "90 m", min: 3200, max: 3400}
+  - {name: "75 m", min: 3900, max: 4000}
+  - {name: "60 m", min: 4750, max: 5060}
+
+  # Klassische Kurzwellen-Rundfunkbänder
+  # Die untere Kante von 49 m ist bewusst auf 5800 gezogen: der Bereich
+  # unterhalb der offiziellen 5900 wird von kleinen europäischen Sendern
+  # regelmäßig genutzt.
+  - {name: "49 m", min: 5800, max: 6200}
+  - {name: "41 m", min: 7200, max: 7600}
+  - {name: "31 m", min: 9300, max: 9900}
+  - {name: "25 m", min: 11600, max: 12100}
+  - {name: "22 m", min: 13570, max: 13870}
+  - {name: "19 m", min: 15100, max: 15830}
+  - {name: "16 m", min: 17480, max: 17900}
+  - {name: "15 m", min: 18900, max: 19020}
+  - {name: "13 m", min: 21450, max: 21850}
+  - {name: "11 m", min: 25600, max: 26100}
+
+# Was dieser Filter mit wegschneidet, und was Du wissen solltest:
+#
+# Die niederländische Piratenszene sendet überwiegend zwischen 6200 und
+# 6400 kHz sowie um 3900 kHz herum - also teilweise ausserhalb der
+# offiziellen Zuteilungen. EiBi führt solche Stationen ohnehin kaum, aber
+# falls Du sie später gezielt aufnehmen willst, ist hier die Stelle dafür:
+# einfach ein Band ergänzen, etwa
+#   - {name: "Piraten 48 m", min: 6200, max: 6400}

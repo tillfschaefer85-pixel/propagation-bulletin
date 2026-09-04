@@ -399,3 +399,50 @@ class TestSiteName(unittest.TestCase):
         data = json.loads(json.dumps(stations_to_dict(metas)))
         entry = next(iter(data["stations"].values()))
         self.assertEqual(entry["site_name"], "Rohrbach")
+
+
+class TestBroadcastFilter(unittest.TestCase):
+    """Nicht-Rundfunk darf gar nicht erst in die Bewertung kommen."""
+
+    def _build(self, broadcasts, band_plan):
+        return build_bulletin(
+            eibi_broadcasts_main=broadcasts,
+            eibi_broadcasts_all=broadcasts,
+            mwlw_stations=[],
+            tx_sites=TX_SITES,
+            weights=WEIGHTS,
+            f107_flux=110.0,
+            today=TODAY,
+            eibi_season="b26",
+            band_plan=band_plan,
+        )
+
+    def test_flight_radio_is_dropped_before_scoring(self):
+        from bulletin.sources.bands import load_band_plan
+
+        plan = load_band_plan(Path(__file__).resolve().parents[1] / "data" / "broadcast_bands.yaml")
+        entries = [
+            broadcast(10021, "Shannon Aeradio", ("en",), itu="D", site="n"),
+            broadcast(6070, "Channel 292", ("de",), itu="D", site="r"),
+        ]
+        bulletin, metas, stats = self._build(entries, plan)
+        names = {m.name for m in metas}
+        self.assertNotIn("Shannon Aeradio", names)
+        self.assertIn("Channel 292", names)
+
+    def test_dropped_entries_are_counted(self):
+        from bulletin.sources.bands import load_band_plan
+
+        plan = load_band_plan(Path(__file__).resolve().parents[1] / "data" / "broadcast_bands.yaml")
+        entries = [broadcast(10021, "Shannon Aeradio", ("en",), itu="D", site="n")]
+        bulletin, metas, stats = self._build(entries, plan)
+        # Haupt- und DX-Liste bekommen dieselbe Eingabe, also zwei Treffer.
+        self.assertEqual(stats["eibi_dropped_non_broadcast"], 2)
+
+    def test_without_a_plan_nothing_is_filtered(self):
+        from bulletin.sources.bands import NO_FILTER
+
+        entries = [broadcast(10021, "Shannon Aeradio", ("en",), itu="D", site="n")]
+        bulletin, metas, stats = self._build(entries, NO_FILTER)
+        self.assertIn("Shannon Aeradio", {m.name for m in metas})
+        self.assertEqual(stats["eibi_dropped_non_broadcast"], 0)

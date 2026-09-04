@@ -35,6 +35,7 @@ from .physics.geometry import (
 )
 from .physics.propagation import Link, Weights, best_slot_by_kp, interest_score
 from .physics.solar import is_greyline
+from .sources.bands import NO_FILTER, BandPlan, load_band_plan
 from .sources.eibi import Broadcast, WANTED_LANGUAGES, days_until_season_change, load_schedule, season_code
 from .sources.mwlw import Station as MwlwStation
 from .sources.mwlw import load_stations as load_mwlw_stations
@@ -268,6 +269,7 @@ def build_bulletin(
     today: date,
     eibi_season: str,
     rx: Point = BERGHEIM,
+    band_plan: BandPlan = NO_FILTER,
 ) -> tuple[Bulletin, list[StationMeta], dict]:
     """Reiner Kern: aus geladenen Rohdaten wird das Tagesbulletin.
 
@@ -282,6 +284,14 @@ def build_bulletin(
     slots = evening_slots(today)
     f107 = f107_flux if f107_flux is not None else FALLBACK_FLUX
     power = weights.get("sw", "assumed_power_kw")
+
+    # Nicht-Rundfunk aussortieren, bevor irgendetwas bewertet wird.
+    # Flugfunk wie "Shannon Aeradio" ist als englischsprachig gefuehrt und
+    # kaeme sonst durch den Sprachfilter direkt in die Hauptliste.
+    before = len(eibi_broadcasts_main) + len(eibi_broadcasts_all)
+    eibi_broadcasts_main = [b for b in eibi_broadcasts_main if band_plan.is_broadcast(b.freq_khz)]
+    eibi_broadcasts_all = [b for b in eibi_broadcasts_all if band_plan.is_broadcast(b.freq_khz)]
+    dropped_non_broadcast = before - len(eibi_broadcasts_main) - len(eibi_broadcasts_all)
 
     main_from_eibi, skipped = resolve_eibi_broadcasts(
         eibi_broadcasts_main, tx_sites=tx_sites, rx=rx, slots=slots, assumed_power_kw=power
@@ -336,6 +346,7 @@ def build_bulletin(
         entries=tuple(entries),
     )
     stats = {
+        "eibi_dropped_non_broadcast": dropped_non_broadcast,
         "eibi_skipped_no_tx_site": skipped,
         "main_candidates": len(main_candidates),
         "dx_candidates": len(dx_candidates),
@@ -359,6 +370,7 @@ def run(*, docs_dir: Path, data_dir: Path, cache_dir: Path) -> dict:
     eibi_all, _ = load_schedule(today, cache_dir=cache_dir, languages=None)
     mwlw_stations = load_mwlw_stations(data_dir / "stations_mw_lw.yaml")
     tx_sites = load_tx_sites(data_dir / "tx_sites.yaml")
+    band_plan = load_band_plan(data_dir / "broadcast_bands.yaml")
 
     try:
         flux_samples, _ = fetch_flux(cache_dir=cache_dir)
@@ -375,6 +387,7 @@ def run(*, docs_dir: Path, data_dir: Path, cache_dir: Path) -> dict:
         f107_flux=f107,
         today=today,
         eibi_season=season,
+        band_plan=band_plan,
     )
 
     write_stations(metas, docs_dir=docs_dir)
