@@ -22,7 +22,7 @@ from bulletin.physics.geometry import BERGHEIM, Point
 from bulletin.physics.propagation import Weights
 from bulletin.sources.eibi import Broadcast
 from bulletin.sources.mwlw import parse_stations
-from bulletin.sources.tx_sites import TxSiteTable
+from bulletin.sources.tx_sites import TxSite, TxSiteTable
 
 WEIGHTS = Weights.load(Path(__file__).resolve().parents[1] / "data" / "weights.yaml")
 
@@ -33,6 +33,13 @@ TX_SITES = TxSiteTable({
 })
 
 TODAY = date(2026, 12, 21)  # Wintersonnenwende - verlaessliche Dunkelheit
+
+# Wie TX_SITES, aber mit Namen - fuer die Pruefung, dass der Standortname
+# bis in die Stammdaten durchlaeuft. "D-n" bleibt bewusst ohne Namen.
+TX_SITES_WITH_NAMES = TxSiteTable({
+    "D-r": TxSite(point=Point(lat=48.6, lon=11.55), name="Rohrbach"),
+    "D-n": TxSite(point=Point(lat=52.6486, lon=12.9092)),
+})
 
 
 def broadcast(
@@ -352,3 +359,43 @@ stations:
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestSiteName(unittest.TestCase):
+    """Der Sendestandort muss aus der Koordinatentabelle bis in die Stammdaten laufen.
+
+    Geprueft wird hier und nicht im Frontend: dort haengt es an der
+    zuletzt erzeugten Datei, hier am Code.
+    """
+
+    def _build(self, broadcasts):
+        return build_bulletin(
+            eibi_broadcasts_main=broadcasts,
+            eibi_broadcasts_all=broadcasts,
+            mwlw_stations=[],
+            tx_sites=TX_SITES_WITH_NAMES,
+            weights=WEIGHTS,
+            f107_flux=110.0,
+            today=TODAY,
+            eibi_season="b26",
+        )
+
+    def test_station_meta_carries_the_site_name(self):
+        main = [broadcast(6070, "Channel 292", ("de",), itu="D", site="r")]
+        bulletin, metas, stats = self._build(main)
+        self.assertEqual(metas[0].site_name, "Rohrbach")
+
+    def test_site_without_a_name_yields_none_not_a_crash(self):
+        main = [broadcast(6070, "Namenlos", ("de",), itu="D", site="n")]
+        bulletin, metas, stats = self._build(main)
+        self.assertIsNone(metas[0].site_name)
+
+    def test_site_name_survives_serialization(self):
+        import json
+        from bulletin.model import stations_to_dict
+
+        main = [broadcast(6070, "Channel 292", ("de",), itu="D", site="r")]
+        bulletin, metas, stats = self._build(main)
+        data = json.loads(json.dumps(stations_to_dict(metas)))
+        entry = next(iter(data["stations"].values()))
+        self.assertEqual(entry["site_name"], "Rohrbach")
