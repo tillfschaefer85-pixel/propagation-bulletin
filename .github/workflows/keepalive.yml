@@ -1,0 +1,54 @@
+name: Zeitplan wachhalten
+
+# GitHub schaltet geplante Workflows in Repositories ab, in denen 60 Tage
+# lang nichts passiert. Betroffen waeren hier die Rueckfallebenen: der
+# puenktliche Anstoss kommt von aussen, aber wenn der ausfaellt, soll der
+# GitHub-Zeitplan noch da sein.
+#
+# Ehrlich zur Wirksamkeit: Ob Commits, die ein Job mit dem
+# GITHUB_TOKEN erzeugt, als "Aktivitaet" im Sinne dieser Regel zaehlen,
+# ist nicht verlaesslich dokumentiert - Berichte gehen auseinander. Der
+# staerkere Schutz ist ohnehin ein anderer: der taegliche Aufruf von
+# cron-job.org laeuft mit einem persoenlichen Token und ist damit
+# Aktivitaet eines Nutzers, nicht eines Bots. Dieser Lauf hier ist die
+# Guertel-und-Hosentraeger-Variante, kein Beweis.
+#
+# Sollte trotzdem einmal eine Mail von GitHub kommen: im Actions-Reiter
+# steht dann ein Knopf zum Reaktivieren.
+
+on:
+  schedule:
+    - cron: "23 4 1 * *"   # am Ersten jedes Monats
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bulletin-keepalive
+  cancel-in-progress: true
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Zeitstempel schreiben
+        run: |
+          mkdir -p .github
+          date -u +"%Y-%m-%dT%H:%MZ" > .github/keepalive-stamp
+          git config user.name "bulletin-bot"
+          git config user.email "bulletin-bot@users.noreply.github.com"
+          git add .github/keepalive-stamp
+          if git diff --staged --quiet; then
+            echo "Unveraendert - nichts zu committen."
+          else
+            git commit -m "Zeitplan wachhalten"
+            for attempt in 1 2 3; do
+              if git push; then break; fi
+              echo "Push abgelehnt, Versuch $attempt - hole Aenderungen und versuche erneut."
+              git pull --rebase origin "${GITHUB_REF_NAME}"
+              sleep 5
+            done
+          fi

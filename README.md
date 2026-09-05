@@ -6,13 +6,29 @@ ein Push am Abend zum Erinnern.
 
 ## Wie es läuft
 
-Drei geplante Läufe, alle als GitHub Actions:
+Vier Läufe als GitHub Actions:
 
 | Lauf | Wann | Was er tut |
 |---|---|---|
-| `build.yml` | 05:13 Ortszeit | Rechnet das Bulletin und committet es nach `docs/` |
+| `build.yml` | 05:15 per cron-job.org | Rechnet das Bulletin und committet es nach `docs/` |
 | `space-weather.yml` | alle 3 Stunden | Legt den aktuellen Kp-Wert als Datei ab |
-| `notify.yml` | 20:32 Ortszeit | Liest das Bulletin und verschickt einen Push |
+| `notify.yml` | 20:30 per cron-job.org | Liest das Bulletin und verschickt einen Push |
+| `keepalive.yml` | monatlich | Hält die GitHub-Zeitpläne wach |
+
+**Der Anstoß kommt von außen.** GitHub behandelt geplante Läufe als
+nachrangig und verzögert sie bei Last erheblich — beobachtet wurden hier
+über 45 Minuten, in anderen Projekten Stunden. Ein kostenloser Auftrag
+bei cron-job.org ruft deshalb minutengenau die GitHub-Schnittstelle auf
+und startet den Lauf wie ein Klick auf „Run workflow". Weil der Dienst
+Zeitzonen kennt, genügt ein Eintrag mit `Europe/Berlin`; die
+Zeitumstellung erledigt sich von selbst.
+
+Die GitHub-eigenen Zeitpläne bleiben als Rückfallebene bestehen. Damit
+die Nachricht nicht zweimal kommt, fragt der geplante Abendlauf vorher
+die eigene Laufhistorie ab: Gab es heute schon einen erfolgreichen Lauf
+per Anstoß, beendet er sich still. Beim Morgenlauf braucht es das nicht —
+ein zweiter Lauf stellt fest, dass sich nichts geändert hat, und
+committet nichts.
 
 Der Morgenlauf rechnet den planbaren Teil: Sendepläne, Sonnenstände,
 Grauzone und für jede geomagnetische Stufe von 0 bis 9 ein bestes
@@ -44,7 +60,24 @@ passende Spalte heraus — gerechnet wird im Browser nichts.
    - Secret `NTFY_TOKEN`: nur nötig bei einem eigenen ntfy-Server mit Anmeldung
    - Variable `PAGE_URL`: die Adresse aus Schritt 2, damit der Push ein Ziel zum Antippen hat
 
-6. **Einmal von Hand auslösen.** Actions → „Bulletin bauen" → „Run
+6. **Externen Anstoß einrichten.** Ein fein granuliertes Personal Access
+   Token anlegen (Settings → Developer settings), beschränkt auf dieses
+   Repository, Berechtigung **Actions: Read and write**. Dann bei
+   cron-job.org zwei Aufträge:
+
+   | Zeit (Europe/Berlin) | Adresse |
+   |---|---|
+   | täglich 05:15 | `.../actions/workflows/build.yml/dispatches` |
+   | täglich 20:30 | `.../actions/workflows/notify.yml/dispatches` |
+
+   Basis ist `https://api.github.com/repos/<name>/propagation-bulletin`.
+   Methode POST, Rumpf `{"ref":"main"}`, Kopfzeilen
+   `Authorization: Bearer <Token>`, `Accept: application/vnd.github+json`
+   und `X-GitHub-Api-Version: 2022-11-28`. Das Token gilt höchstens ein
+   Jahr — Ablauf im Kalender vormerken, sonst bleibt der Push eines Tages
+   ohne Vorwarnung aus.
+
+7. **Einmal von Hand auslösen.** Actions → „Bulletin bauen" → „Run
    workflow". Danach „Push verschicken" ebenso. Beide haben
    `workflow_dispatch`, damit Du nicht bis morgen früh warten musst.
 

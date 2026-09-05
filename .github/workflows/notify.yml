@@ -20,8 +20,11 @@ on:
   workflow_dispatch:
 
 # Nur lesen. Dieser Lauf hat keinen Grund, irgendetwas zu veraendern.
+# actions: read wird fuer den Doppelschutz gebraucht - er fragt die
+# eigene Laufhistorie ab.
 permissions:
   contents: read
+  actions: read
 
 concurrency:
   group: bulletin-notify
@@ -56,18 +59,38 @@ jobs:
             echo "run=false" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Schon verschickt?
+        id: dedupe
+        # Der puenktliche Anstoss kommt von aussen (cron-job.org); der
+        # GitHub-Zeitplan ist nur noch Rueckfall. Ohne diese Pruefung
+        # kaeme die Nachricht zweimal - einmal um 20:30 und noch einmal,
+        # wenn GitHub seinen Termin Stunden spaeter nachholt.
+        #
+        # Nur fuer geplante Laeufe. Wer selbst auf "Run workflow" drueckt
+        # oder von aussen anstoesst, will die Nachricht.
+        if: steps.guard.outputs.run == 'true' && github.event_name == 'schedule'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if PYTHONPATH=src python3 -m bulletin.runs \
+               --repo "${{ github.repository }}" --workflow notify.yml; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Python einrichten
-        if: steps.guard.outputs.run == 'true'
+        if: steps.guard.outputs.run == 'true' && steps.dedupe.outputs.skip != 'true'
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
       - name: Abhaengigkeiten installieren
-        if: steps.guard.outputs.run == 'true'
+        if: steps.guard.outputs.run == 'true' && steps.dedupe.outputs.skip != 'true'
         run: pip install -r requirements.txt
 
       - name: Push verschicken
-        if: steps.guard.outputs.run == 'true'
+        if: steps.guard.outputs.run == 'true' && steps.dedupe.outputs.skip != 'true'
         env:
           # NTFY_TOPIC ist faktisch das Passwort - bei ntfy gibt es keine
           # Anmeldung, wer den Namen kennt, liest mit. Deshalb als Secret

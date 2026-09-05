@@ -65,6 +65,7 @@ def fetch_text(
     timeout: float = DEFAULT_TIMEOUT,
     retries: int = DEFAULT_RETRIES,
     max_cache_age_days: float | None = None,
+    extra_headers: dict[str, str] | None = None,
     opener=urllib.request.urlopen,
     sleep=time.sleep,
 ) -> Fetched:
@@ -78,7 +79,10 @@ def fetch_text(
     last_error: Exception | None = None
     for attempt in range(retries):
         try:
-            request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+            headers = {"User-Agent": USER_AGENT}
+            if extra_headers:
+                headers.update(extra_headers)
+            request = urllib.request.Request(url, headers=headers)
             with opener(request, timeout=timeout) as response:
                 text = response.read().decode("utf-8", errors="replace")
             if cache_file is not None:
