@@ -10,9 +10,9 @@ Drei geplante Läufe, alle als GitHub Actions:
 
 | Lauf | Wann | Was er tut |
 |---|---|---|
-| `build.yml` | 05:15 Ortszeit | Rechnet das Bulletin und committet es nach `docs/` |
+| `build.yml` | 05:13 Ortszeit | Rechnet das Bulletin und committet es nach `docs/` |
 | `space-weather.yml` | alle 3 Stunden | Legt den aktuellen Kp-Wert als Datei ab |
-| `notify.yml` | 20:30 Ortszeit | Liest das Bulletin und verschickt einen Push |
+| `notify.yml` | 20:32 Ortszeit | Liest das Bulletin und verschickt einen Push |
 
 Der Morgenlauf rechnet den planbaren Teil: Sendepläne, Sonnenstände,
 Grauzone und für jede geomagnetische Stufe von 0 bis 9 ein bestes
@@ -76,9 +76,14 @@ einem eingefrorenen Stand bekommen, ohne es zu merken.
 
 **Zeitumstellung.** Cron in Actions läuft in UTC und kennt keine
 Sommerzeit. Jeder zeitgebundene Lauf hat deshalb zwei Cron-Zeilen und
-einen Torwächter, der prüft, ob es lokal wirklich so weit ist. Ein Test
-geht jeden Tag eines Jahres durch und stellt sicher, dass immer genau
-eine der beiden Zeilen feuert.
+einen Torwächter. Dieser entscheidet anhand der Cron-Zeile, die den Lauf
+ausgelöst hat — nicht anhand der Uhrzeit. Das ist der Unterschied
+zwischen „läuft zuverlässig" und „läuft meistens": geplante Läufe starten
+unter Last regelmäßig verspätet, und eine Prüfung per Zeitfenster müsste
+unter 60 Minuten Toleranz bleiben, sonst käme die jeweils andere Zeile
+mit durch. Ein Lauf mit 50 Minuten Verzug wäre so still verworfen worden.
+Ein Test geht jeden Tag eines Jahres durch und stellt sicher, dass immer
+genau eine der beiden Zeilen feuert.
 
 **Geplante Jobs schlafen ein.** GitHub deaktiviert Cron-Workflows in
 Repositories, in denen 60 Tage lang nichts passiert. Die Commits des

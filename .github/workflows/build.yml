@@ -11,10 +11,16 @@ name: Bulletin bauen
 # der Torwaechter im Job - sonst liefe der Bau das halbe Jahr zur
 # falschen Stunde und in den Umstellungswochen zweimal.
 
+# Die Minutenangaben sind bewusst krumm: zur vollen und halben Stunde
+# drängen sich die Zeitpläne der halben Welt, dort sind Verzögerungen und
+# ganz ausgefallene Läufe am häufigsten. Ändert man sie, müssen die Werte
+# bei --summer-cron und --winter-cron mitgeändert werden - ein Test in
+# tests/test_guard.py wacht darüber.
+
 on:
   schedule:
-    - cron: "15 3 * * *"   # 05:15 deutscher Sommerzeit
-    - cron: "15 4 * * *"   # 05:15 deutscher Winterzeit
+    - cron: "13 3 * * *"   # 05:13 deutscher Sommerzeit
+    - cron: "13 4 * * *"   # 05:13 deutscher Winterzeit
   workflow_dispatch:       # zum Ausprobieren von Hand, ohne auf morgen zu warten
 
 # Der Job schreibt in sein eigenes Repository.
@@ -31,35 +37,30 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
       - name: Zeitfenster pruefen
         id: guard
-        # Von Hand gestartete Laeufe gehen immer durch. Der Waechter
-        # existiert nur, um die falsche der beiden Cron-Zeilen
-        # abzufangen - wer selbst auf "Run workflow" klickt, meint es so,
-        # egal wie spaet es ist. Ohne diese Ausnahme tut ein Testlauf
-        # ausserhalb des Zeitfensters gar nichts und meldet trotzdem Erfolg.
+        # Entschieden wird anhand der Cron-Zeile, die diesen Lauf ausgeloest
+        # hat - nicht anhand der Uhrzeit. Geplante Laeufe starten unter Last
+        # regelmaessig verspaetet, und eine Pruefung per Zeitfenster muss
+        # unter 60 Minuten Toleranz bleiben, sonst kaeme die jeweils andere
+        # Zeile mit durch. Ein Lauf mit 50 Minuten Verzug waere so still
+        # verworfen worden, obwohl er der richtige war.
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "Von Hand gestartet - Zeitfenster wird nicht geprueft."
+            echo "Von Hand gestartet - Zeitplan wird nicht geprueft."
             echo "run=true" >> "$GITHUB_OUTPUT"
-          elif python3 -c "
-          import sys
-          from datetime import datetime
-          from zoneinfo import ZoneInfo
-          now = datetime.now(ZoneInfo('Europe/Berlin'))
-          delta = ((now.hour * 60 + now.minute) - (5 * 60 + 15)) % (24 * 60)
-          print(f'Ortszeit {now:%H:%M}, Abstand zum Ziel: {delta} min')
-          sys.exit(0 if delta <= 45 else 1)
-          "; then
+          elif PYTHONPATH=src python3 -m bulletin.guard \
+                 --at "05:13" \
+                 --schedule "${{ github.event.schedule }}" \
+                 --summer-cron "13 3 * * *" \
+                 --winter-cron "13 4 * * *"; then
             echo "run=true" >> "$GITHUB_OUTPUT"
           else
-            echo "Falsche Cron-Zeile fuer die aktuelle Zeitzone - uebersprungen."
             echo "run=false" >> "$GITHUB_OUTPUT"
           fi
-
-      - name: Repository auschecken
-        if: steps.guard.outputs.run == 'true'
-        uses: actions/checkout@v4
 
       - name: Python einrichten
         if: steps.guard.outputs.run == 'true'

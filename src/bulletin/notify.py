@@ -105,9 +105,7 @@ def _timing_phrase(slot_hhmm: str, now: datetime) -> str:
     return f"jetzt ({slot_hhmm})"
 
 
-def _entry_line(
-    entry: dict, station: dict, bucket: int, now: datetime, *, alternates: int = 0
-) -> str:
+def _entry_line(entry: dict, station: dict, bucket: int, now: datetime) -> str:
     """Eine Zeile fuer eine Station im Nachrichtentext."""
     slot = entry["best_by_kp"][bucket]
     freq = station["freq_khz"]
@@ -117,70 +115,10 @@ def _entry_line(
     if station.get("band_class") in ("mw", "lw") and station.get("bearing_deg") is not None:
         line += f", Loop {station['bearing_deg']:.0f} Grad"
 
-    # Zusammengefasste Parallelfrequenzen werden mitgezaehlt, nicht
-    # verschwiegen: kommt die genannte nicht durch, lohnt der Blick auf
-    # die Seite statt Aufgeben.
-    if alternates == 1:
-        line += ", +1 Frequenz"
-    elif alternates > 1:
-        line += f", +{alternates} Frequenzen"
-
     reason = (entry.get("rarity") or {}).get("reason")
     if reason:
         line += f" [{reason}]"
     return line
-
-
-def _station_key(station: dict) -> tuple[str, str]:
-    """Schluessel, unter dem zwei Eintraege als derselbe Sender gelten.
-
-    Gleiche Regel wie in docs/app.js: Name und Bandklasse. Das Band
-    gehoert dazu, weil sieben Kurzwellenfrequenzen desselben Programms
-    eine Aufgabe sind - man dreht, bis eine kommt -, derselbe Sender auf
-    Mittelwelle aber eine andere: andere Antenne, andere Peilung.
-
-    Verglichen wird gross-/kleinschreibungsblind und ohne doppelte
-    Leerzeichen, weiter nicht. "Radio Romania Int." und "Radio Romania
-    International" bleiben zwei Sender - lieber eine Dublette zuviel als
-    zwei Programme stillschweigend verschmolzen.
-    """
-    name = " ".join(str(station.get("name", "")).lower().split())
-    return name, str(station.get("band_class", ""))
-
-
-def _collapse_by_station(
-    scored: list[tuple[dict, dict, float]]
-) -> list[tuple[dict, dict, float, int]]:
-    """Behaelt je Sender und Band nur die beste Frequenz.
-
-    Ohne das fuellt ein Programm, das parallel auf sieben Frequenzen
-    laeuft, den ganzen Push - und die drei Zeilen, die er hat, sagen
-    dreimal dasselbe.
-
-    Die Sortierung entscheidet bei gleicher Punktzahl nach Frequenz und
-    Kennung, nicht nach der Reihenfolge im Bulletin. Auf Mittelwelle
-    bekommen viele Eintraege dieselbe Zahl; ohne den Nachschlag spraenge
-    der Push von Tag zu Tag, ohne dass sich an der Ausbreitung etwas
-    geaendert haette. Dieselbe Regel steht in docs/app.js.
-
-    Zurueck kommt je Gruppe der Gewinner samt Zahl der verdraengten
-    Frequenzen - die Zeile sagt sie mit an, damit die Aufraeumung nichts
-    verschweigt.
-    """
-
-    def rank(item: tuple[dict, dict, float]) -> tuple[float, float, str]:
-        entry, station, score = item
-        return (-score, station.get("freq_khz", 0.0), str(entry.get("station_id", "")))
-
-    groups: dict[tuple[str, str], list[tuple[dict, dict, float]]] = {}
-    for item in scored:
-        groups.setdefault(_station_key(item[1]), []).append(item)
-
-    winners = []
-    for group in groups.values():
-        best, *rest = sorted(group, key=rank)
-        winners.append((*best, len(rest)))
-    return sorted(winners, key=lambda item: rank(item[:3]))
 
 
 def compose(
@@ -217,13 +155,13 @@ def compose(
     main_entries = [e for e in bulletin.get("entries", []) if e.get("list_kind") == "main"]
 
     scored = [
-        (e, station_index[e["station_id"]], e["best_by_kp"][bucket]["score"])
+        (e, e["best_by_kp"][bucket]["score"])
         for e in main_entries
         if e.get("best_by_kp") and station_index.get(e["station_id"])
     ]
-    collapsed = _collapse_by_station(scored)
+    scored.sort(key=lambda pair: pair[1], reverse=True)
 
-    if not collapsed:
+    if not scored:
         return PushMessage(
             title=f"Heute Abend nichts zu holen ({kp_text})",
             body="Keine Station im Bulletin, die heute Abend in Frage kommt.",
@@ -232,7 +170,8 @@ def compose(
             tags=("mute",),
         )
 
-    top_entry, top_station, top_score, _ = collapsed[0]
+    top_entry, top_score = scored[0]
+    top_station = station_index[top_entry["station_id"]]
     quiet = top_score < quiet_threshold
 
     if quiet:
@@ -242,8 +181,8 @@ def compose(
         title = f"{kp_text}: {top_station['name']} {_timing_phrase(slot['t'], now)}"
 
     lines = [
-        _entry_line(entry, station, bucket, now, alternates=alternates)
-        for entry, station, _, alternates in collapsed[:max_lines]
+        _entry_line(entry, station_index[entry["station_id"]], bucket, now)
+        for entry, _ in scored[:max_lines]
     ]
     if quiet:
         lines.insert(0, "Beste verfuegbare Moeglichkeiten:")

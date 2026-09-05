@@ -173,98 +173,16 @@ function bandLabel(khz) {
   return Math.abs(nearest - meters) <= 4 ? `${nearest} m` : `${meters} m`;
 }
 
-/**
- * Rangfolge zweier Zeilen: erst die Punktzahl, dann Festes.
- *
- * Der Nachschlag ist keine Kosmetik. Ohne ihn haengt bei gleicher
- * Punktzahl - auf Mittelwelle keine Seltenheit - davon ab, in welcher
- * Reihenfolge der Morgenlauf die Eintraege geschrieben hat, welche
- * Frequenz die Liste anzeigt. Das kann von Tag zu Tag springen, ohne
- * dass sich an der Ausbreitung etwas geaendert haette.
- */
-function compareRows(a, b) {
-  if (b.slot.score !== a.slot.score) return b.slot.score - a.slot.score;
-  if (a.station.freq_khz !== b.station.freq_khz) return a.station.freq_khz - b.station.freq_khz;
-  return String(a.entry.station_id).localeCompare(String(b.entry.station_id));
-}
-
-/**
- * Schluessel, unter dem zwei Zeilen als derselbe Sender gelten:
- * Name und Bandklasse.
- *
- * Das Band gehoert bewusst dazu. Sieben Kurzwellenfrequenzen desselben
- * Programms sind eine Aufgabe - man dreht, bis eine davon kommt. Derselbe
- * Sender auf Mittelwelle ist eine andere: andere Tageszeit, andere
- * Antenne, andere Peilung. Die beiden zusammenzuwerfen wuerde eine
- * Empfangsmoeglichkeit verschlucken statt Doppeltes aufzuraeumen.
- *
- * Verglichen wird gross-/kleinschreibungsblind und ohne doppelte
- * Leerzeichen; weiter geht die Normalisierung absichtlich nicht.
- * "Radio Romania Int." und "Radio Romania International" bleiben zwei
- * Sender - lieber eine Dublette zuviel als zwei verschiedene Programme
- * stillschweigend verschmolzen.
- */
-function stationKey(station) {
-  const name = String(station.name || "").toLowerCase().replace(/\s+/g, " ").trim();
-  return `${name}\u0000${station.band_class || ""}`;
-}
-
-/**
- * Behaelt je Sender und Band nur die beste Frequenz.
- *
- * Die verdraengten Zeilen sind nicht weg: sie haengen als `alternates`
- * am Gewinner, nach derselben Rangfolge sortiert. Die Liste zeigt ihre
- * Zahl, das Detailfenster zeigt sie einzeln - damit die Aufraeumung
- * nichts versteckt, was Du am Geraet brauchen koenntest.
- */
-function collapseByStation(rows) {
-  const groups = new Map();
-  for (const row of rows) {
-    const key = stationKey(row.station);
-    const group = groups.get(key);
-    if (group) group.push(row);
-    else groups.set(key, [row]);
-  }
-
-  const winners = [];
-  for (const group of groups.values()) {
-    const [best, ...rest] = [...group].sort(compareRows);
-    winners.push({ ...best, alternates: rest });
-  }
-  return winners.sort(compareRows);
-}
-
-/**
- * Die Eintraege einer Liste, nach Punktzahl der gewaehlten Kp-Stufe
- * sortiert und je Sender und Band auf die beste Frequenz zusammengefasst.
- */
+/** Die Eintraege einer Liste, nach Punktzahl der gewaehlten Kp-Stufe sortiert. */
 function entriesForBucket(bulletin, stations, kind, bucket) {
-  const rows = (bulletin.entries || [])
+  return (bulletin.entries || [])
     .filter((e) => e.list_kind === kind && e.best_by_kp && stations[e.station_id])
     .map((e) => ({
       entry: e,
       station: stations[e.station_id],
       slot: e.best_by_kp[bucket],
-    }));
-  return collapseByStation(rows);
-}
-
-/**
- * Einzeiler unter der Station: was zusammengefasst wurde.
- *
- * Bis zu zwei Ausweichfrequenzen stehen ausgeschrieben da - so weit
- * reicht es, um beim Drehen gleich die naechste zu probieren. Darueber
- * wuerde die Zeile auf dem Telefon umbrechen, also nur noch die Zahl;
- * die Frequenzen selbst stehen im Detailfenster.
- */
-function alternateHint(alternates) {
-  if (!alternates.length) return "";
-  if (alternates.length > 2) return `Sendet auf ${alternates.length} weiteren Frequenzen`;
-  const list = alternates.map((alt) => {
-    const f = formatFrequency(alt.station.freq_khz);
-    return `${f.value} ${f.unit}`;
-  });
-  return `Sendet auch auf ${list.join(" und ")}`;
+    }))
+    .sort((a, b) => b.slot.score - a.slot.score);
 }
 
 /** Deutsche Zahlschreibweise: Komma statt Punkt. */
@@ -479,24 +397,6 @@ function openStationDetail(row) {
       body.appendChild(list);
     }
 
-    const alternates = row.alternates || [];
-    if (alternates.length) {
-      body.appendChild(el("h4", null, "Weitere Frequenzen"));
-      for (const alt of alternates) {
-        const f = formatFrequency(alt.station.freq_khz);
-        defRow(body, `${f.value} ${f.unit}`,
-          alt.slot.score > 0
-            ? `${num(alt.slot.score)} Punkte · ${alt.slot.t}`
-            : "heute Abend nicht erreichbar");
-      }
-      body.appendChild(
-        el("p", "modal-aside",
-          "Dasselbe Programm, parallel ausgestrahlt. Die Liste zeigt nur die " +
-          "heute beste dieser Frequenzen — kommt sie nicht durch, sind das die " +
-          "naechsten Versuche.")
-      );
-    }
-
     if (entry.rarity) {
       body.appendChild(el("h4", null, "Seltenheit"));
       defRow(body, "Grundwert", `${Math.round(entry.rarity.baseline * 100)} von 100`);
@@ -685,12 +585,6 @@ function renderStation(row, now) {
   }
   const reason = entry.rarity && entry.rarity.reason;
   if (reason) detail.appendChild(el("div", "aside", reason));
-
-  const alternates = row.alternates || [];
-  if (alternates.length) {
-    detail.appendChild(el("div", "aside", alternateHint(alternates)));
-  }
-
   node.appendChild(detail);
 
   return node;
@@ -873,9 +767,6 @@ if (typeof module !== "undefined") {
     formatFrequency,
     timingPhrase,
     dialPosition,
-    stationKey,
-    collapseByStation,
-    alternateHint,
     entriesForBucket,
     isCurrent,
   };

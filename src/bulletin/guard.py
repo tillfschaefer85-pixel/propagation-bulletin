@@ -8,12 +8,22 @@ so weit ist. Ohne diese Pruefung wuerde der Push das halbe Jahr ueber
 eine Stunde zu frueh oder zu spaet kommen, und in den Umstellungswochen
 sogar zweimal.
 
-Das Fenster ist bewusst einseitig: akzeptiert wird nur ab der Zielzeit
-bis zur Toleranzgrenze, nie davor. Cron feuert naemlich nie zu frueh,
-wohl aber verspaetet - geplante Laeufe starten unter Last regelmaessig
-einige Minuten bis eine Viertelstunde spaeter. Ein symmetrisches
-Fenster wuerde dagegen die falsche der beiden Cron-Zeilen mit
-durchlassen, sobald sie eine Stunde daneben liegt.
+Es gibt zwei Wege, das zu entscheiden.
+
+Der bessere: GitHub liefert im Lauf selbst mit, WELCHE Cron-Zeile ihn
+ausgeloest hat (github.event.schedule). Dann genuegt der Vergleich mit
+der Zeile, die zur aktuellen Zeitzone gehoert - eine exakte Entscheidung,
+die von Verspaetungen voellig unberuehrt bleibt. Das ist wichtiger als es
+klingt: geplante Laeufe starten unter Last regelmaessig verspaetet, und
+18:30 UTC ist eine der ueberlaufensten Zeiten ueberhaupt.
+
+Der Rueckfallweg, wenn diese Angabe fehlt: das Zeitfenster. Es ist
+einseitig - akzeptiert wird nur ab der Zielzeit bis zur Toleranzgrenze,
+nie davor, denn Cron feuert nie zu frueh. Die Toleranz muss unter 60
+Minuten bleiben, sonst kaeme die jeweils andere Zeile mit durch. Genau
+diese Grenze ist der Grund, warum der Vergleich mit der Cron-Zeile
+vorzuziehen ist: ein Lauf mit 50 Minuten Verspaetung wuerde hier still
+verworfen, obwohl er der richtige war.
 """
 
 from __future__ import annotations
@@ -59,19 +69,70 @@ def is_expected_local_time(
     return delta <= tolerance_minutes
 
 
+def summer_time_active(now: datetime) -> bool:
+    """Gilt gerade Sommerzeit? (Ortszeit liegt dann zwei Stunden vor UTC.)"""
+    offset = now.astimezone(BERLIN).utcoffset()
+    return offset is not None and offset.total_seconds() == 7200
+
+
+def expected_cron(now: datetime, summer_cron: str, winter_cron: str) -> str:
+    """Die Cron-Zeile, die zur aktuellen Zeitzone gehoert."""
+    return summer_cron if summer_time_active(now) else winter_cron
+
+
+def should_run(
+    now: datetime,
+    *,
+    target: time,
+    schedule: str | None = None,
+    summer_cron: str | None = None,
+    winter_cron: str | None = None,
+    tolerance_minutes: int = DEFAULT_TOLERANCE_MINUTES,
+) -> tuple[bool, str]:
+    """Entscheidet, ob dieser Lauf weitergehen soll. Gibt auch die Begruendung zurueck.
+
+    Kennt der Aufrufer die ausloesende Cron-Zeile, entscheidet der
+    Vergleich mit der zur Zeitzone passenden Zeile - unabhaengig davon,
+    wie spaet der Lauf tatsaechlich gestartet ist. Sonst bleibt das
+    Zeitfenster als Rueckfall.
+    """
+    local = now.astimezone(BERLIN)
+
+    if schedule and summer_cron and winter_cron:
+        expected = expected_cron(now, summer_cron, winter_cron)
+        season = "Sommerzeit" if summer_time_active(now) else "Winterzeit"
+        if schedule.strip() == expected:
+            return True, f"{season}: ausgeloest von {schedule} - das ist die richtige Zeile"
+        return False, (
+            f"{season}: ausgeloest von {schedule}, erwartet wird {expected} - uebersprungen"
+        )
+
+    ok = is_expected_local_time(target, now, tolerance_minutes=tolerance_minutes)
+    return ok, (
+        f"Ortszeit {local:%H:%M}, Ziel {target:%H:%M} - "
+        + ("passt" if ok else "passt nicht, uebersprungen")
+    )
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--at", required=True, help="Zielzeit in Ortszeit, z.B. 20:30")
     parser.add_argument("--tolerance", type=int, default=DEFAULT_TOLERANCE_MINUTES)
+    parser.add_argument("--schedule", default="", help="ausloesende Cron-Zeile (github.event.schedule)")
+    parser.add_argument("--summer-cron", default="", help="Cron-Zeile fuer die Sommerzeit")
+    parser.add_argument("--winter-cron", default="", help="Cron-Zeile fuer die Winterzeit")
     args = parser.parse_args(argv)
 
-    now = datetime.now(BERLIN)
-    if is_expected_local_time(parse_hhmm(args.at), now, tolerance_minutes=args.tolerance):
-        print(f"Ortszeit {now:%H:%M} passt zu {args.at} - Lauf geht weiter")
-        return 0
-
-    print(f"Ortszeit {now:%H:%M} passt nicht zu {args.at} - Lauf wird uebersprungen")
-    return 1
+    ok, reason = should_run(
+        datetime.now(BERLIN),
+        target=parse_hhmm(args.at),
+        schedule=args.schedule or None,
+        summer_cron=args.summer_cron or None,
+        winter_cron=args.winter_cron or None,
+        tolerance_minutes=args.tolerance,
+    )
+    print(reason)
+    return 0 if ok else 1
 
 
 if __name__ == "__main__":
