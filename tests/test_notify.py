@@ -213,6 +213,108 @@ class TestComposeContent(unittest.TestCase):
         self.assertEqual(message.click_url, PAGE)
 
 
+class TestComposeCollapsesDuplicateStations(unittest.TestCase):
+    """Ein Programm auf mehreren Frequenzen darf den Push nicht fuellen.
+
+    Dieselbe Regel gilt auf der Seite (collapseByStation in docs/app.js).
+    Laufen die beiden Fassungen auseinander, sagt der Push etwas anderes
+    als die Seite, die zehn Sekunden spaeter aufgeht.
+    """
+
+    def _compose(self, entries, stations, kp=kp_sample(2.0), threshold=25.0):
+        return compose(
+            bulletin_with(entries), stations_with(stations), kp,
+            now=NOW, page_url=PAGE, quiet_threshold=threshold,
+        )
+
+    def _romania(self):
+        entries = [
+            entry("r1", {2: 41.2}),
+            entry("r2", {2: 58.9}),
+            entry("r3", {2: 33.0}),
+            entry("c", {2: 68.4}),
+        ]
+        stations = [
+            station("r1", "Radio Romania Int.", 5955, band="sw"),
+            station("r2", "Radio Romania Int.", 6030, band="sw"),
+            station("r3", "Radio Romania Int.", 7350, band="sw"),
+            station("c", "Channel 292", 3955, band="sw"),
+        ]
+        return entries, stations
+
+    def test_only_the_best_frequency_of_a_station_appears(self):
+        message = self._compose(*self._romania())
+        lines = message.body.splitlines()
+        self.assertEqual(len(lines), 2)
+        self.assertIn("Channel 292", lines[0])
+        self.assertIn("6030 kHz", lines[1])
+        self.assertNotIn("5955", message.body)
+        self.assertNotIn("7350", message.body)
+
+    def test_the_line_says_how_many_frequencies_were_folded_in(self):
+        message = self._compose(*self._romania())
+        self.assertIn("+2 Frequenzen", message.body)
+
+    def test_a_single_folded_frequency_is_counted_in_the_singular(self):
+        entries = [entry("r1", {2: 41.2}), entry("r2", {2: 58.9})]
+        stations = [
+            station("r1", "Radio Romania Int.", 5955, band="sw"),
+            station("r2", "Radio Romania Int.", 6030, band="sw"),
+        ]
+        message = self._compose(entries, stations)
+        self.assertIn("+1 Frequenz", message.body)
+        self.assertNotIn("+1 Frequenzen", message.body)
+
+    def test_a_station_without_parallel_frequencies_gets_no_suffix(self):
+        message = self._compose([entry("a", {2: 80.0})], [station("a", "Test", 1008)])
+        self.assertNotIn("Frequenz", message.body)
+
+    def test_the_band_separates_mediumwave_from_shortwave(self):
+        entries = [entry("s", {2: 58.9}), entry("m", {2: 44.0})]
+        stations = [
+            station("s", "Radio Romania Int.", 6030, band="sw"),
+            station("m", "Radio Romania Int.", 1314, band="mw"),
+        ]
+        message = self._compose(entries, stations)
+        self.assertEqual(len(message.body.splitlines()), 2)
+
+    def test_the_title_names_the_winning_frequency_of_the_group(self):
+        message = self._compose(*self._romania())
+        self.assertIn("Channel 292", message.title)
+
+    def test_equal_scores_are_broken_by_frequency_not_by_input_order(self):
+        # Auf Mittelwelle bekommen viele Eintraege dieselbe Punktzahl.
+        # Ohne festen Nachschlag spraenge der Push von Tag zu Tag.
+        stations = [
+            station("hoch", "Doppelt", 9600, band="sw"),
+            station("tief", "Doppelt", 6030, band="sw"),
+        ]
+        forwards = self._compose([entry("hoch", {2: 50.0}), entry("tief", {2: 50.0})], stations)
+        backwards = self._compose([entry("tief", {2: 50.0}), entry("hoch", {2: 50.0})], stations)
+        self.assertIn("6030 kHz", forwards.body)
+        self.assertIn("6030 kHz", backwards.body)
+
+    def test_case_and_spacing_do_not_split_a_station(self):
+        entries = [entry("a", {2: 60.0}), entry("b", {2: 50.0})]
+        stations = [
+            station("a", "Radio  Romania Int. ", 6030, band="sw"),
+            station("b", "radio romania int.", 7350, band="sw"),
+        ]
+        message = self._compose(entries, stations)
+        self.assertEqual(len(message.body.splitlines()), 1)
+
+    def test_the_collapse_follows_the_kp_bucket(self):
+        # Welche Frequenz gewinnt, haengt an der Lage - genau wie der
+        # Regler auf der Seite es zeigt.
+        entries = [entry("a", {2: 60.0, 5: 10.0}), entry("b", {2: 30.0, 5: 45.0})]
+        stations = [
+            station("a", "Radio Romania Int.", 5955, band="sw"),
+            station("b", "Radio Romania Int.", 6030, band="sw"),
+        ]
+        self.assertIn("5955 kHz", self._compose(entries, stations, kp=kp_sample(2.0)).body)
+        self.assertIn("6030 kHz", self._compose(entries, stations, kp=kp_sample(5.0)).body)
+
+
 class TestComposeQuietEvening(unittest.TestCase):
     def test_below_threshold_is_announced_as_quiet(self):
         message = compose(

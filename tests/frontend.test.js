@@ -17,9 +17,28 @@ const {
   formatFrequency,
   timingPhrase,
   dialPosition,
+  stationKey,
+  collapseByStation,
+  alternateHint,
   entriesForBucket,
   isCurrent,
 } = require("../docs/app.js");
+
+/**
+ * Baut eine Zeile, wie entriesForBucket sie erzeugt.
+ *
+ * Die echten Daten enthalten an den meisten Tagen keinen Sender auf
+ * mehreren Frequenzen - auf sie zu warten hiesse, die Zusammenfassung
+ * nie zu testen.
+ */
+function row(name, bandClass, freqKhz, score, extra = {}) {
+  const id = `${bandClass}-${freqKhz}-${name.toLowerCase().replace(/\s+/g, "-")}`;
+  return {
+    entry: { station_id: id, list_kind: "main", ...extra },
+    station: { station_id: id, name, band_class: bandClass, freq_khz: freqKhz },
+    slot: { kp: 2, t: "21:00", score },
+  };
+}
 
 const docs = path.join(__dirname, "..", "docs");
 const bulletin = JSON.parse(fs.readFileSync(path.join(docs, "bulletin.json"), "utf8"));
@@ -106,6 +125,121 @@ test("DX-Eintraege landen nicht in der Hauptliste", () => {
   const main = entriesForBucket(bulletin, stations, "main", 2).map((r) => r.entry.station_id);
   const dx = entriesForBucket(bulletin, stations, "dx", 2).map((r) => r.entry.station_id);
   for (const id of dx) assert.ok(!main.includes(id));
+});
+
+test("ein Sender auf mehreren Frequenzen steht nur einmal in der Liste", () => {
+  const rows = collapseByStation([
+    row("Radio Romania Int.", "sw", 5955, 41.2),
+    row("Radio Romania Int.", "sw", 6030, 58.9),
+    row("Radio Romania Int.", "sw", 7350, 33.0),
+    row("Channel 292", "sw", 3955, 68.4),
+  ]);
+  assert.deepEqual(rows.map((r) => r.station.name), ["Channel 292", "Radio Romania Int."]);
+  assert.equal(rows[1].station.freq_khz, 6030, "nicht die beste Frequenz behalten");
+});
+
+test("die verdraengten Frequenzen haengen als alternates am Gewinner", () => {
+  const [best] = collapseByStation([
+    row("Radio Romania Int.", "sw", 5955, 41.2),
+    row("Radio Romania Int.", "sw", 6030, 58.9),
+    row("Radio Romania Int.", "sw", 7350, 33.0),
+  ]);
+  assert.deepEqual(best.alternates.map((r) => r.station.freq_khz), [5955, 7350]);
+  assert.deepEqual(best.alternates.map((r) => r.slot.score), [41.2, 33.0], "nicht nach Punktzahl sortiert");
+});
+
+test("das Band trennt: derselbe Name auf Mittel- und Kurzwelle bleibt zweimal stehen", () => {
+  const rows = collapseByStation([
+    row("Radio Romania Int.", "sw", 6030, 58.9),
+    row("Radio Romania Int.", "mw", 1314, 44.0),
+  ]);
+  assert.equal(rows.length, 2, "Mittelwelle und Kurzwelle zusammengeworfen");
+  for (const r of rows) assert.deepEqual(r.alternates, []);
+});
+
+test("Schreibweise und doppelte Leerzeichen trennen nicht", () => {
+  assert.equal(
+    stationKey({ name: "Radio  Romania Int. ", band_class: "sw" }),
+    stationKey({ name: "radio romania int.", band_class: "sw" })
+  );
+});
+
+test("aehnliche, aber nicht gleiche Namen bleiben getrennt", () => {
+  // Lieber eine Dublette zuviel als zwei Programme stillschweigend
+  // verschmolzen - die Normalisierung geht bewusst nicht weiter.
+  const rows = collapseByStation([
+    row("Radio Romania Int.", "sw", 6030, 58.9),
+    row("Radio Romania Muzical", "sw", 7350, 44.0),
+  ]);
+  assert.equal(rows.length, 2);
+});
+
+test("bei gleicher Punktzahl entscheidet die niedrigere Frequenz, nicht die Reihenfolge", () => {
+  const forwards = collapseByStation([
+    row("Radio Romania Int.", "sw", 9600, 50.0),
+    row("Radio Romania Int.", "sw", 6030, 50.0),
+  ]);
+  const backwards = collapseByStation([
+    row("Radio Romania Int.", "sw", 6030, 50.0),
+    row("Radio Romania Int.", "sw", 9600, 50.0),
+  ]);
+  assert.equal(forwards[0].station.freq_khz, 6030);
+  assert.equal(backwards[0].station.freq_khz, 6030);
+});
+
+test("entriesForBucket fasst zusammen und laesst die Reihenfolge absteigend", () => {
+  const bulletin = {
+    entries: [
+      { station_id: "a", list_kind: "main", best_by_kp: [{ kp: 0, t: "21:00", score: 20 }] },
+      { station_id: "b", list_kind: "main", best_by_kp: [{ kp: 0, t: "22:00", score: 60 }] },
+      { station_id: "c", list_kind: "main", best_by_kp: [{ kp: 0, t: "23:00", score: 40 }] },
+    ],
+  };
+  const stationsById = {
+    a: { name: "Radio Romania Int.", band_class: "sw", freq_khz: 5955 },
+    b: { name: "Radio Romania Int.", band_class: "sw", freq_khz: 6030 },
+    c: { name: "Channel 292", band_class: "sw", freq_khz: 3955 },
+  };
+  const rows = entriesForBucket(bulletin, stationsById, "main", 0);
+  assert.deepEqual(rows.map((r) => r.station.freq_khz), [6030, 3955]);
+  assert.equal(rows[0].alternates.length, 1);
+});
+
+test("die Zusammenfassung folgt dem Kp-Regler", () => {
+  // Welche Frequenz gewinnt, haengt an der Lage: auf einer anderen Stufe
+  // kann eine andere vorne stehen. Wuerde einmal fest zusammengefasst,
+  // zeigte der Regler eine Rangfolge, die es so nicht gibt.
+  const bulletin = {
+    entries: [
+      { station_id: "a", list_kind: "main", best_by_kp: [{ kp: 0, t: "21:00", score: 60 }, { kp: 1, t: "21:00", score: 10 }] },
+      { station_id: "b", list_kind: "main", best_by_kp: [{ kp: 0, t: "22:00", score: 30 }, { kp: 1, t: "22:00", score: 45 }] },
+    ],
+  };
+  const stationsById = {
+    a: { name: "Radio Romania Int.", band_class: "sw", freq_khz: 5955 },
+    b: { name: "Radio Romania Int.", band_class: "sw", freq_khz: 6030 },
+  };
+  assert.equal(entriesForBucket(bulletin, stationsById, "main", 0)[0].station.freq_khz, 5955);
+  assert.equal(entriesForBucket(bulletin, stationsById, "main", 1)[0].station.freq_khz, 6030);
+});
+
+test("alternateHint schreibt wenige Frequenzen aus und zaehlt viele", () => {
+  const one = [row("R", "sw", 6030, 10)];
+  const two = [row("R", "sw", 6030, 10), row("R", "sw", 7350, 9)];
+  const many = [...two, row("R", "sw", 9600, 8)];
+  assert.equal(alternateHint(one), "Sendet auch auf 6030 kHz");
+  assert.equal(alternateHint(two), "Sendet auch auf 6030 kHz und 7350 kHz");
+  assert.equal(alternateHint(many), "Sendet auf 3 weiteren Frequenzen");
+  assert.equal(alternateHint([]), "");
+});
+
+test("die echten Daten enthalten nach der Zusammenfassung keine Dubletten mehr", () => {
+  for (const kind of ["main", "dx"]) {
+    for (let bucket = 0; bucket <= 9; bucket++) {
+      const keys = entriesForBucket(bulletin, stations, kind, bucket).map((r) => stationKey(r.station));
+      assert.equal(new Set(keys).size, keys.length, `${kind}, Kp ${bucket}`);
+    }
+  }
 });
 
 test("isCurrent erkennt den heutigen Stand", () => {
