@@ -99,34 +99,6 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-7220-radio-romania-int-g-en": {
-      "station_id": "sw-7220-radio-romania-int-g-en",
-      "name": "Radio Romania Int.",
-      "band_class": "sw",
-      "freq_khz": 7220.0,
-      "language": "en",
-      "distance_km": 1533.7,
-      "bearing_deg": 99.9,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Galbeni",
-      "null_bearings_deg": null,
-      "hints": []
-    },
-    "sw-6070-channel-292-r-de-en": {
-      "station_id": "sw-6070-channel-292-r-de-en",
-      "name": "Channel 292",
-      "band_class": "sw",
-      "freq_khz": 6070.0,
-      "language": "de",
-      "distance_km": 439.1,
-      "bearing_deg": 124.7,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Rohrbach (Channel 292)",
-      "null_bearings_deg": null,
-      "hints": []
-    },
     "sw-11975-radio-romania-int-g-fr": {
       "station_id": "sw-11975-radio-romania-int-g-fr",
       "name": "Radio Romania Int.",
@@ -166,6 +138,34 @@
       "power_kw": 100.0,
       "source": "eibi",
       "site_name": "Tiganesti",
+      "null_bearings_deg": null,
+      "hints": []
+    },
+    "sw-6070-channel-292-r-de-en": {
+      "station_id": "sw-6070-channel-292-r-de-en",
+      "name": "Channel 292",
+      "band_class": "sw",
+      "freq_khz": 6070.0,
+      "language": "de",
+      "distance_km": 439.1,
+      "bearing_deg": 124.7,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Rohrbach (Channel 292)",
+      "null_bearings_deg": null,
+      "hints": []
+    },
+    "sw-7220-radio-romania-int-g-en": {
+      "station_id": "sw-7220-radio-romania-int-g-en",
+      "name": "Radio Romania Int.",
+      "band_class": "sw",
+      "freq_khz": 7220.0,
+      "language": "en",
+      "distance_km": 1533.7,
+      "bearing_deg": 99.9,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Galbeni",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -235,20 +235,6 @@
         "Loop auf 109 Grad, Stoerer bei 199 oder 19 Grad ausnullbar"
       ]
     },
-    "sw-3975-shortwave-radio-gold-wa-de-en": {
-      "station_id": "sw-3975-shortwave-radio-gold-wa-de-en",
-      "name": "Shortwave Radio Gold",
-      "band_class": "sw",
-      "freq_khz": 3975.0,
-      "language": "de",
-      "distance_km": 287.1,
-      "bearing_deg": 47.3,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Winsen (Aller)",
-      "null_bearings_deg": null,
-      "hints": []
-    },
     "sw-13580-radio-romania-int-t-en": {
       "station_id": "sw-13580-radio-romania-int-t-en",
       "name": "Radio Romania Int.",
@@ -260,6 +246,20 @@
       "power_kw": 100.0,
       "source": "eibi",
       "site_name": "Tiganesti",
+      "null_bearings_deg": null,
+      "hints": []
+    },
+    "sw-3975-shortwave-radio-gold-wa-de-en": {
+      "station_id": "sw-3975-shortwave-radio-gold-wa-de-en",
+      "name": "Shortwave Radio Gold",
+      "band_class": "sw",
+      "freq_khz": 3975.0,
+      "language": "de",
+      "distance_km": 287.1,
+      "bearing_deg": 47.3,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Winsen (Aller)",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -333,20 +333,6 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-9690-radio-exterior-espa-a-n-xx": {
-      "station_id": "sw-9690-radio-exterior-espa-a-n-xx",
-      "name": "Radio Exterior Espa�a",
-      "band_class": "sw",
-      "freq_khz": 9690.0,
-      "language": null,
-      "distance_km": 1451.3,
-      "bearing_deg": 216.4,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Noblejas",
-      "null_bearings_deg": null,
-      "hints": []
-    },
     "sw-9500-radio-romania-int-g-xx": {
       "station_id": "sw-9500-radio-romania-int-g-xx",
       "name": "Radio Romania Int.",
@@ -361,6 +347,20 @@
       "null_bearings_deg": null,
       "hints": []
     },
+    "sw-9690-radio-exterior-espa-a-n-xx": {
+      "station_id": "sw-9690-radio-exterior-espa-a-n-xx",
+      "name": "Radio Exterior Espa�a",
+      "band_class": "sw",
+      "freq_khz": 9690.0,
+      "language": null,
+      "distance_km": 1451.3,
+      "bearing_deg": 216.4,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Noblejas",
+      "null_bearings_deg": null,
+      "hints": []
+    },
     "sw-15390-radio-exterior-espa-a-n-xx": {
       "station_id": "sw-15390-radio-exterior-espa-a-n-xx",
       "name": "Radio Exterior Espa�a",
@@ -372,20 +372,6 @@
       "power_kw": 100.0,
       "source": "eibi",
       "site_name": "Noblejas",
-      "null_bearings_deg": null,
-      "hints": []
-    },
-    "sw-5910-radio-romania-int-s-xx": {
-      "station_id": "sw-5910-radio-romania-int-s-xx",
-      "name": "Radio Romania Int.",
-      "band_class": "sw",
-      "freq_khz": 5910.0,
-      "language": null,
-      "distance_km": 1673.9,
-      "bearing_deg": 106.9,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Saftica",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -417,6 +403,20 @@
       "null_bearings_deg": null,
       "hints": []
     },
+    "sw-5910-radio-romania-int-s-xx": {
+      "station_id": "sw-5910-radio-romania-int-s-xx",
+      "name": "Radio Romania Int.",
+      "band_class": "sw",
+      "freq_khz": 5910.0,
+      "language": null,
+      "distance_km": 1673.9,
+      "bearing_deg": 106.9,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Saftica",
+      "null_bearings_deg": null,
+      "hints": []
+    },
     "sw-15160-radio-romania-int-t-xx": {
       "station_id": "sw-15160-radio-romania-int-t-xx",
       "name": "Radio Romania Int.",
@@ -445,17 +445,17 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-6050-hcjb-voice-of-andes-c-xx": {
-      "station_id": "sw-6050-hcjb-voice-of-andes-c-xx",
-      "name": "HCJB Voice of Andes",
+    "sw-13600-radio-romania-int-t-xx": {
+      "station_id": "sw-13600-radio-romania-int-t-xx",
+      "name": "Radio Romania Int.",
       "band_class": "sw",
-      "freq_khz": 6050.0,
+      "freq_khz": 13600.0,
       "language": null,
-      "distance_km": 9685.5,
-      "bearing_deg": 266.1,
+      "distance_km": 1600.1,
+      "bearing_deg": 108.0,
       "power_kw": 100.0,
       "source": "eibi",
-      "site_name": "Pico Pichincha",
+      "site_name": "Tiganesti",
       "null_bearings_deg": null,
       "hints": []
     }
