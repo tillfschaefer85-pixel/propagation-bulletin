@@ -333,20 +333,6 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-9500-radio-romania-int-g-xx": {
-      "station_id": "sw-9500-radio-romania-int-g-xx",
-      "name": "Radio Romania Int.",
-      "band_class": "sw",
-      "freq_khz": 9500.0,
-      "language": null,
-      "distance_km": 1533.7,
-      "bearing_deg": 99.9,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Galbeni",
-      "null_bearings_deg": null,
-      "hints": []
-    },
     "sw-9690-radio-exterior-espa-a-n-xx": {
       "station_id": "sw-9690-radio-exterior-espa-a-n-xx",
       "name": "Radio Exterior Espa�a",
@@ -361,25 +347,25 @@
       "null_bearings_deg": null,
       "hints": []
     },
+    "sw-9500-radio-romania-int-g-xx": {
+      "station_id": "sw-9500-radio-romania-int-g-xx",
+      "name": "Radio Romania Int.",
+      "band_class": "sw",
+      "freq_khz": 9500.0,
+      "language": null,
+      "distance_km": 1533.7,
+      "bearing_deg": 99.9,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Galbeni",
+      "null_bearings_deg": null,
+      "hints": []
+    },
     "sw-15390-radio-exterior-espa-a-n-xx": {
       "station_id": "sw-15390-radio-exterior-espa-a-n-xx",
       "name": "Radio Exterior Espa�a",
       "band_class": "sw",
       "freq_khz": 15390.0,
-      "language": null,
-      "distance_km": 1451.3,
-      "bearing_deg": 216.4,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Noblejas",
-      "null_bearings_deg": null,
-      "hints": []
-    },
-    "sw-15500-radio-exterior-espa-a-n-xx": {
-      "station_id": "sw-15500-radio-exterior-espa-a-n-xx",
-      "name": "Radio Exterior Espa�a",
-      "band_class": "sw",
-      "freq_khz": 15500.0,
       "language": null,
       "distance_km": 1451.3,
       "bearing_deg": 216.4,
@@ -456,6 +442,20 @@
       "power_kw": 100.0,
       "source": "eibi",
       "site_name": "Tiganesti",
+      "null_bearings_deg": null,
+      "hints": []
+    },
+    "sw-6050-hcjb-voice-of-andes-c-xx": {
+      "station_id": "sw-6050-hcjb-voice-of-andes-c-xx",
+      "name": "HCJB Voice of Andes",
+      "band_class": "sw",
+      "freq_khz": 6050.0,
+      "language": null,
+      "distance_km": 9685.5,
+      "bearing_deg": 266.1,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Pico Pichincha",
       "null_bearings_deg": null,
       "hints": []
     }
