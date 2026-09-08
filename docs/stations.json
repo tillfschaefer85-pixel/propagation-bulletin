@@ -127,20 +127,6 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-13750-radio-romania-digital-t-en": {
-      "station_id": "sw-13750-radio-romania-digital-t-en",
-      "name": "Radio Romania DIGITAL",
-      "band_class": "sw",
-      "freq_khz": 13750.0,
-      "language": "en",
-      "distance_km": 1600.1,
-      "bearing_deg": 108.0,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Tiganesti",
-      "null_bearings_deg": null,
-      "hints": []
-    },
     "sw-6070-channel-292-r-de-en": {
       "station_id": "sw-6070-channel-292-r-de-en",
       "name": "Channel 292",
@@ -166,6 +152,20 @@
       "power_kw": 100.0,
       "source": "eibi",
       "site_name": "Galbeni",
+      "null_bearings_deg": null,
+      "hints": []
+    },
+    "sw-13750-radio-romania-digital-t-en": {
+      "station_id": "sw-13750-radio-romania-digital-t-en",
+      "name": "Radio Romania DIGITAL",
+      "band_class": "sw",
+      "freq_khz": 13750.0,
+      "language": "en",
+      "distance_km": 1600.1,
+      "bearing_deg": 108.0,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Tiganesti",
       "null_bearings_deg": null,
       "hints": []
     },
