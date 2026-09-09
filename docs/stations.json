@@ -43,11 +43,11 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-9575-radio-romania-int-g-fr": {
-      "station_id": "sw-9575-radio-romania-int-g-fr",
+    "sw-11860-radio-romania-int-g-fr": {
+      "station_id": "sw-11860-radio-romania-int-g-fr",
       "name": "Radio Romania Int.",
       "band_class": "sw",
-      "freq_khz": 9575.0,
+      "freq_khz": 11860.0,
       "language": "fr",
       "distance_km": 1533.7,
       "bearing_deg": 99.9,
@@ -57,11 +57,11 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-11860-radio-romania-int-g-fr": {
-      "station_id": "sw-11860-radio-romania-int-g-fr",
+    "sw-9575-radio-romania-int-g-fr": {
+      "station_id": "sw-9575-radio-romania-int-g-fr",
       "name": "Radio Romania Int.",
       "band_class": "sw",
-      "freq_khz": 11860.0,
+      "freq_khz": 9575.0,
       "language": "fr",
       "distance_km": 1533.7,
       "bearing_deg": 99.9,
@@ -127,20 +127,6 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-6070-channel-292-r-de-en": {
-      "station_id": "sw-6070-channel-292-r-de-en",
-      "name": "Channel 292",
-      "band_class": "sw",
-      "freq_khz": 6070.0,
-      "language": "de",
-      "distance_km": 439.1,
-      "bearing_deg": 124.7,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Rohrbach (Channel 292)",
-      "null_bearings_deg": null,
-      "hints": []
-    },
     "sw-7220-radio-romania-int-g-en": {
       "station_id": "sw-7220-radio-romania-int-g-en",
       "name": "Radio Romania Int.",
@@ -152,6 +138,20 @@
       "power_kw": 100.0,
       "source": "eibi",
       "site_name": "Galbeni",
+      "null_bearings_deg": null,
+      "hints": []
+    },
+    "sw-6070-channel-292-r-de-en": {
+      "station_id": "sw-6070-channel-292-r-de-en",
+      "name": "Channel 292",
+      "band_class": "sw",
+      "freq_khz": 6070.0,
+      "language": "de",
+      "distance_km": 439.1,
+      "bearing_deg": 124.7,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Rohrbach (Channel 292)",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -333,20 +333,6 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-9690-radio-exterior-espa-a-n-xx": {
-      "station_id": "sw-9690-radio-exterior-espa-a-n-xx",
-      "name": "Radio Exterior Espa�a",
-      "band_class": "sw",
-      "freq_khz": 9690.0,
-      "language": null,
-      "distance_km": 1451.3,
-      "bearing_deg": 216.4,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Noblejas",
-      "null_bearings_deg": null,
-      "hints": []
-    },
     "sw-9500-radio-romania-int-g-xx": {
       "station_id": "sw-9500-radio-romania-int-g-xx",
       "name": "Radio Romania Int.",
@@ -358,6 +344,20 @@
       "power_kw": 100.0,
       "source": "eibi",
       "site_name": "Galbeni",
+      "null_bearings_deg": null,
+      "hints": []
+    },
+    "sw-9690-radio-exterior-espa-a-n-xx": {
+      "station_id": "sw-9690-radio-exterior-espa-a-n-xx",
+      "name": "Radio Exterior Espa�a",
+      "band_class": "sw",
+      "freq_khz": 9690.0,
+      "language": null,
+      "distance_km": 1451.3,
+      "bearing_deg": 216.4,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Noblejas",
       "null_bearings_deg": null,
       "hints": []
     },
