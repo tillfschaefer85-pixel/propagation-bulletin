@@ -58,9 +58,29 @@ class TxSiteTable:
         return site.point if site is not None else None
 
     def lookup_site(self, itu: str, transmitter_site: str) -> TxSite | None:
-        """Wie lookup(), gibt aber den vollen Eintrag samt Namen zurueck."""
+        """Wie lookup(), gibt aber den vollen Eintrag samt Namen zurueck.
+
+        Behandelt auch Uebernahmen. EiBi schreibt sie mit fuehrendem
+        Schraegstrich: Radio Taiwan mit dem Eintrag "/BUL-s" sendet nicht
+        aus Taiwan, sondern ueber die bulgarische Anlage in Sofia. Die
+        Herkunft der Station sagt dann nichts ueber den Funkweg - was
+        zaehlt, ist der Standort der Antenne.
+
+        Das ist im internationalen Kurzwellenrundfunk der Normalfall, nicht
+        die Ausnahme: BBC ueber Zypern, Radio Taiwan ueber Bulgarien, HCJB
+        ueber Deutschland. Frueher fielen all diese Sendungen durch, weil
+        stur "TWN-/BUL-s" gesucht wurde - ein Schluessel, den es nicht
+        geben kann.
+        """
         if not transmitter_site:
             return None
+
+        if transmitter_site.startswith("/"):
+            relay = transmitter_site[1:]
+            # "/BUL-s" nennt Land und Anlage, "/CYP" nur das Land - Letzteres
+            # laesst sich nicht auflösen und wird nicht geraten.
+            return self._sites.get(relay) if "-" in relay else None
+
         return self._sites.get(f"{itu}-{transmitter_site}")
 
     def coverage(self) -> frozenset[str]:
