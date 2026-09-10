@@ -109,7 +109,7 @@ class TestResolveEibiBroadcasts(unittest.TestCase):
             broadcast(6070, "Bekannt", ("de",), itu="D", site="n"),
             broadcast(9600, "Unbekannt", ("de",), itu="USA", site="o"),
         ]
-        resolved, skipped = resolve_eibi_broadcasts(
+        resolved, skipped, _ = resolve_eibi_broadcasts(
             broadcasts, tx_sites=TX_SITES, rx=BERGHEIM, slots=evening_slots(TODAY), assumed_power_kw=100.0
         )
         self.assertEqual(len(resolved), 1)
@@ -118,7 +118,7 @@ class TestResolveEibiBroadcasts(unittest.TestCase):
 
     def test_broadcast_outside_evening_window_is_dropped_without_being_counted_as_skipped(self):
         broadcasts = [broadcast(6070, "Morgens", ("de",), itu="D", site="n", start="0500", end="0700")]
-        resolved, skipped = resolve_eibi_broadcasts(
+        resolved, skipped, _ = resolve_eibi_broadcasts(
             broadcasts, tx_sites=TX_SITES, rx=BERGHEIM, slots=evening_slots(TODAY), assumed_power_kw=100.0
         )
         self.assertEqual(resolved, [])
@@ -126,14 +126,14 @@ class TestResolveEibiBroadcasts(unittest.TestCase):
 
     def test_station_id_is_stable_and_readable(self):
         b = broadcast(6070, "Channel 292", ("de", "en"), itu="D", site="r")
-        resolved, _ = resolve_eibi_broadcasts(
+        resolved, _, _ = resolve_eibi_broadcasts(
             [b], tx_sites=TX_SITES, rx=BERGHEIM, slots=evening_slots(TODAY), assumed_power_kw=100.0
         )
         self.assertEqual(resolved[0].station_id, "sw-6070-channel-292-r-de-en")
 
     def test_assumed_power_is_applied(self):
         b = broadcast(6070, "Test", ("de",), itu="D", site="n")
-        resolved, _ = resolve_eibi_broadcasts(
+        resolved, _, _ = resolve_eibi_broadcasts(
             [b], tx_sites=TX_SITES, rx=BERGHEIM, slots=evening_slots(TODAY), assumed_power_kw=77.0
         )
         self.assertEqual(resolved[0].link.power_kw, 77.0)
@@ -144,7 +144,7 @@ class TestResolveEibiBroadcasts(unittest.TestCase):
         # zwei Eintraegen im Bulletin fuehren.
         day = broadcast(3955, "Channel 292", ("de", "en"), site="r", start="0700", end="2000")
         night = broadcast(3955, "Channel 292", ("de", "en"), site="r", start="2100", end="0459")
-        resolved, _ = resolve_eibi_broadcasts(
+        resolved, _, _ = resolve_eibi_broadcasts(
             [day, night], tx_sites=TX_SITES, rx=BERGHEIM, slots=evening_slots(TODAY), assumed_power_kw=100.0
         )
         self.assertEqual(len(resolved), 1)
@@ -152,7 +152,7 @@ class TestResolveEibiBroadcasts(unittest.TestCase):
     def test_merged_station_covers_slots_from_both_schedule_lines(self):
         day = broadcast(3955, "Channel 292", ("de", "en"), site="r", start="0700", end="2000")
         night = broadcast(3955, "Channel 292", ("de", "en"), site="r", start="2100", end="0459")
-        resolved, _ = resolve_eibi_broadcasts(
+        resolved, _, _ = resolve_eibi_broadcasts(
             [day, night], tx_sites=TX_SITES, rx=BERGHEIM, slots=evening_slots(TODAY), assumed_power_kw=100.0
         )
         times = {s.strftime("%H:%M") for s in resolved[0].slots}
@@ -446,3 +446,54 @@ class TestBroadcastFilter(unittest.TestCase):
         bulletin, metas, stats = self._build(entries, NO_FILTER)
         self.assertIn("Shannon Aeradio", {m.name for m in metas})
         self.assertEqual(stats["eibi_dropped_non_broadcast"], 0)
+
+
+class TestMissingSiteDiagnostics(unittest.TestCase):
+    """Welche Standort-Codes fehlen, und wie oft?
+
+    Ohne diese Zahl lässt sich die Koordinatentabelle nur auf Verdacht
+    erweitern. Mit ihr wächst sie dort, wo tatsächlich Sender verloren gehen.
+    """
+
+    def test_missing_codes_are_counted_by_frequency(self):
+        entries = [
+            broadcast(9500, "A", ("en",), itu="USA", site="o"),
+            broadcast(9600, "B", ("en",), itu="USA", site="o"),
+            broadcast(9700, "C", ("en",), itu="CHN", site="k"),
+            broadcast(6070, "D", ("de",), itu="D", site="n"),  # bekannt
+        ]
+        resolved, skipped, missing = resolve_eibi_broadcasts(
+            entries, tx_sites=TX_SITES, rx=BERGHEIM,
+            slots=evening_slots(TODAY), assumed_power_kw=100.0,
+        )
+        self.assertEqual(skipped, 3)
+        self.assertEqual(missing["USA-o"], 2)
+        self.assertEqual(missing["CHN-k"], 1)
+        self.assertNotIn("D-n", missing)
+
+    def test_entries_without_a_site_code_are_grouped_separately(self):
+        entries = [broadcast(9500, "A", ("en",), itu="USA", site="")]
+        resolved, skipped, missing = resolve_eibi_broadcasts(
+            entries, tx_sites=TX_SITES, rx=BERGHEIM,
+            slots=evening_slots(TODAY), assumed_power_kw=100.0,
+        )
+        self.assertEqual(missing["USA-(ohne)"], 1)
+
+    def test_stats_expose_the_top_missing_sites(self):
+        entries = [broadcast(9500 + i, f"S{i}", ("en",), itu="USA", site="o") for i in range(4)]
+        bulletin, metas, stats = build_bulletin(
+            eibi_broadcasts_main=entries, eibi_broadcasts_all=[], mwlw_stations=[],
+            tx_sites=TX_SITES, weights=WEIGHTS, f107_flux=110.0,
+            today=TODAY, eibi_season="b26",
+        )
+        top = dict(stats["eibi_top_missing_sites"])
+        self.assertEqual(top.get("USA-o"), 4)
+
+    def test_top_list_is_capped(self):
+        entries = [broadcast(6000 + i, f"S{i}", ("en",), itu="XX", site=f"s{i}") for i in range(50)]
+        bulletin, metas, stats = build_bulletin(
+            eibi_broadcasts_main=entries, eibi_broadcasts_all=[], mwlw_stations=[],
+            tx_sites=TX_SITES, weights=WEIGHTS, f107_flux=110.0,
+            today=TODAY, eibi_season="b26",
+        )
+        self.assertLessEqual(len(stats["eibi_top_missing_sites"]), 30)
