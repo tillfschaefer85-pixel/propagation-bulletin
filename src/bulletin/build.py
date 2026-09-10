@@ -11,6 +11,7 @@ wie die Ergebnisse zu bulletin.json werden.
 
 from __future__ import annotations
 
+from collections import Counter
 from dataclasses import dataclass
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
@@ -102,7 +103,7 @@ def resolve_eibi_broadcasts(
     rx: Point,
     slots: list[datetime],
     assumed_power_kw: float,
-) -> tuple[list[ResolvedStation], int]:
+) -> tuple[list[ResolvedStation], int, "Counter[str]"]:
     """Loest EiBi-Sendungen in bewertbare Stationen auf.
 
     Der zweite Rueckgabewert ist die Zahl der Eintraege, die mangels
@@ -120,11 +121,16 @@ def resolve_eibi_broadcasts(
     active_by_id: dict[str, list[datetime]] = {}
     meta_by_id: dict[str, tuple[Broadcast, "Link", str | None]] = {}
     skipped = 0
+    # Welche Standort-Codes fehlen, und wie oft? Ohne diese Zahl waere die
+    # Frage, wie man die Koordinatentabelle sinnvoll erweitert, reines
+    # Raten - man wuerde Sender ergaenzen, die abends nie laufen.
+    missing: Counter[str] = Counter()
 
     for b in broadcasts:
         site = tx_sites.lookup_site(b.itu, b.transmitter_site)
         if site is None:
             skipped += 1
+            missing[f"{b.itu}-{b.transmitter_site}" if b.transmitter_site else f"{b.itu}-(ohne)"] += 1
             continue
         tx = site.point
         active = on_air_slots(b, slots)
@@ -159,7 +165,7 @@ def resolve_eibi_broadcasts(
         )
         for station_id, (b, link, site_name) in meta_by_id.items()
     ]
-    return resolved, skipped
+    return resolved, skipped, missing
 
 
 def resolve_mwlw_stations(
@@ -293,13 +299,13 @@ def build_bulletin(
     eibi_broadcasts_all = [b for b in eibi_broadcasts_all if band_plan.is_broadcast(b.freq_khz)]
     dropped_non_broadcast = before - len(eibi_broadcasts_main) - len(eibi_broadcasts_all)
 
-    main_from_eibi, skipped = resolve_eibi_broadcasts(
+    main_from_eibi, skipped, missing_sites = resolve_eibi_broadcasts(
         eibi_broadcasts_main, tx_sites=tx_sites, rx=rx, slots=slots, assumed_power_kw=power
     )
     main_from_mwlw = resolve_mwlw_stations(mwlw_stations, rx=rx, slots=slots)
     main_candidates = main_from_eibi + main_from_mwlw
 
-    all_from_eibi, _ = resolve_eibi_broadcasts(
+    all_from_eibi, _, _ = resolve_eibi_broadcasts(
         eibi_broadcasts_all, tx_sites=tx_sites, rx=rx, slots=slots, assumed_power_kw=power
     )
     main_ids = {c.station_id for c in main_candidates}
@@ -348,6 +354,9 @@ def build_bulletin(
     stats = {
         "eibi_dropped_non_broadcast": dropped_non_broadcast,
         "eibi_skipped_no_tx_site": skipped,
+        # Die haeufigsten fehlenden Standorte, damit die Tabelle gezielt
+        # dort waechst, wo es tatsaechlich etwas bringt.
+        "eibi_top_missing_sites": missing_sites.most_common(30),
         "main_candidates": len(main_candidates),
         "dx_candidates": len(dx_candidates),
     }
