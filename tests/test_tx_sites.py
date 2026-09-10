@@ -3,7 +3,7 @@
 import unittest
 from pathlib import Path
 
-from bulletin.sources.tx_sites import TxSiteTable, load_tx_sites
+from bulletin.sources.tx_sites import TxSite, TxSiteTable, load_tx_sites
 from bulletin.physics.geometry import Point
 
 
@@ -118,3 +118,85 @@ class TestRelays(unittest.TestCase):
         point = self.table.lookup("TWN", "/BUL-s")
         self.assertIsNotNone(point)
         self.assertAlmostEqual(point.lon, 23.2167, places=3)
+
+
+class TestCountryDefaults(unittest.TestCase):
+    """Länder mit nur einer Sendeanlage.
+
+    Die EiBi-README sagt es ausdrücklich: "No such code is used if there is
+    only one transmitter site in that country." Ein leeres Standortfeld ist
+    dort keine Lücke, sondern eine Aussage — der Vatikan kam mit 31 Treffern
+    in der Diagnose vor, ohne je auflösbar zu sein.
+    """
+
+    def setUp(self):
+        self.table = TxSiteTable(
+            {"BUL-s": Point(lat=42.8167, lon=23.2167), "D-n": Point(lat=52.6486, lon=12.9092)},
+            {
+                "CVA": TxSite(point=Point(lat=42.05, lon=12.3167), name="Santa Maria di Galeria"),
+                "ASC": TxSite(point=Point(lat=-7.9, lon=-14.3833), name="Ascension Island"),
+            },
+        )
+
+    def test_empty_code_resolves_for_single_site_countries(self):
+        site = self.table.lookup_site("CVA", "")
+        self.assertIsNotNone(site)
+        self.assertEqual(site.name, "Santa Maria di Galeria")
+
+    def test_empty_code_stays_unresolved_for_other_countries(self):
+        # Rumänien hat mehrere Anlagen - hier wäre jede Wahl geraten.
+        self.assertIsNone(self.table.lookup_site("ROU", ""))
+
+    def test_relay_naming_only_a_single_site_country_resolves(self):
+        site = self.table.lookup_site("G", "/ASC")
+        self.assertIsNotNone(site)
+        self.assertEqual(site.name, "Ascension Island")
+
+    def test_relay_naming_a_multi_site_country_stays_unresolved(self):
+        self.assertIsNone(self.table.lookup_site("G", "/CYP"))
+
+    def test_explicit_site_code_wins_over_the_country_default(self):
+        site = self.table.lookup_site("D", "n")
+        self.assertAlmostEqual(site.point.lat, 52.6486, places=3)
+
+    def test_coverage_includes_default_only_countries(self):
+        self.assertIn("CVA", self.table.coverage())
+
+    def test_table_without_defaults_behaves_as_before(self):
+        plain = TxSiteTable({"D-n": Point(lat=52.6486, lon=12.9092)})
+        self.assertIsNone(plain.lookup_site("CVA", ""))
+
+
+class TestShippedTableAfterExpansion(unittest.TestCase):
+    """Die Codes aus der echten Diagnose müssen jetzt auflösbar sein."""
+
+    def setUp(self):
+        self.table = load_tx_sites(
+            Path(__file__).resolve().parents[1] / "data" / "tx_sites.yaml"
+        )
+
+    def test_the_most_frequent_missing_codes_now_resolve(self):
+        # Genau die Spitzenreiter aus dem Protokoll des echten Laufs.
+        for itu, code, hits in [
+            ("KRE", "u", 87), ("CHN", "ka", 78), ("G", "/OMA-a", 31),
+            ("CVA", "", 31), ("CHN", "b", 30), ("NZL", "r", 29),
+            ("CHN", "x", 27), ("J", "y", 23), ("G", "/ASC", 21),
+            ("CHN", "k", 19), ("POL", "p", 19), ("F", "g", 18),
+            ("CHN", "u", 17), ("CHN", "t", 16), ("INS", "j", 13),
+            ("IND", "b", 13), ("B", "b", 11), ("RUS", "c", 11),
+            ("CUB", "", 11), ("KOR", "k", 10), ("CUB", "b", 10),
+        ]:
+            with self.subTest(code=f"{itu}-{code}"):
+                self.assertIsNotNone(
+                    self.table.lookup_site(itu, code),
+                    f"{itu}-{code} ({hits} Treffer) ist weiterhin nicht auflösbar",
+                )
+
+    def test_ambiguous_cases_are_still_refused(self):
+        for itu, code in [("ROU", ""), ("G", "/CYP"), ("CHN", "/MLI")]:
+            with self.subTest(code=f"{itu}-{code}"):
+                self.assertIsNone(self.table.lookup_site(itu, code))
+
+    def test_table_has_grown_substantially(self):
+        self.assertGreaterEqual(len(self.table), 90)
+        self.assertGreaterEqual(len(self.table.coverage()), 50)

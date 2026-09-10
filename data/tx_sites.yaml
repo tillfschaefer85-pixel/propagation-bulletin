@@ -114,3 +114,84 @@ sites:
   EQA-p: {lat: -0.2333, lon: -78.3333, name: "Pifo"}
   EQA-s: {lat: -3.7, lon: -79.3, name: "Saraguro"}
   EQA-t: {lat: -1.0, lon: -77.8, name: "Tena"}
+
+# --- Ergaenzt aus der EiBi-README nach Auswertung der Diagnose ---
+  KRE-u: {lat: 40.0833, lon: 126.0833, name: "Kujang"}
+  CHN-ka: {lat: 39.35, lon: 75.7667, name: "Kashi (Kashgar)"}
+  OMA-a: {lat: 21.9167, lon: 59.6167, name: "A'Seela"}
+  CHN-b: {lat: 39.75, lon: 116.8167, name: "Beijing-Matoucun"}
+  NZL-r: {lat: -38.8333, lon: 176.4167, name: "Rangitaiki"}
+  CHN-x: {lat: 34.2, lon: 108.9, name: "Xian-Xianyang"}
+  J-y: {lat: 36.1667, lon: 139.8333, name: "Yamata"}
+  CHN-k: {lat: 24.8833, lon: 102.5, name: "Kunming-Anning"}
+  POL-p: {lat: 52.1436, lon: 20.9, name: "Puchaly"}
+  F-g: {lat: 43.1053, lon: 5.9892, name: "La Garde (Toulon)"}
+  CHN-u: {lat: 44.1464, lon: 86.8953, name: "Urumqi"}
+  CHN-t: {lat: 29.65, lon: 91.25, name: "Lhasa-Baiding (Tibet)"}
+  INS-j: {lat: -6.3917, lon: 106.8611, name: "Jakarta-Cimanggis"}
+  IND-b: {lat: 13.2333, lon: 77.5, name: "Bengaluru-Doddaballapur"}
+  B-b: {lat: -15.6111, lon: -48.1314, name: "Brasilia-Parque do Rodeador"}
+  RUS-c: {lat: 51.8333, lon: 113.7167, name: "Chita (Atamanovka)"}
+  F-oe: {lat: 48.4667, lon: -5.05, name: "Ouessant"}
+  KOR-k: {lat: 35.8333, lon: 126.8333, name: "Kimjae"}
+  CUB-b: {lat: 22.95, lon: -82.55, name: "Bauta"}
+  CHN-a: {lat: 34.5, lon: 107.1667, name: "Baoji-Xinjie"}
+  CHN-s: {lat: 38.2167, lon: 114.1, name: "Shijiazhuang"}
+  CHN-h: {lat: 40.8, lon: 111.7833, name: "Hohhot"}
+  CHN-bd: {lat: 39.6333, lon: 116.0833, name: "Beijing-Doudian"}
+  MLI-c: {lat: 12.6833, lon: -8.0333, name: "CRI-Bamako"}
+  MLI-k: {lat: 12.75, lon: -8.05, name: "Kati (Bamako)"}
+  CYP-a: {lat: 34.6167, lon: 32.9333, name: "Akrotiri"}
+  KRE-p: {lat: 39.0833, lon: 125.3833, name: "Pyongyang"}
+  KRE-k: {lat: 40.9667, lon: 126.6, name: "Kanggye"}
+  CLN-t: {lat: 8.7333, lon: 81.1667, name: "Trincomalee"}
+  CLN-i: {lat: 7.5167, lon: 79.8, name: "Iranawila"}
+  PHL-t: {lat: 15.35, lon: 120.6167, name: "Tinang"}
+  PHL-b: {lat: 14.8, lon: 120.9167, name: "Bocaue"}
+  MRA-s: {lat: 15.1167, lon: 145.6833, name: "Saipan-Agingan Point"}
+  MRA-m: {lat: 15.2667, lon: 145.8, name: "Marpi (Saipan)"}
+  GUM-m: {lat: 13.2772, lon: 144.6711, name: "Agana/Merizo (KTWR)"}
+  GUM-a: {lat: 13.3411, lon: 144.6489, name: "Agat (KSDA)"}
+  ARS-j: {lat: 21.25, lon: 39.1667, name: "Jeddah"}
+  KWT-k: {lat: 29.15, lon: 47.7667, name: "Kabd/Sulaibiyah"}
+
+# Laender mit nur EINER Sendeanlage.
+#
+# Die EiBi-README sagt es ausdruecklich: "No such code is used if there is
+# only one transmitter site in that country." Ein leeres Standortfeld ist
+# dort also keine Luecke, sondern eine Aussage. Fuer diese Laender ist die
+# Koordinate damit eindeutig - das ist kein Raten.
+#
+# Wichtig: Nur Laender aufnehmen, fuer die die README tatsaechlich einen
+# einzigen Standort (oder einen ausdruecklichen Regelfall mit "except")
+# auffuehrt. Wo mehrere Anlagen gelistet sind - Rumaenien, Zypern, Mali -
+# bleibt ein leeres Feld weiterhin unaufloesbar.
+country_defaults:
+  CVA: {lat: 42.05, lon: 12.3167, name: "Santa Maria di Galeria"}
+  CUB: {lat: 23.0, lon: -82.5, name: "La Habana (Quivicán/Bejucal/Bauta)"}
+  ASC: {lat: -7.9, lon: -14.3833, name: "Ascension Island"}
+  AUT: {lat: 48.0, lon: 16.4667, name: "Moosbrunn"}
+  BES: {lat: 12.2, lon: -68.3, name: "Bonaire"}
+  BFA: {lat: 12.4333, lon: -1.55, name: "Ouagadougou"}
+  BLR: {lat: 53.9667, lon: 27.7833, name: "Minsk-Sasnovy"}
+  GUF: {lat: 4.9, lon: -52.4833, name: "Montsinéry"}
+  HRV: {lat: 45.65, lon: 16.45, name: "Deanovec"}
+  LTU: {lat: 55.0436, lon: 23.8078, name: "Sitkunai"}
+  LVA: {lat: 56.9333, lon: 24.2833, name: "Ulbroka"}
+  MDA: {lat: 47.2833, lon: 29.4, name: "Maiac (Grigoriopol)"}
+  MDG: {lat: -18.8333, lon: 47.5833, name: "Talata Volonondry"}
+  AFS: {lat: -26.5833, lon: 28.1333, name: "Meyerton"}
+  ARM: {lat: 40.4167, lon: 45.2, name: "Gavar"}
+  CTR: {lat: 10.4167, lon: -83.7167, name: "Cariari de Pococí"}
+  GAB: {lat: -1.6667, lon: 13.5167, name: "Moyabi"}
+  ERI: {lat: 15.2167, lon: 38.8667, name: "Asmara-Saladaro"}
+  RRW: {lat: -1.9167, lon: 30.1167, name: "Kigali"}
+  NGR: {lat: 13.5, lon: 2.1, name: "Niamey"}
+  MTN: {lat: 18.1167, lon: -15.95, name: "Nouakchott"}
+  BOT: {lat: -21.95, lon: 27.65, name: "Mopeng Hill"}
+  LBY: {lat: 32.9, lon: 13.1833, name: "Sabrata"}
+  NPL: {lat: 27.5, lon: 85.5, name: "Khumaltar"}
+  BIO: {lat: -7.4333, lon: 72.4333, name: "Diego Garcia"}
+  FSM: {lat: 6.9667, lon: 158.2, name: "Pohnpei"}
+  GUY: {lat: 6.8167, lon: -58.0833, name: "Sparendaam"}
+  CME: {lat: 4.15, lon: 9.2333, name: "Buea"}

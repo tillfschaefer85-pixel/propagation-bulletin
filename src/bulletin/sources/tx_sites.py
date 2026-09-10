@@ -34,7 +34,12 @@ class TxSite:
 class TxSiteTable:
     """Nachschlagetabelle ITU-Code + Standort-Code -> Point."""
 
-    def __init__(self, sites: dict[str, TxSite | Point]):
+    def __init__(
+        self,
+        sites: dict[str, TxSite | Point],
+        country_defaults: dict[str, TxSite] | None = None,
+    ):
+        self._country_defaults: dict[str, TxSite] = country_defaults or {}
         # Point wird weiterhin angenommen, damit bestehende Tests und
         # Aufrufer nicht angefasst werden muessen.
         self._sites: dict[str, TxSite] = {
@@ -72,30 +77,41 @@ class TxSiteTable:
         stur "TWN-/BUL-s" gesucht wurde - ein Schluessel, den es nicht
         geben kann.
         """
-        if not transmitter_site:
-            return None
-
         if transmitter_site.startswith("/"):
             relay = transmitter_site[1:]
-            # "/BUL-s" nennt Land und Anlage, "/CYP" nur das Land - Letzteres
-            # laesst sich nicht auflösen und wird nicht geraten.
-            return self._sites.get(relay) if "-" in relay else None
+            # "/BUL-s" nennt Land und Anlage, "/CYP" nur das Land. Im zweiten
+            # Fall hilft nur ein Laenderstandard - und den gibt es nur, wo das
+            # Land tatsaechlich bloss eine Anlage hat.
+            if "-" in relay:
+                return self._sites.get(relay)
+            return self._country_defaults.get(relay)
+
+        if not transmitter_site:
+            # Ein leeres Feld ist laut EiBi-README keine Luecke, sondern eine
+            # Aussage: "No such code is used if there is only one transmitter
+            # site in that country." Fuer solche Laender ist die Koordinate
+            # eindeutig. Fuer alle anderen bleibt es unaufloesbar.
+            return self._country_defaults.get(itu)
 
         return self._sites.get(f"{itu}-{transmitter_site}")
 
     def coverage(self) -> frozenset[str]:
         """Die abgedeckten ITU-Laendercodes, fuer eine schnelle Uebersicht."""
-        return frozenset(key.split("-", 1)[0] for key in self._sites)
+        return frozenset(key.split("-", 1)[0] for key in self._sites) | frozenset(
+            self._country_defaults
+        )
 
 
 def load_tx_sites(path: str | Path) -> TxSiteTable:
     with open(path, "r", encoding="utf-8") as handle:
         data = yaml.safe_load(handle) or {}
 
-    sites: dict[str, TxSite] = {}
-    for key, coords in data.get("sites", {}).items():
-        sites[key] = TxSite(
+    def to_site(coords: dict) -> TxSite:
+        return TxSite(
             point=Point(lat=float(coords["lat"]), lon=float(coords["lon"])),
             name=coords.get("name"),
         )
-    return TxSiteTable(sites)
+
+    sites = {key: to_site(v) for key, v in (data.get("sites") or {}).items()}
+    defaults = {key: to_site(v) for key, v in (data.get("country_defaults") or {}).items()}
+    return TxSiteTable(sites, defaults)
