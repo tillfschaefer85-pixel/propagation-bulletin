@@ -80,6 +80,8 @@ jobs:
 
       - name: Bulletin bauen
         if: steps.guard.outputs.run == 'true'
+        # Die Statistik landet auf der Fehlerausgabe und damit im Protokoll -
+        # dort stehen unter anderem die haeufigsten fehlenden Sendestandorte.
         run: PYTHONPATH=src python -m bulletin.build
 
       - name: Ergebnis committen
