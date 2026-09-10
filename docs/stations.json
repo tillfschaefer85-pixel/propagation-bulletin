@@ -375,6 +375,20 @@
       "null_bearings_deg": null,
       "hints": []
     },
+    "sw-5910-radio-romania-int-s-xx": {
+      "station_id": "sw-5910-radio-romania-int-s-xx",
+      "name": "Radio Romania Int.",
+      "band_class": "sw",
+      "freq_khz": 5910.0,
+      "language": null,
+      "distance_km": 1673.9,
+      "bearing_deg": 106.9,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Saftica",
+      "null_bearings_deg": null,
+      "hints": []
+    },
     "sw-15520-radio-exterior-espa-a-n-xx": {
       "station_id": "sw-15520-radio-exterior-espa-a-n-xx",
       "name": "Radio Exterior Espa�a",
@@ -389,9 +403,9 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-5910-radio-romania-int-s-xx": {
-      "station_id": "sw-5910-radio-romania-int-s-xx",
-      "name": "Radio Romania Int.",
+    "sw-5910-radio-romania-digital-s-xx": {
+      "station_id": "sw-5910-radio-romania-digital-s-xx",
+      "name": "Radio Romania DIGITAL",
       "band_class": "sw",
       "freq_khz": 5910.0,
       "language": null,
@@ -414,20 +428,6 @@
       "power_kw": 100.0,
       "source": "eibi",
       "site_name": "Tiganesti",
-      "null_bearings_deg": null,
-      "hints": []
-    },
-    "sw-5910-radio-romania-digital-s-xx": {
-      "station_id": "sw-5910-radio-romania-digital-s-xx",
-      "name": "Radio Romania DIGITAL",
-      "band_class": "sw",
-      "freq_khz": 5910.0,
-      "language": null,
-      "distance_km": 1673.9,
-      "bearing_deg": 106.9,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Saftica",
       "null_bearings_deg": null,
       "hints": []
     },
