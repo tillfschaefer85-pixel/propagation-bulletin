@@ -113,20 +113,6 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-12060-sm-radio-dessau-/ARM-de": {
-      "station_id": "sw-12060-sm-radio-dessau-/ARM-de",
-      "name": "SM Radio Dessau",
-      "band_class": "sw",
-      "freq_khz": 12060.0,
-      "language": "de",
-      "distance_km": 3172.5,
-      "bearing_deg": 96.5,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Gavar",
-      "null_bearings_deg": null,
-      "hints": []
-    },
     "sw-9570-radio-romania-digital-t-de": {
       "station_id": "sw-9570-radio-romania-digital-t-de",
       "name": "Radio Romania DIGITAL",
@@ -138,6 +124,20 @@
       "power_kw": 100.0,
       "source": "eibi",
       "site_name": "Tiganesti",
+      "null_bearings_deg": null,
+      "hints": []
+    },
+    "sw-12060-sm-radio-dessau-/ARM-de": {
+      "station_id": "sw-12060-sm-radio-dessau-/ARM-de",
+      "name": "SM Radio Dessau",
+      "band_class": "sw",
+      "freq_khz": 12060.0,
+      "language": "de",
+      "distance_km": 3172.5,
+      "bearing_deg": 96.5,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Gavar",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -225,6 +225,20 @@
       "null_bearings_deg": null,
       "hints": []
     },
+    "sw-9585-bible-voice-/BUL-s-en": {
+      "station_id": "sw-9585-bible-voice-/BUL-s-en",
+      "name": "Bible Voice",
+      "band_class": "sw",
+      "freq_khz": 9585.0,
+      "language": "en",
+      "distance_km": 1545.4,
+      "bearing_deg": 119.4,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Sofia-Kostinbrod",
+      "null_bearings_deg": null,
+      "hints": []
+    },
     "sw-7220-radio-romania-int-g-en": {
       "station_id": "sw-7220-radio-romania-int-g-en",
       "name": "Radio Romania Int.",
@@ -239,11 +253,11 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-7275-irrs-milano-/BUL-s-en": {
-      "station_id": "sw-7275-irrs-milano-/BUL-s-en",
+    "sw-7290-irrs-milano-/BUL-s-en": {
+      "station_id": "sw-7290-irrs-milano-/BUL-s-en",
       "name": "IRRS Milano",
       "band_class": "sw",
-      "freq_khz": 7275.0,
+      "freq_khz": 7290.0,
       "language": "en",
       "distance_km": 1545.4,
       "bearing_deg": 119.4,
@@ -253,25 +267,11 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-6070-channel-292-r-de-en": {
-      "station_id": "sw-6070-channel-292-r-de-en",
-      "name": "Channel 292",
-      "band_class": "sw",
-      "freq_khz": 6070.0,
-      "language": "de",
-      "distance_km": 439.1,
-      "bearing_deg": 124.7,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Rohrbach (Channel 292)",
-      "null_bearings_deg": null,
-      "hints": []
-    },
-    "sw-7290-irrs-milano-/BUL-s-en": {
-      "station_id": "sw-7290-irrs-milano-/BUL-s-en",
+    "sw-7275-irrs-milano-/BUL-s-en": {
+      "station_id": "sw-7275-irrs-milano-/BUL-s-en",
       "name": "IRRS Milano",
       "band_class": "sw",
-      "freq_khz": 7290.0,
+      "freq_khz": 7275.0,
       "language": "en",
       "distance_km": 1545.4,
       "bearing_deg": 119.4,
@@ -407,34 +407,6 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-9400-bible-voice-/BUL-s-xx": {
-      "station_id": "sw-9400-bible-voice-/BUL-s-xx",
-      "name": "Bible Voice",
-      "band_class": "sw",
-      "freq_khz": 9400.0,
-      "language": null,
-      "distance_km": 1545.4,
-      "bearing_deg": 119.4,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Sofia-Kostinbrod",
-      "null_bearings_deg": null,
-      "hints": []
-    },
-    "sw-11600-bible-voice-/BUL-s-xx": {
-      "station_id": "sw-11600-bible-voice-/BUL-s-xx",
-      "name": "Bible Voice",
-      "band_class": "sw",
-      "freq_khz": 11600.0,
-      "language": null,
-      "distance_km": 1545.4,
-      "bearing_deg": 119.4,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Sofia-Kostinbrod",
-      "null_bearings_deg": null,
-      "hints": []
-    },
     "sw-7410-radio-vaticana-site-xx": {
       "station_id": "sw-7410-radio-vaticana-site-xx",
       "name": "Radio Vaticana",
@@ -446,6 +418,34 @@
       "power_kw": 100.0,
       "source": "eibi",
       "site_name": "Santa Maria di Galeria",
+      "null_bearings_deg": null,
+      "hints": []
+    },
+    "sw-9710-radio-vaticana-site-xx": {
+      "station_id": "sw-9710-radio-vaticana-site-xx",
+      "name": "Radio Vaticana",
+      "band_class": "sw",
+      "freq_khz": 9710.0,
+      "language": null,
+      "distance_km": 1080.6,
+      "bearing_deg": 154.2,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Santa Maria di Galeria",
+      "null_bearings_deg": null,
+      "hints": []
+    },
+    "sw-6090-kbs-world-radio-/G-w-xx": {
+      "station_id": "sw-6090-kbs-world-radio-/G-w-xx",
+      "name": "KBS World Radio",
+      "band_class": "sw",
+      "freq_khz": 6090.0,
+      "language": null,
+      "distance_km": 662.7,
+      "bearing_deg": 286.8,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Woofferton",
       "null_bearings_deg": null,
       "hints": []
     }
