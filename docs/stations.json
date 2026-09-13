@@ -183,6 +183,20 @@
       "null_bearings_deg": null,
       "hints": []
     },
+    "sw-9585-bible-voice-/BUL-s-en": {
+      "station_id": "sw-9585-bible-voice-/BUL-s-en",
+      "name": "Bible Voice",
+      "band_class": "sw",
+      "freq_khz": 9585.0,
+      "language": "en",
+      "distance_km": 1545.4,
+      "bearing_deg": 119.4,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Sofia-Kostinbrod",
+      "null_bearings_deg": null,
+      "hints": []
+    },
     "sw-11975-radio-romania-int-g-fr": {
       "station_id": "sw-11975-radio-romania-int-g-fr",
       "name": "Radio Romania Int.",
@@ -222,20 +236,6 @@
       "power_kw": 100.0,
       "source": "eibi",
       "site_name": "Woofferton",
-      "null_bearings_deg": null,
-      "hints": []
-    },
-    "sw-9585-bible-voice-/BUL-s-en": {
-      "station_id": "sw-9585-bible-voice-/BUL-s-en",
-      "name": "Bible Voice",
-      "band_class": "sw",
-      "freq_khz": 9585.0,
-      "language": "en",
-      "distance_km": 1545.4,
-      "bearing_deg": 119.4,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Sofia-Kostinbrod",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -337,6 +337,20 @@
       "null_bearings_deg": null,
       "hints": []
     },
+    "sw-9585-follow-the-bible-min-/CVA-xx": {
+      "station_id": "sw-9585-follow-the-bible-min-/CVA-xx",
+      "name": "Follow the Bible Min.",
+      "band_class": "sw",
+      "freq_khz": 9585.0,
+      "language": null,
+      "distance_km": 1080.6,
+      "bearing_deg": 154.2,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Santa Maria di Galeria",
+      "null_bearings_deg": null,
+      "hints": []
+    },
     "sw-9500-radio-romania-int-g-xx": {
       "station_id": "sw-9500-radio-romania-int-g-xx",
       "name": "Radio Romania Int.",
@@ -407,20 +421,6 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-7410-radio-vaticana-site-xx": {
-      "station_id": "sw-7410-radio-vaticana-site-xx",
-      "name": "Radio Vaticana",
-      "band_class": "sw",
-      "freq_khz": 7410.0,
-      "language": null,
-      "distance_km": 1080.6,
-      "bearing_deg": 154.2,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Santa Maria di Galeria",
-      "null_bearings_deg": null,
-      "hints": []
-    },
     "sw-9710-radio-vaticana-site-xx": {
       "station_id": "sw-9710-radio-vaticana-site-xx",
       "name": "Radio Vaticana",
@@ -435,17 +435,17 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-6090-kbs-world-radio-/G-w-xx": {
-      "station_id": "sw-6090-kbs-world-radio-/G-w-xx",
-      "name": "KBS World Radio",
+    "sw-7410-radio-vaticana-site-xx": {
+      "station_id": "sw-7410-radio-vaticana-site-xx",
+      "name": "Radio Vaticana",
       "band_class": "sw",
-      "freq_khz": 6090.0,
+      "freq_khz": 7410.0,
       "language": null,
-      "distance_km": 662.7,
-      "bearing_deg": 286.8,
+      "distance_km": 1080.6,
+      "bearing_deg": 154.2,
       "power_kw": 100.0,
       "source": "eibi",
-      "site_name": "Woofferton",
+      "site_name": "Santa Maria di Galeria",
       "null_bearings_deg": null,
       "hints": []
     }
