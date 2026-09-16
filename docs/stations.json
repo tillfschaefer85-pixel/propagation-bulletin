@@ -113,6 +113,20 @@
       "null_bearings_deg": null,
       "hints": []
     },
+    "sw-9400-brother-stair-/BUL-s-en": {
+      "station_id": "sw-9400-brother-stair-/BUL-s-en",
+      "name": "Brother Stair",
+      "band_class": "sw",
+      "freq_khz": 9400.0,
+      "language": "en",
+      "distance_km": 1545.4,
+      "bearing_deg": 119.4,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Sofia-Kostinbrod",
+      "null_bearings_deg": null,
+      "hints": []
+    },
     "sw-9425-brother-stair-/BUL-s-en": {
       "station_id": "sw-9425-brother-stair-/BUL-s-en",
       "name": "Brother Stair",
@@ -127,11 +141,11 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-9400-brother-stair-/BUL-s-en": {
-      "station_id": "sw-9400-brother-stair-/BUL-s-en",
+    "sw-11600-brother-stair-/BUL-s-en": {
+      "station_id": "sw-11600-brother-stair-/BUL-s-en",
       "name": "Brother Stair",
       "band_class": "sw",
-      "freq_khz": 9400.0,
+      "freq_khz": 11600.0,
       "language": "en",
       "distance_km": 1545.4,
       "bearing_deg": 119.4,
@@ -166,20 +180,6 @@
       "power_kw": 100.0,
       "source": "eibi",
       "site_name": "Santa Maria di Galeria",
-      "null_bearings_deg": null,
-      "hints": []
-    },
-    "sw-11600-brother-stair-/BUL-s-en": {
-      "station_id": "sw-11600-brother-stair-/BUL-s-en",
-      "name": "Brother Stair",
-      "band_class": "sw",
-      "freq_khz": 11600.0,
-      "language": "en",
-      "distance_km": 1545.4,
-      "bearing_deg": 119.4,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Sofia-Kostinbrod",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -239,11 +239,11 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-7290-irrs-milano-/BUL-s-en": {
-      "station_id": "sw-7290-irrs-milano-/BUL-s-en",
+    "sw-7275-irrs-milano-/BUL-s-en": {
+      "station_id": "sw-7275-irrs-milano-/BUL-s-en",
       "name": "IRRS Milano",
       "band_class": "sw",
-      "freq_khz": 7290.0,
+      "freq_khz": 7275.0,
       "language": "en",
       "distance_km": 1545.4,
       "bearing_deg": 119.4,
@@ -253,11 +253,11 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-7275-irrs-milano-/BUL-s-en": {
-      "station_id": "sw-7275-irrs-milano-/BUL-s-en",
+    "sw-7290-irrs-milano-/BUL-s-en": {
+      "station_id": "sw-7290-irrs-milano-/BUL-s-en",
       "name": "IRRS Milano",
       "band_class": "sw",
-      "freq_khz": 7275.0,
+      "freq_khz": 7290.0,
       "language": "en",
       "distance_km": 1545.4,
       "bearing_deg": 119.4,
@@ -342,20 +342,6 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-9690-radio-exterior-espa-a-n-xx": {
-      "station_id": "sw-9690-radio-exterior-espa-a-n-xx",
-      "name": "Radio Exterior Espa�a",
-      "band_class": "sw",
-      "freq_khz": 9690.0,
-      "language": null,
-      "distance_km": 1451.3,
-      "bearing_deg": 216.4,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Noblejas",
-      "null_bearings_deg": null,
-      "hints": []
-    },
     "sw-9500-radio-romania-int-g-xx": {
       "station_id": "sw-9500-radio-romania-int-g-xx",
       "name": "Radio Romania Int.",
@@ -367,6 +353,20 @@
       "power_kw": 100.0,
       "source": "eibi",
       "site_name": "Galbeni",
+      "null_bearings_deg": null,
+      "hints": []
+    },
+    "sw-9690-radio-exterior-espa-a-n-xx": {
+      "station_id": "sw-9690-radio-exterior-espa-a-n-xx",
+      "name": "Radio Exterior Espa�a",
+      "band_class": "sw",
+      "freq_khz": 9690.0,
+      "language": null,
+      "distance_km": 1451.3,
+      "bearing_deg": 216.4,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Noblejas",
       "null_bearings_deg": null,
       "hints": []
     },
