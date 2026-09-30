@@ -29,20 +29,6 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-11650-radio-romania-int-t-en": {
-      "station_id": "sw-11650-radio-romania-int-t-en",
-      "name": "Radio Romania Int.",
-      "band_class": "sw",
-      "freq_khz": 11650.0,
-      "language": "en",
-      "distance_km": 1600.1,
-      "bearing_deg": 108.0,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Tiganesti",
-      "null_bearings_deg": null,
-      "hints": []
-    },
     "sw-12060-sm-radio-dessau-/ARM-de": {
       "station_id": "sw-12060-sm-radio-dessau-/ARM-de",
       "name": "SM Radio Dessau",
@@ -113,20 +99,6 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-9425-brother-stair-/BUL-s-en": {
-      "station_id": "sw-9425-brother-stair-/BUL-s-en",
-      "name": "Brother Stair",
-      "band_class": "sw",
-      "freq_khz": 9425.0,
-      "language": "en",
-      "distance_km": 1545.4,
-      "bearing_deg": 119.4,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Sofia-Kostinbrod",
-      "null_bearings_deg": null,
-      "hints": []
-    },
     "sw-9400-brother-stair-/BUL-s-en": {
       "station_id": "sw-9400-brother-stair-/BUL-s-en",
       "name": "Brother Stair",
@@ -141,12 +113,26 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-11750-radio-romania-int-t-de": {
-      "station_id": "sw-11750-radio-romania-int-t-de",
+    "sw-9425-brother-stair-/BUL-s-en": {
+      "station_id": "sw-9425-brother-stair-/BUL-s-en",
+      "name": "Brother Stair",
+      "band_class": "sw",
+      "freq_khz": 9425.0,
+      "language": "en",
+      "distance_km": 1545.4,
+      "bearing_deg": 119.4,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Sofia-Kostinbrod",
+      "null_bearings_deg": null,
+      "hints": []
+    },
+    "sw-11650-radio-romania-int-t-en": {
+      "station_id": "sw-11650-radio-romania-int-t-en",
       "name": "Radio Romania Int.",
       "band_class": "sw",
-      "freq_khz": 11750.0,
-      "language": "de",
+      "freq_khz": 11650.0,
+      "language": "en",
       "distance_km": 1600.1,
       "bearing_deg": 108.0,
       "power_kw": 100.0,
@@ -166,6 +152,20 @@
       "power_kw": 100.0,
       "source": "eibi",
       "site_name": "Woofferton",
+      "null_bearings_deg": null,
+      "hints": []
+    },
+    "sw-11750-radio-romania-int-t-de": {
+      "station_id": "sw-11750-radio-romania-int-t-de",
+      "name": "Radio Romania Int.",
+      "band_class": "sw",
+      "freq_khz": 11750.0,
+      "language": "de",
+      "distance_km": 1600.1,
+      "bearing_deg": 108.0,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Tiganesti",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -202,11 +202,11 @@
         "Loop auf 183 Grad, Stoerer bei 273 oder 93 Grad ausnullbar"
       ]
     },
-    "sw-7275-irrs-milano-/BUL-s-en": {
-      "station_id": "sw-7275-irrs-milano-/BUL-s-en",
+    "sw-7290-irrs-milano-/BUL-s-en": {
+      "station_id": "sw-7290-irrs-milano-/BUL-s-en",
       "name": "IRRS Milano",
       "band_class": "sw",
-      "freq_khz": 7275.0,
+      "freq_khz": 7290.0,
       "language": "en",
       "distance_km": 1545.4,
       "bearing_deg": 119.4,
@@ -216,11 +216,11 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-7290-irrs-milano-/BUL-s-en": {
-      "station_id": "sw-7290-irrs-milano-/BUL-s-en",
+    "sw-7275-irrs-milano-/BUL-s-en": {
+      "station_id": "sw-7275-irrs-milano-/BUL-s-en",
       "name": "IRRS Milano",
       "band_class": "sw",
-      "freq_khz": 7290.0,
+      "freq_khz": 7275.0,
       "language": "en",
       "distance_km": 1545.4,
       "bearing_deg": 119.4,
@@ -272,17 +272,17 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-13760-china-radio-int-ka-en": {
-      "station_id": "sw-13760-china-radio-int-ka-en",
-      "name": "China Radio Int.",
+    "sw-6005-radio-taiwan-int-/BUL-s-fr": {
+      "station_id": "sw-6005-radio-taiwan-int-/BUL-s-fr",
+      "name": "Radio Taiwan Int.",
       "band_class": "sw",
-      "freq_khz": 13760.0,
-      "language": "en",
-      "distance_km": 5364.2,
-      "bearing_deg": 75.6,
+      "freq_khz": 6005.0,
+      "language": "fr",
+      "distance_km": 1545.4,
+      "bearing_deg": 119.4,
       "power_kw": 100.0,
       "source": "eibi",
-      "site_name": "Kashi (Kashgar)",
+      "site_name": "Sofia-Kostinbrod",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -384,20 +384,6 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-7410-radio-vaticana-site-xx": {
-      "station_id": "sw-7410-radio-vaticana-site-xx",
-      "name": "Radio Vaticana",
-      "band_class": "sw",
-      "freq_khz": 7410.0,
-      "language": null,
-      "distance_km": 1080.6,
-      "bearing_deg": 154.2,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Santa Maria di Galeria",
-      "null_bearings_deg": null,
-      "hints": []
-    },
     "sw-9790-radio-taiwan-int-/BUL-s-xx": {
       "station_id": "sw-9790-radio-taiwan-int-/BUL-s-xx",
       "name": "Radio Taiwan Int.",
@@ -409,6 +395,20 @@
       "power_kw": 100.0,
       "source": "eibi",
       "site_name": "Sofia-Kostinbrod",
+      "null_bearings_deg": null,
+      "hints": []
+    },
+    "sw-7410-radio-vaticana-site-xx": {
+      "station_id": "sw-7410-radio-vaticana-site-xx",
+      "name": "Radio Vaticana",
+      "band_class": "sw",
+      "freq_khz": 7410.0,
+      "language": null,
+      "distance_km": 1080.6,
+      "bearing_deg": 154.2,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Santa Maria di Galeria",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -426,31 +426,31 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-13690-radio-romania-digital-s-xx": {
-      "station_id": "sw-13690-radio-romania-digital-s-xx",
-      "name": "Radio Romania DIGITAL",
+    "sw-13700-china-radio-int-u-xx": {
+      "station_id": "sw-13700-china-radio-int-u-xx",
+      "name": "China Radio Int.",
       "band_class": "sw",
-      "freq_khz": 13690.0,
+      "freq_khz": 13700.0,
       "language": null,
-      "distance_km": 1673.9,
-      "bearing_deg": 106.9,
+      "distance_km": 5767.8,
+      "bearing_deg": 64.0,
       "power_kw": 100.0,
       "source": "eibi",
-      "site_name": "Saftica",
+      "site_name": "Urumqi",
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-11975-radio-romania-int-g-xx": {
-      "station_id": "sw-11975-radio-romania-int-g-xx",
-      "name": "Radio Romania Int.",
+    "sw-13805-cnr1-jammer-firedrake-u-xx": {
+      "station_id": "sw-13805-cnr1-jammer-firedrake-u-xx",
+      "name": "CNR1 Jammer/Firedrake",
       "band_class": "sw",
-      "freq_khz": 11975.0,
+      "freq_khz": 13805.0,
       "language": null,
-      "distance_km": 1533.7,
-      "bearing_deg": 99.9,
+      "distance_km": 5767.8,
+      "bearing_deg": 64.0,
       "power_kw": 100.0,
       "source": "eibi",
-      "site_name": "Galbeni",
+      "site_name": "Urumqi",
       "null_bearings_deg": null,
       "hints": []
     }
