@@ -57,11 +57,11 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-11860-radio-romania-int-g-fr": {
-      "station_id": "sw-11860-radio-romania-int-g-fr",
+    "sw-11830-radio-romania-int-g-fr": {
+      "station_id": "sw-11830-radio-romania-int-g-fr",
       "name": "Radio Romania Int.",
       "band_class": "sw",
-      "freq_khz": 11860.0,
+      "freq_khz": 11830.0,
       "language": "fr",
       "distance_km": 1533.7,
       "bearing_deg": 99.9,
@@ -71,11 +71,11 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-11830-radio-romania-int-g-fr": {
-      "station_id": "sw-11830-radio-romania-int-g-fr",
+    "sw-11860-radio-romania-int-g-fr": {
+      "station_id": "sw-11860-radio-romania-int-g-fr",
       "name": "Radio Romania Int.",
       "band_class": "sw",
-      "freq_khz": 11830.0,
+      "freq_khz": 11860.0,
       "language": "fr",
       "distance_km": 1533.7,
       "bearing_deg": 99.9,
@@ -183,11 +183,11 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-9400-brother-stair-/BUL-s-en": {
-      "station_id": "sw-9400-brother-stair-/BUL-s-en",
+    "sw-9425-brother-stair-/BUL-s-en": {
+      "station_id": "sw-9425-brother-stair-/BUL-s-en",
       "name": "Brother Stair",
       "band_class": "sw",
-      "freq_khz": 9400.0,
+      "freq_khz": 9425.0,
       "language": "en",
       "distance_km": 1545.4,
       "bearing_deg": 119.4,
@@ -197,11 +197,11 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-9425-brother-stair-/BUL-s-en": {
-      "station_id": "sw-9425-brother-stair-/BUL-s-en",
+    "sw-9400-brother-stair-/BUL-s-en": {
+      "station_id": "sw-9400-brother-stair-/BUL-s-en",
       "name": "Brother Stair",
       "band_class": "sw",
-      "freq_khz": 9425.0,
+      "freq_khz": 9400.0,
       "language": "en",
       "distance_km": 1545.4,
       "bearing_deg": 119.4,
@@ -342,20 +342,6 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-9500-radio-romania-int-g-xx": {
-      "station_id": "sw-9500-radio-romania-int-g-xx",
-      "name": "Radio Romania Int.",
-      "band_class": "sw",
-      "freq_khz": 9500.0,
-      "language": null,
-      "distance_km": 1533.7,
-      "bearing_deg": 99.9,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Galbeni",
-      "null_bearings_deg": null,
-      "hints": []
-    },
     "sw-9690-radio-exterior-espa-a-n-xx": {
       "station_id": "sw-9690-radio-exterior-espa-a-n-xx",
       "name": "Radio Exterior Espa�a",
@@ -367,6 +353,20 @@
       "power_kw": 100.0,
       "source": "eibi",
       "site_name": "Noblejas",
+      "null_bearings_deg": null,
+      "hints": []
+    },
+    "sw-9500-radio-romania-int-g-xx": {
+      "station_id": "sw-9500-radio-romania-int-g-xx",
+      "name": "Radio Romania Int.",
+      "band_class": "sw",
+      "freq_khz": 9500.0,
+      "language": null,
+      "distance_km": 1533.7,
+      "bearing_deg": 99.9,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Galbeni",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -398,20 +398,6 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-9425-iran-international-tv-/BUL-s-xx": {
-      "station_id": "sw-9425-iran-international-tv-/BUL-s-xx",
-      "name": "Iran International TV",
-      "band_class": "sw",
-      "freq_khz": 9425.0,
-      "language": null,
-      "distance_km": 1545.4,
-      "bearing_deg": 119.4,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Sofia-Kostinbrod",
-      "null_bearings_deg": null,
-      "hints": []
-    },
     "sw-9710-radio-vaticana-site-xx": {
       "station_id": "sw-9710-radio-vaticana-site-xx",
       "name": "Radio Vaticana",
@@ -423,6 +409,20 @@
       "power_kw": 100.0,
       "source": "eibi",
       "site_name": "Santa Maria di Galeria",
+      "null_bearings_deg": null,
+      "hints": []
+    },
+    "sw-9425-iran-international-tv-/BUL-s-xx": {
+      "station_id": "sw-9425-iran-international-tv-/BUL-s-xx",
+      "name": "Iran International TV",
+      "band_class": "sw",
+      "freq_khz": 9425.0,
+      "language": null,
+      "distance_km": 1545.4,
+      "bearing_deg": 119.4,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Sofia-Kostinbrod",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -440,17 +440,17 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-7410-radio-vaticana-site-xx": {
-      "station_id": "sw-7410-radio-vaticana-site-xx",
-      "name": "Radio Vaticana",
+    "sw-7300-hcjb-r-akhbar-mufriha-/G-w-xx": {
+      "station_id": "sw-7300-hcjb-r-akhbar-mufriha-/G-w-xx",
+      "name": "HCJB R.Akhbar Mufriha",
       "band_class": "sw",
-      "freq_khz": 7410.0,
+      "freq_khz": 7300.0,
       "language": null,
-      "distance_km": 1080.6,
-      "bearing_deg": 154.2,
+      "distance_km": 662.7,
+      "bearing_deg": 286.8,
       "power_kw": 100.0,
       "source": "eibi",
-      "site_name": "Santa Maria di Galeria",
+      "site_name": "Woofferton",
       "null_bearings_deg": null,
       "hints": []
     }
