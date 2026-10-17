@@ -1,0 +1,5474 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-17",
+  "generated_at": "2026-10-17T03:15:31.035474+00:00",
+  "eibi_season": "a26",
+  "days_until_season_change": 8,
+  "f107_flux": 126.66666666666667,
+  "entries": [
+    {
+      "station_id": "sw-11975-radio-romania-int-g-fr",
+      "list_kind": "main",
+      "best_by_kp": [
+        {
+          "kp": 0,
+          "t": "22:00",
+          "score": 74.9,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.25,
+            "owf_mhz": 12.96,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 1.0
+          }
+        },
+        {
+          "kp": 1,
+          "t": "22:00",
+          "score": 75.1,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.9,
+            "owf_mhz": 12.66,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.977
+          }
+        },
+        {
+          "kp": 2,
+          "t": "22:00",
+          "score": 75.2,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.55,
+            "owf_mhz": 12.37,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.954
+          }
+        },
+        {
+          "kp": 3,
+          "t": "22:00",
+          "score": 75.3,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.2,
+            "owf_mhz": 12.07,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.931
+          }
+        },
+        {
+          "kp": 4,
+          "t": "22:00",
+          "score": 69.4,
+          "gate": 0.927,
+          "components": {
+            "muf_mhz": 13.85,
+            "owf_mhz": 11.77,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.909
+          }
+        },
+        {
+          "kp": 5,
+          "t": "22:00",
+          "score": 59.0,
+          "gate": 0.816,
+          "components": {
+            "muf_mhz": 13.5,
+            "owf_mhz": 11.48,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.886
+          }
+        },
+        {
+          "kp": 6,
+          "t": "22:00",
+          "score": 47.2,
+          "gate": 0.698,
+          "components": {
+            "muf_mhz": 13.15,
+            "owf_mhz": 11.18,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.863
+          }
+        },
+        {
+          "kp": 7,
+          "t": "22:00",
+          "score": 34.7,
+          "gate": 0.574,
+          "components": {
+            "muf_mhz": 12.81,
+            "owf_mhz": 10.88,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.84
+          }
+        },
+        {
+          "kp": 8,
+          "t": "22:00",
+          "score": 22.6,
+          "gate": 0.443,
+          "components": {
+            "muf_mhz": 12.46,
+            "owf_mhz": 10.59,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.817
+          }
+        },
+        {
+          "kp": 9,
+          "t": "22:00",
+          "score": 12.2,
+          "gate": 0.305,
+          "components": {
+            "muf_mhz": 12.11,
+            "owf_mhz": 10.29,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.794
+          }
+        }
+      ],
+      "rarity": {
+        "baseline": 0.617,
+        "today": null,
+        "reason": null
+      },
+      "interest_rank_score": 56.28
+    },
+    {
+      "station_id": "sw-11975-radio-romania-int-g-en",
+      "list_kind": "main",
+      "best_by_kp": [
+        {
+          "kp": 0,
+          "t": "22:30",
+          "score": 74.9,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.25,
+            "owf_mhz": 12.96,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 1.0
+          }
+        },
+        {
+          "kp": 1,
+          "t": "22:30",
+          "score": 75.1,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.9,
+            "owf_mhz": 12.66,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.977
+          }
+        },
+        {
+          "kp": 2,
+          "t": "22:30",
+          "score": 75.2,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.55,
+            "owf_mhz": 12.37,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.954
+          }
+        },
+        {
+          "kp": 3,
+          "t": "22:30",
+          "score": 75.3,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.2,
+            "owf_mhz": 12.07,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.931
+          }
+        },
+        {
+          "kp": 4,
+          "t": "22:30",
+          "score": 69.4,
+          "gate": 0.927,
+          "components": {
+            "muf_mhz": 13.85,
+            "owf_mhz": 11.77,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.909
+          }
+        },
+        {
+          "kp": 5,
+          "t": "22:30",
+          "score": 59.0,
+          "gate": 0.816,
+          "components": {
+            "muf_mhz": 13.5,
+            "owf_mhz": 11.48,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.886
+          }
+        },
+        {
+          "kp": 6,
+          "t": "22:30",
+          "score": 47.2,
+          "gate": 0.698,
+          "components": {
+            "muf_mhz": 13.15,
+            "owf_mhz": 11.18,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.863
+          }
+        },
+        {
+          "kp": 7,
+          "t": "22:30",
+          "score": 34.7,
+          "gate": 0.574,
+          "components": {
+            "muf_mhz": 12.81,
+            "owf_mhz": 10.88,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.84
+          }
+        },
+        {
+          "kp": 8,
+          "t": "22:30",
+          "score": 22.6,
+          "gate": 0.443,
+          "components": {
+            "muf_mhz": 12.46,
+            "owf_mhz": 10.59,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.817
+          }
+        },
+        {
+          "kp": 9,
+          "t": "22:30",
+          "score": 12.2,
+          "gate": 0.305,
+          "components": {
+            "muf_mhz": 12.11,
+            "owf_mhz": 10.29,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.794
+          }
+        }
+      ],
+      "rarity": {
+        "baseline": 0.617,
+        "today": null,
+        "reason": null
+      },
+      "interest_rank_score": 56.28
+    },
+    {
+      "station_id": "sw-11750-radio-romania-int-t-de",
+      "list_kind": "main",
+      "best_by_kp": [
+        {
+          "kp": 0,
+          "t": "20:00",
+          "score": 74.1,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.64,
+            "owf_mhz": 13.29,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.376,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 1.0
+          }
+        },
+        {
+          "kp": 1,
+          "t": "20:00",
+          "score": 74.3,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.37,
+            "owf_mhz": 13.06,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.376,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.983
+          }
+        },
+        {
+          "kp": 2,
+          "t": "20:00",
+          "score": 74.5,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.09,
+            "owf_mhz": 12.83,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.376,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.965
+          }
+        },
+        {
+          "kp": 3,
+          "t": "20:00",
+          "score": 74.7,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.82,
+            "owf_mhz": 12.6,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.376,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.948
+          }
+        },
+        {
+          "kp": 4,
+          "t": "20:00",
+          "score": 74.8,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.55,
+            "owf_mhz": 12.37,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.376,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.93
+          }
+        },
+        {
+          "kp": 5,
+          "t": "20:00",
+          "score": 74.9,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.28,
+            "owf_mhz": 12.14,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.376,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.913
+          }
+        },
+        {
+          "kp": 6,
+          "t": "20:00",
+          "score": 75.0,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.01,
+            "owf_mhz": 11.91,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.376,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.896
+          }
+        },
+        {
+          "kp": 7,
+          "t": "20:00",
+          "score": 72.9,
+          "gate": 0.972,
+          "components": {
+            "muf_mhz": 13.73,
+            "owf_mhz": 11.67,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.376,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.878
+          }
+        },
+        {
+          "kp": 8,
+          "t": "20:00",
+          "score": 65.4,
+          "gate": 0.886,
+          "components": {
+            "muf_mhz": 13.46,
+            "owf_mhz": 11.44,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.376,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.861
+          }
+        },
+        {
+          "kp": 9,
+          "t": "20:00",
+          "score": 56.8,
+          "gate": 0.796,
+          "components": {
+            "muf_mhz": 13.19,
+            "owf_mhz": 11.21,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.376,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.843
+          }
+        }
+      ],
+      "rarity": {
+        "baseline": 0.624,
+        "today": null,
+        "reason": null
+      },
+      "interest_rank_score": 56.14
+    },
+    {
+      "station_id": "sw-11650-radio-romania-int-t-en",
+      "list_kind": "main",
+      "best_by_kp": [
+        {
+          "kp": 0,
+          "t": "00:00",
+          "score": 73.9,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.64,
+            "owf_mhz": 13.29,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.376,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 1.0
+          }
+        },
+        {
+          "kp": 1,
+          "t": "00:00",
+          "score": 74.2,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.37,
+            "owf_mhz": 13.06,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.376,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.983
+          }
+        },
+        {
+          "kp": 2,
+          "t": "00:00",
+          "score": 74.4,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.09,
+            "owf_mhz": 12.83,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.376,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.965
+          }
+        },
+        {
+          "kp": 3,
+          "t": "00:00",
+          "score": 74.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.82,
+            "owf_mhz": 12.6,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.376,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.948
+          }
+        },
+        {
+          "kp": 4,
+          "t": "00:00",
+          "score": 74.8,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.55,
+            "owf_mhz": 12.37,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.376,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.93
+          }
+        },
+        {
+          "kp": 5,
+          "t": "00:00",
+          "score": 74.9,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.28,
+            "owf_mhz": 12.14,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.376,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.913
+          }
+        },
+        {
+          "kp": 6,
+          "t": "00:00",
+          "score": 75.0,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.01,
+            "owf_mhz": 11.91,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.376,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.896
+          }
+        },
+        {
+          "kp": 7,
+          "t": "00:00",
+          "score": 75.0,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 13.73,
+            "owf_mhz": 11.67,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.376,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.878
+          }
+        },
+        {
+          "kp": 8,
+          "t": "00:00",
+          "score": 68.8,
+          "gate": 0.923,
+          "components": {
+            "muf_mhz": 13.46,
+            "owf_mhz": 11.44,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.376,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.861
+          }
+        },
+        {
+          "kp": 9,
+          "t": "00:00",
+          "score": 60.5,
+          "gate": 0.834,
+          "components": {
+            "muf_mhz": 13.19,
+            "owf_mhz": 11.21,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.376,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.843
+          }
+        }
+      ],
+      "rarity": {
+        "baseline": 0.624,
+        "today": null,
+        "reason": null
+      },
+      "interest_rank_score": 56.06
+    },
+    {
+      "station_id": "sw-11830-radio-romania-int-g-fr",
+      "list_kind": "main",
+      "best_by_kp": [
+        {
+          "kp": 0,
+          "t": "18:30",
+          "score": 73.8,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.72,
+            "owf_mhz": 13.36,
+            "luf_mhz": 4.49,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 0.524,
+            "geomagnetic": 1.0
+          }
+        },
+        {
+          "kp": 1,
+          "t": "18:30",
+          "score": 74.3,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.36,
+            "owf_mhz": 13.06,
+            "luf_mhz": 4.49,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 0.524,
+            "geomagnetic": 0.977
+          }
+        },
+        {
+          "kp": 2,
+          "t": "18:30",
+          "score": 74.7,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.0,
+            "owf_mhz": 12.75,
+            "luf_mhz": 4.49,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 0.524,
+            "geomagnetic": 0.954
+          }
+        },
+        {
+          "kp": 3,
+          "t": "18:30",
+          "score": 75.0,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.64,
+            "owf_mhz": 12.45,
+            "luf_mhz": 4.49,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 0.524,
+            "geomagnetic": 0.931
+          }
+        },
+        {
+          "kp": 4,
+          "t": "18:30",
+          "score": 75.2,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.28,
+            "owf_mhz": 12.14,
+            "luf_mhz": 4.49,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 0.524,
+            "geomagnetic": 0.909
+          }
+        },
+        {
+          "kp": 5,
+          "t": "18:30",
+          "score": 75.3,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 13.92,
+            "owf_mhz": 11.83,
+            "luf_mhz": 4.49,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 0.524,
+            "geomagnetic": 0.886
+          }
+        },
+        {
+          "kp": 6,
+          "t": "18:00",
+          "score": 75.3,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.06,
+            "owf_mhz": 11.95,
+            "luf_mhz": 6.54,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 0.095,
+            "geomagnetic": 0.863
+          }
+        },
+        {
+          "kp": 7,
+          "t": "18:00",
+          "score": 69.4,
+          "gate": 0.928,
+          "components": {
+            "muf_mhz": 13.68,
+            "owf_mhz": 11.63,
+            "luf_mhz": 6.54,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 0.095,
+            "geomagnetic": 0.84
+          }
+        },
+        {
+          "kp": 8,
+          "t": "18:00",
+          "score": 58.1,
+          "gate": 0.807,
+          "components": {
+            "muf_mhz": 13.31,
+            "owf_mhz": 11.32,
+            "luf_mhz": 6.54,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 0.095,
+            "geomagnetic": 0.817
+          }
+        },
+        {
+          "kp": 9,
+          "t": "18:00",
+          "score": 45.2,
+          "gate": 0.679,
+          "components": {
+            "muf_mhz": 12.94,
+            "owf_mhz": 11.0,
+            "luf_mhz": 6.54,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 0.095,
+            "geomagnetic": 0.794
+          }
+        }
+      ],
+      "rarity": {
+        "baseline": 0.617,
+        "today": null,
+        "reason": null
+      },
+      "interest_rank_score": 55.91
+    },
+    {
+      "station_id": "sw-11860-radio-romania-int-g-fr",
+      "list_kind": "main",
+      "best_by_kp": [
+        {
+          "kp": 0,
+          "t": "18:30",
+          "score": 73.9,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.72,
+            "owf_mhz": 13.36,
+            "luf_mhz": 4.49,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 0.524,
+            "geomagnetic": 1.0
+          }
+        },
+        {
+          "kp": 1,
+          "t": "18:30",
+          "score": 74.3,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.36,
+            "owf_mhz": 13.06,
+            "luf_mhz": 4.49,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 0.524,
+            "geomagnetic": 0.977
+          }
+        },
+        {
+          "kp": 2,
+          "t": "18:30",
+          "score": 74.7,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.0,
+            "owf_mhz": 12.75,
+            "luf_mhz": 4.49,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 0.524,
+            "geomagnetic": 0.954
+          }
+        },
+        {
+          "kp": 3,
+          "t": "18:30",
+          "score": 75.0,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.64,
+            "owf_mhz": 12.45,
+            "luf_mhz": 4.49,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 0.524,
+            "geomagnetic": 0.931
+          }
+        },
+        {
+          "kp": 4,
+          "t": "18:30",
+          "score": 75.2,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.28,
+            "owf_mhz": 12.14,
+            "luf_mhz": 4.49,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 0.524,
+            "geomagnetic": 0.909
+          }
+        },
+        {
+          "kp": 5,
+          "t": "18:00",
+          "score": 75.1,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.43,
+            "owf_mhz": 12.27,
+            "luf_mhz": 6.54,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 0.095,
+            "geomagnetic": 0.886
+          }
+        },
+        {
+          "kp": 6,
+          "t": "18:00",
+          "score": 75.3,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.06,
+            "owf_mhz": 11.95,
+            "luf_mhz": 6.54,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 0.095,
+            "geomagnetic": 0.863
+          }
+        },
+        {
+          "kp": 7,
+          "t": "18:00",
+          "score": 68.5,
+          "gate": 0.917,
+          "components": {
+            "muf_mhz": 13.68,
+            "owf_mhz": 11.63,
+            "luf_mhz": 6.54,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 0.095,
+            "geomagnetic": 0.84
+          }
+        },
+        {
+          "kp": 8,
+          "t": "18:00",
+          "score": 57.0,
+          "gate": 0.795,
+          "components": {
+            "muf_mhz": 13.31,
+            "owf_mhz": 11.32,
+            "luf_mhz": 6.54,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 0.095,
+            "geomagnetic": 0.817
+          }
+        },
+        {
+          "kp": 9,
+          "t": "18:00",
+          "score": 44.0,
+          "gate": 0.667,
+          "components": {
+            "muf_mhz": 12.94,
+            "owf_mhz": 11.0,
+            "luf_mhz": 6.54,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 0.095,
+            "geomagnetic": 0.794
+          }
+        }
+      ],
+      "rarity": {
+        "baseline": 0.617,
+        "today": null,
+        "reason": null
+      },
+      "interest_rank_score": 55.91
+    },
+    {
+      "station_id": "sw-11600-brother-stair-/BUL-s-en",
+      "list_kind": "main",
+      "best_by_kp": [
+        {
+          "kp": 0,
+          "t": "18:30",
+          "score": 72.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.95,
+            "owf_mhz": 13.56,
+            "luf_mhz": 5.17,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 0.381,
+            "geomagnetic": 1.0
+          }
+        },
+        {
+          "kp": 1,
+          "t": "18:30",
+          "score": 72.9,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.76,
+            "owf_mhz": 13.4,
+            "luf_mhz": 5.17,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 0.381,
+            "geomagnetic": 0.988
+          }
+        },
+        {
+          "kp": 2,
+          "t": "18:30",
+          "score": 73.2,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.58,
+            "owf_mhz": 13.24,
+            "luf_mhz": 5.17,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 0.381,
+            "geomagnetic": 0.977
+          }
+        },
+        {
+          "kp": 3,
+          "t": "18:30",
+          "score": 73.5,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.39,
+            "owf_mhz": 13.08,
+            "luf_mhz": 5.17,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 0.381,
+            "geomagnetic": 0.965
+          }
+        },
+        {
+          "kp": 4,
+          "t": "18:30",
+          "score": 73.8,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.21,
+            "owf_mhz": 12.92,
+            "luf_mhz": 5.17,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 0.381,
+            "geomagnetic": 0.953
+          }
+        },
+        {
+          "kp": 5,
+          "t": "18:30",
+          "score": 74.1,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.02,
+            "owf_mhz": 12.77,
+            "luf_mhz": 5.17,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 0.381,
+            "geomagnetic": 0.942
+          }
+        },
+        {
+          "kp": 6,
+          "t": "18:30",
+          "score": 74.3,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.83,
+            "owf_mhz": 12.61,
+            "luf_mhz": 5.17,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 0.381,
+            "geomagnetic": 0.93
+          }
+        },
+        {
+          "kp": 7,
+          "t": "18:30",
+          "score": 74.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.65,
+            "owf_mhz": 12.45,
+            "luf_mhz": 5.17,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 0.381,
+            "geomagnetic": 0.918
+          }
+        },
+        {
+          "kp": 8,
+          "t": "18:30",
+          "score": 74.8,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.46,
+            "owf_mhz": 12.29,
+            "luf_mhz": 5.17,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 0.381,
+            "geomagnetic": 0.907
+          }
+        },
+        {
+          "kp": 9,
+          "t": "18:30",
+          "score": 75.0,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.28,
+            "owf_mhz": 12.14,
+            "luf_mhz": 5.17,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 0.381,
+            "geomagnetic": 0.895
+          }
+        }
+      ],
+      "rarity": {
+        "baseline": 0.619,
+        "today": null,
+        "reason": null
+      },
+      "interest_rank_score": 54.89
+    },
+    {
+      "station_id": "sw-9705-radio-vaticana-site-fr",
+      "list_kind": "main",
+      "best_by_kp": [
+        {
+          "kp": 0,
+          "t": "21:00",
+          "score": 77.3,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 12.24,
+            "owf_mhz": 10.4,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 1.0
+          }
+        },
+        {
+          "kp": 1,
+          "t": "21:00",
+          "score": 77.4,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 12.14,
+            "owf_mhz": 10.32,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.992
+          }
+        },
+        {
+          "kp": 2,
+          "t": "21:00",
+          "score": 77.4,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 12.04,
+            "owf_mhz": 10.23,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.984
+          }
+        },
+        {
+          "kp": 3,
+          "t": "21:00",
+          "score": 77.5,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 11.94,
+            "owf_mhz": 10.15,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.975
+          }
+        },
+        {
+          "kp": 4,
+          "t": "21:00",
+          "score": 77.5,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 11.84,
+            "owf_mhz": 10.06,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.967
+          }
+        },
+        {
+          "kp": 5,
+          "t": "21:00",
+          "score": 77.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 11.74,
+            "owf_mhz": 9.98,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.959
+          }
+        },
+        {
+          "kp": 6,
+          "t": "21:00",
+          "score": 77.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 11.64,
+            "owf_mhz": 9.89,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.951
+          }
+        },
+        {
+          "kp": 7,
+          "t": "21:00",
+          "score": 77.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 11.54,
+            "owf_mhz": 9.81,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.943
+          }
+        },
+        {
+          "kp": 8,
+          "t": "21:00",
+          "score": 77.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 11.44,
+            "owf_mhz": 9.72,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.934
+          }
+        },
+        {
+          "kp": 9,
+          "t": "21:00",
+          "score": 75.2,
+          "gate": 0.969,
+          "components": {
+            "muf_mhz": 11.34,
+            "owf_mhz": 9.64,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.926
+          }
+        }
+      ],
+      "rarity": {
+        "baseline": 0.559,
+        "today": null,
+        "reason": null
+      },
+      "interest_rank_score": 54.6
+    },
+    {
+      "station_id": "sw-9705-radio-vaticana-site-en",
+      "list_kind": "main",
+      "best_by_kp": [
+        {
+          "kp": 0,
+          "t": "22:00",
+          "score": 77.3,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 12.24,
+            "owf_mhz": 10.4,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 1.0
+          }
+        },
+        {
+          "kp": 1,
+          "t": "22:00",
+          "score": 77.4,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 12.14,
+            "owf_mhz": 10.32,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.992
+          }
+        },
+        {
+          "kp": 2,
+          "t": "22:00",
+          "score": 77.4,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 12.04,
+            "owf_mhz": 10.23,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.984
+          }
+        },
+        {
+          "kp": 3,
+          "t": "22:00",
+          "score": 77.5,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 11.94,
+            "owf_mhz": 10.15,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.975
+          }
+        },
+        {
+          "kp": 4,
+          "t": "22:00",
+          "score": 77.5,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 11.84,
+            "owf_mhz": 10.06,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.967
+          }
+        },
+        {
+          "kp": 5,
+          "t": "22:00",
+          "score": 77.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 11.74,
+            "owf_mhz": 9.98,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.959
+          }
+        },
+        {
+          "kp": 6,
+          "t": "22:00",
+          "score": 77.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 11.64,
+            "owf_mhz": 9.89,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.951
+          }
+        },
+        {
+          "kp": 7,
+          "t": "22:00",
+          "score": 77.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 11.54,
+            "owf_mhz": 9.81,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.943
+          }
+        },
+        {
+          "kp": 8,
+          "t": "22:00",
+          "score": 77.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 11.44,
+            "owf_mhz": 9.72,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.934
+          }
+        },
+        {
+          "kp": 9,
+          "t": "22:00",
+          "score": 75.2,
+          "gate": 0.969,
+          "components": {
+            "muf_mhz": 11.34,
+            "owf_mhz": 9.64,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.926
+          }
+        }
+      ],
+      "rarity": {
+        "baseline": 0.559,
+        "today": null,
+        "reason": null
+      },
+      "interest_rank_score": 54.6
+    },
+    {
+      "station_id": "sw-9740-radio-romania-int-g-en",
+      "list_kind": "main",
+      "best_by_kp": [
+        {
+          "kp": 0,
+          "t": "22:30",
+          "score": 71.0,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.25,
+            "owf_mhz": 12.96,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 1.0
+          }
+        },
+        {
+          "kp": 1,
+          "t": "22:30",
+          "score": 71.5,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.9,
+            "owf_mhz": 12.66,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.977
+          }
+        },
+        {
+          "kp": 2,
+          "t": "22:30",
+          "score": 72.1,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.55,
+            "owf_mhz": 12.37,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.954
+          }
+        },
+        {
+          "kp": 3,
+          "t": "22:30",
+          "score": 72.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.2,
+            "owf_mhz": 12.07,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.931
+          }
+        },
+        {
+          "kp": 4,
+          "t": "22:30",
+          "score": 73.1,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 13.85,
+            "owf_mhz": 11.77,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.909
+          }
+        },
+        {
+          "kp": 5,
+          "t": "22:30",
+          "score": 73.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 13.5,
+            "owf_mhz": 11.48,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.886
+          }
+        },
+        {
+          "kp": 6,
+          "t": "22:30",
+          "score": 74.0,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 13.15,
+            "owf_mhz": 11.18,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.863
+          }
+        },
+        {
+          "kp": 7,
+          "t": "22:30",
+          "score": 74.4,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 12.81,
+            "owf_mhz": 10.88,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.84
+          }
+        },
+        {
+          "kp": 8,
+          "t": "22:30",
+          "score": 74.8,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 12.46,
+            "owf_mhz": 10.59,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.817
+          }
+        },
+        {
+          "kp": 9,
+          "t": "22:30",
+          "score": 75.1,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 12.11,
+            "owf_mhz": 10.29,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.794
+          }
+        }
+      ],
+      "rarity": {
+        "baseline": 0.617,
+        "today": null,
+        "reason": null
+      },
+      "interest_rank_score": 53.96
+    },
+    {
+      "station_id": "sw-12060-sm-radio-dessau-/ARM-de",
+      "list_kind": "main",
+      "best_by_kp": [
+        {
+          "kp": 0,
+          "t": "19:30",
+          "score": 64.3,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 20.84,
+            "owf_mhz": 17.72,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.266,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 1.0
+          }
+        },
+        {
+          "kp": 1,
+          "t": "19:30",
+          "score": 64.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 20.59,
+            "owf_mhz": 17.5,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.266,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.988
+          }
+        },
+        {
+          "kp": 2,
+          "t": "19:30",
+          "score": 64.9,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 20.33,
+            "owf_mhz": 17.28,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.266,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.975
+          }
+        },
+        {
+          "kp": 3,
+          "t": "19:30",
+          "score": 65.2,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 20.07,
+            "owf_mhz": 17.06,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.266,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.963
+          }
+        },
+        {
+          "kp": 4,
+          "t": "19:30",
+          "score": 65.5,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 19.81,
+            "owf_mhz": 16.84,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.266,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.95
+          }
+        },
+        {
+          "kp": 5,
+          "t": "19:30",
+          "score": 65.8,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 19.55,
+            "owf_mhz": 16.62,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.266,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.938
+          }
+        },
+        {
+          "kp": 6,
+          "t": "19:30",
+          "score": 66.1,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 19.29,
+            "owf_mhz": 16.4,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.266,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.926
+          }
+        },
+        {
+          "kp": 7,
+          "t": "19:30",
+          "score": 66.4,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 19.04,
+            "owf_mhz": 16.18,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.266,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.913
+          }
+        },
+        {
+          "kp": 8,
+          "t": "19:30",
+          "score": 66.7,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 18.78,
+            "owf_mhz": 15.96,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.266,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.901
+          }
+        },
+        {
+          "kp": 9,
+          "t": "19:30",
+          "score": 67.0,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 18.52,
+            "owf_mhz": 15.74,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.266,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.889
+          }
+        }
+      ],
+      "rarity": {
+        "baseline": 0.734,
+        "today": null,
+        "reason": null
+      },
+      "interest_rank_score": 53.91
+    },
+    {
+      "station_id": "sw-9575-radio-romania-int-g-fr",
+      "list_kind": "main",
+      "best_by_kp": [
+        {
+          "kp": 0,
+          "t": "22:00",
+          "score": 70.5,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.25,
+            "owf_mhz": 12.96,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 1.0
+          }
+        },
+        {
+          "kp": 1,
+          "t": "22:00",
+          "score": 71.1,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.9,
+            "owf_mhz": 12.66,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.977
+          }
+        },
+        {
+          "kp": 2,
+          "t": "22:00",
+          "score": 71.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.55,
+            "owf_mhz": 12.37,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.954
+          }
+        },
+        {
+          "kp": 3,
+          "t": "22:00",
+          "score": 72.2,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.2,
+            "owf_mhz": 12.07,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.931
+          }
+        },
+        {
+          "kp": 4,
+          "t": "22:00",
+          "score": 72.7,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 13.85,
+            "owf_mhz": 11.77,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.909
+          }
+        },
+        {
+          "kp": 5,
+          "t": "22:00",
+          "score": 73.2,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 13.5,
+            "owf_mhz": 11.48,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.886
+          }
+        },
+        {
+          "kp": 6,
+          "t": "22:00",
+          "score": 73.7,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 13.15,
+            "owf_mhz": 11.18,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.863
+          }
+        },
+        {
+          "kp": 7,
+          "t": "22:00",
+          "score": 74.2,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 12.81,
+            "owf_mhz": 10.88,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.84
+          }
+        },
+        {
+          "kp": 8,
+          "t": "22:00",
+          "score": 74.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 12.46,
+            "owf_mhz": 10.59,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.817
+          }
+        },
+        {
+          "kp": 9,
+          "t": "22:00",
+          "score": 74.9,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 12.11,
+            "owf_mhz": 10.29,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.794
+          }
+        }
+      ],
+      "rarity": {
+        "baseline": 0.617,
+        "today": null,
+        "reason": null
+      },
+      "interest_rank_score": 53.59
+    },
+    {
+      "station_id": "sw-9585-bible-voice-/BUL-s-en",
+      "list_kind": "main",
+      "best_by_kp": [
+        {
+          "kp": 0,
+          "t": "19:30",
+          "score": 70.4,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.32,
+            "owf_mhz": 13.02,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 1.0
+          }
+        },
+        {
+          "kp": 1,
+          "t": "19:30",
+          "score": 70.7,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.14,
+            "owf_mhz": 12.87,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.988
+          }
+        },
+        {
+          "kp": 2,
+          "t": "19:30",
+          "score": 71.0,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.96,
+            "owf_mhz": 12.72,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.977
+          }
+        },
+        {
+          "kp": 3,
+          "t": "19:30",
+          "score": 71.2,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.78,
+            "owf_mhz": 12.56,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.965
+          }
+        },
+        {
+          "kp": 4,
+          "t": "19:30",
+          "score": 71.5,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.6,
+            "owf_mhz": 12.41,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.953
+          }
+        },
+        {
+          "kp": 5,
+          "t": "19:30",
+          "score": 71.8,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.42,
+            "owf_mhz": 12.26,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.942
+          }
+        },
+        {
+          "kp": 6,
+          "t": "19:30",
+          "score": 72.1,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.25,
+            "owf_mhz": 12.11,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.93
+          }
+        },
+        {
+          "kp": 7,
+          "t": "19:30",
+          "score": 72.4,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.07,
+            "owf_mhz": 11.96,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.918
+          }
+        },
+        {
+          "kp": 8,
+          "t": "19:30",
+          "score": 72.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 13.89,
+            "owf_mhz": 11.81,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.907
+          }
+        },
+        {
+          "kp": 9,
+          "t": "19:30",
+          "score": 72.9,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 13.71,
+            "owf_mhz": 11.65,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.895
+          }
+        }
+      ],
+      "rarity": {
+        "baseline": 0.619,
+        "today": null,
+        "reason": null
+      },
+      "interest_rank_score": 53.24
+    },
+    {
+      "station_id": "sw-9570-radio-romania-digital-t-de",
+      "list_kind": "main",
+      "best_by_kp": [
+        {
+          "kp": 0,
+          "t": "20:00",
+          "score": 69.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.64,
+            "owf_mhz": 13.29,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.376,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 1.0
+          }
+        },
+        {
+          "kp": 1,
+          "t": "20:00",
+          "score": 70.0,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.37,
+            "owf_mhz": 13.06,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.376,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.983
+          }
+        },
+        {
+          "kp": 2,
+          "t": "20:00",
+          "score": 70.5,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.09,
+            "owf_mhz": 12.83,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.376,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.965
+          }
+        },
+        {
+          "kp": 3,
+          "t": "20:00",
+          "score": 70.9,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.82,
+            "owf_mhz": 12.6,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.376,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.948
+          }
+        },
+        {
+          "kp": 4,
+          "t": "20:00",
+          "score": 71.3,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.55,
+            "owf_mhz": 12.37,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.376,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.93
+          }
+        },
+        {
+          "kp": 5,
+          "t": "20:00",
+          "score": 71.8,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.28,
+            "owf_mhz": 12.14,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.376,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.913
+          }
+        },
+        {
+          "kp": 6,
+          "t": "20:00",
+          "score": 72.2,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.01,
+            "owf_mhz": 11.91,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.376,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.896
+          }
+        },
+        {
+          "kp": 7,
+          "t": "20:00",
+          "score": 72.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 13.73,
+            "owf_mhz": 11.67,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.376,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.878
+          }
+        },
+        {
+          "kp": 8,
+          "t": "20:00",
+          "score": 73.0,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 13.46,
+            "owf_mhz": 11.44,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.376,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.861
+          }
+        },
+        {
+          "kp": 9,
+          "t": "20:00",
+          "score": 73.4,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 13.19,
+            "owf_mhz": 11.21,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.376,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.843
+          }
+        }
+      ],
+      "rarity": {
+        "baseline": 0.624,
+        "today": null,
+        "reason": null
+      },
+      "interest_rank_score": 53.13
+    },
+    {
+      "station_id": "sw-9425-brother-stair-/BUL-s-en",
+      "list_kind": "main",
+      "best_by_kp": [
+        {
+          "kp": 0,
+          "t": "00:00",
+          "score": 69.9,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.32,
+            "owf_mhz": 13.02,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 1.0
+          }
+        },
+        {
+          "kp": 1,
+          "t": "00:00",
+          "score": 70.2,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.14,
+            "owf_mhz": 12.87,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.988
+          }
+        },
+        {
+          "kp": 2,
+          "t": "00:00",
+          "score": 70.5,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.96,
+            "owf_mhz": 12.72,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.977
+          }
+        },
+        {
+          "kp": 3,
+          "t": "00:00",
+          "score": 70.8,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.78,
+            "owf_mhz": 12.56,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.965
+          }
+        },
+        {
+          "kp": 4,
+          "t": "00:00",
+          "score": 71.1,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.6,
+            "owf_mhz": 12.41,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.953
+          }
+        },
+        {
+          "kp": 5,
+          "t": "00:00",
+          "score": 71.4,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.42,
+            "owf_mhz": 12.26,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.942
+          }
+        },
+        {
+          "kp": 6,
+          "t": "00:00",
+          "score": 71.7,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.25,
+            "owf_mhz": 12.11,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.93
+          }
+        },
+        {
+          "kp": 7,
+          "t": "00:00",
+          "score": 72.0,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.07,
+            "owf_mhz": 11.96,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.918
+          }
+        },
+        {
+          "kp": 8,
+          "t": "00:00",
+          "score": 72.3,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 13.89,
+            "owf_mhz": 11.81,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.907
+          }
+        },
+        {
+          "kp": 9,
+          "t": "00:00",
+          "score": 72.5,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 13.71,
+            "owf_mhz": 11.65,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.895
+          }
+        }
+      ],
+      "rarity": {
+        "baseline": 0.619,
+        "today": null,
+        "reason": null
+      },
+      "interest_rank_score": 52.87
+    },
+    {
+      "station_id": "sw-9400-brother-stair-/BUL-s-en",
+      "list_kind": "main",
+      "best_by_kp": [
+        {
+          "kp": 0,
+          "t": "19:30",
+          "score": 69.9,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.32,
+            "owf_mhz": 13.02,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 1.0
+          }
+        },
+        {
+          "kp": 1,
+          "t": "19:30",
+          "score": 70.1,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.14,
+            "owf_mhz": 12.87,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.988
+          }
+        },
+        {
+          "kp": 2,
+          "t": "19:30",
+          "score": 70.4,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.96,
+            "owf_mhz": 12.72,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.977
+          }
+        },
+        {
+          "kp": 3,
+          "t": "19:30",
+          "score": 70.7,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.78,
+            "owf_mhz": 12.56,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.965
+          }
+        },
+        {
+          "kp": 4,
+          "t": "19:30",
+          "score": 71.0,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.6,
+            "owf_mhz": 12.41,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.953
+          }
+        },
+        {
+          "kp": 5,
+          "t": "19:30",
+          "score": 71.3,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.42,
+            "owf_mhz": 12.26,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.942
+          }
+        },
+        {
+          "kp": 6,
+          "t": "19:30",
+          "score": 71.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.25,
+            "owf_mhz": 12.11,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.93
+          }
+        },
+        {
+          "kp": 7,
+          "t": "19:30",
+          "score": 71.9,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.07,
+            "owf_mhz": 11.96,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.918
+          }
+        },
+        {
+          "kp": 8,
+          "t": "19:30",
+          "score": 72.2,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 13.89,
+            "owf_mhz": 11.81,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.907
+          }
+        },
+        {
+          "kp": 9,
+          "t": "19:30",
+          "score": 72.5,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 13.71,
+            "owf_mhz": 11.65,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.895
+          }
+        }
+      ],
+      "rarity": {
+        "baseline": 0.619,
+        "today": null,
+        "reason": null
+      },
+      "interest_rank_score": 52.79
+    },
+    {
+      "station_id": "sw-1696-cross-la-garde-radio-wx-g-fr-en",
+      "list_kind": "main",
+      "best_by_kp": [
+        {
+          "kp": 0,
+          "t": "00:00",
+          "score": 59.6,
+          "gate": 1.0,
+          "components": {
+            "darkness": 1.0,
+            "field": 0.477,
+            "geomagnetic": 1.0,
+            "seasonal_noise": 0.836
+          }
+        },
+        {
+          "kp": 1,
+          "t": "00:00",
+          "score": 59.4,
+          "gate": 1.0,
+          "components": {
+            "darkness": 1.0,
+            "field": 0.477,
+            "geomagnetic": 0.989,
+            "seasonal_noise": 0.836
+          }
+        },
+        {
+          "kp": 2,
+          "t": "00:00",
+          "score": 59.2,
+          "gate": 1.0,
+          "components": {
+            "darkness": 1.0,
+            "field": 0.477,
+            "geomagnetic": 0.978,
+            "seasonal_noise": 0.836
+          }
+        },
+        {
+          "kp": 3,
+          "t": "00:00",
+          "score": 59.0,
+          "gate": 1.0,
+          "components": {
+            "darkness": 1.0,
+            "field": 0.477,
+            "geomagnetic": 0.968,
+            "seasonal_noise": 0.836
+          }
+        },
+        {
+          "kp": 4,
+          "t": "00:00",
+          "score": 58.8,
+          "gate": 1.0,
+          "components": {
+            "darkness": 1.0,
+            "field": 0.477,
+            "geomagnetic": 0.957,
+            "seasonal_noise": 0.836
+          }
+        },
+        {
+          "kp": 5,
+          "t": "00:00",
+          "score": 58.7,
+          "gate": 1.0,
+          "components": {
+            "darkness": 1.0,
+            "field": 0.477,
+            "geomagnetic": 0.946,
+            "seasonal_noise": 0.836
+          }
+        },
+        {
+          "kp": 6,
+          "t": "00:00",
+          "score": 58.5,
+          "gate": 1.0,
+          "components": {
+            "darkness": 1.0,
+            "field": 0.477,
+            "geomagnetic": 0.935,
+            "seasonal_noise": 0.836
+          }
+        },
+        {
+          "kp": 7,
+          "t": "00:00",
+          "score": 58.3,
+          "gate": 1.0,
+          "components": {
+            "darkness": 1.0,
+            "field": 0.477,
+            "geomagnetic": 0.924,
+            "seasonal_noise": 0.836
+          }
+        },
+        {
+          "kp": 8,
+          "t": "00:00",
+          "score": 58.1,
+          "gate": 1.0,
+          "components": {
+            "darkness": 1.0,
+            "field": 0.477,
+            "geomagnetic": 0.913,
+            "seasonal_noise": 0.836
+          }
+        },
+        {
+          "kp": 9,
+          "t": "00:00",
+          "score": 57.9,
+          "gate": 1.0,
+          "components": {
+            "darkness": 1.0,
+            "field": 0.477,
+            "geomagnetic": 0.903,
+            "seasonal_noise": 0.836
+          }
+        }
+      ],
+      "rarity": {
+        "baseline": 0.523,
+        "today": 0.823,
+        "reason": "Grauzone am Sender gegen 19:00"
+      },
+      "interest_rank_score": 52.67
+    },
+    {
+      "station_id": "sw-6145-kbs-world-radio-/G-w-fr",
+      "list_kind": "main",
+      "best_by_kp": [
+        {
+          "kp": 0,
+          "t": "21:00",
+          "score": 76.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 9.22,
+            "owf_mhz": 7.84,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.524,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 1.0
+          }
+        },
+        {
+          "kp": 1,
+          "t": "21:00",
+          "score": 77.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 8.89,
+            "owf_mhz": 7.55,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.524,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.964
+          }
+        },
+        {
+          "kp": 2,
+          "t": "21:00",
+          "score": 78.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 8.56,
+            "owf_mhz": 7.27,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.524,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.928
+          }
+        },
+        {
+          "kp": 3,
+          "t": "21:00",
+          "score": 79.4,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 8.23,
+            "owf_mhz": 6.99,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.524,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.892
+          }
+        },
+        {
+          "kp": 4,
+          "t": "21:00",
+          "score": 80.2,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 7.9,
+            "owf_mhz": 6.71,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.524,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.856
+          }
+        },
+        {
+          "kp": 5,
+          "t": "21:00",
+          "score": 80.7,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 7.56,
+            "owf_mhz": 6.43,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.524,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.821
+          }
+        },
+        {
+          "kp": 6,
+          "t": "21:00",
+          "score": 81.0,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 7.23,
+            "owf_mhz": 6.15,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.524,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.785
+          }
+        },
+        {
+          "kp": 7,
+          "t": "21:00",
+          "score": 61.9,
+          "gate": 0.799,
+          "components": {
+            "muf_mhz": 6.9,
+            "owf_mhz": 5.87,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.524,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.749
+          }
+        },
+        {
+          "kp": 8,
+          "t": "21:00",
+          "score": 38.0,
+          "gate": 0.575,
+          "components": {
+            "muf_mhz": 6.57,
+            "owf_mhz": 5.59,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.524,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.713
+          }
+        },
+        {
+          "kp": 9,
+          "t": "21:00",
+          "score": 15.5,
+          "gate": 0.327,
+          "components": {
+            "muf_mhz": 6.24,
+            "owf_mhz": 5.3,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.524,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.677
+          }
+        }
+      ],
+      "rarity": {
+        "baseline": 0.476,
+        "today": null,
+        "reason": null
+      },
+      "interest_rank_score": 50.35
+    },
+    {
+      "station_id": "sw-6070-channel-292-r-de-en",
+      "list_kind": "main",
+      "best_by_kp": [
+        {
+          "kp": 0,
+          "t": "19:30",
+          "score": 83.1,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 7.75,
+            "owf_mhz": 6.59,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.595,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 1.0
+          }
+        },
+        {
+          "kp": 1,
+          "t": "19:30",
+          "score": 83.5,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 7.55,
+            "owf_mhz": 6.42,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.595,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.974
+          }
+        },
+        {
+          "kp": 2,
+          "t": "19:30",
+          "score": 83.7,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 7.36,
+            "owf_mhz": 6.25,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.595,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.949
+          }
+        },
+        {
+          "kp": 3,
+          "t": "19:30",
+          "score": 83.8,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 7.16,
+            "owf_mhz": 6.08,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.595,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.923
+          }
+        },
+        {
+          "kp": 4,
+          "t": "19:00",
+          "score": 83.7,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 7.19,
+            "owf_mhz": 6.11,
+            "luf_mhz": 4.94,
+            "hops": 1.0,
+            "field": 0.595,
+            "aiming": 1.0,
+            "darkness": 0.429,
+            "geomagnetic": 0.898
+          }
+        },
+        {
+          "kp": 5,
+          "t": "19:00",
+          "score": 74.9,
+          "gate": 0.903,
+          "components": {
+            "muf_mhz": 6.98,
+            "owf_mhz": 5.93,
+            "luf_mhz": 4.94,
+            "hops": 1.0,
+            "field": 0.595,
+            "aiming": 1.0,
+            "darkness": 0.429,
+            "geomagnetic": 0.872
+          }
+        },
+        {
+          "kp": 6,
+          "t": "19:00",
+          "score": 61.1,
+          "gate": 0.771,
+          "components": {
+            "muf_mhz": 6.78,
+            "owf_mhz": 5.76,
+            "luf_mhz": 4.94,
+            "hops": 1.0,
+            "field": 0.595,
+            "aiming": 1.0,
+            "darkness": 0.429,
+            "geomagnetic": 0.846
+          }
+        },
+        {
+          "kp": 7,
+          "t": "19:00",
+          "score": 45.7,
+          "gate": 0.631,
+          "components": {
+            "muf_mhz": 6.57,
+            "owf_mhz": 5.59,
+            "luf_mhz": 4.94,
+            "hops": 1.0,
+            "field": 0.595,
+            "aiming": 1.0,
+            "darkness": 0.429,
+            "geomagnetic": 0.821
+          }
+        },
+        {
+          "kp": 8,
+          "t": "19:00",
+          "score": 30.1,
+          "gate": 0.482,
+          "components": {
+            "muf_mhz": 6.37,
+            "owf_mhz": 5.41,
+            "luf_mhz": 4.94,
+            "hops": 1.0,
+            "field": 0.595,
+            "aiming": 1.0,
+            "darkness": 0.429,
+            "geomagnetic": 0.795
+          }
+        },
+        {
+          "kp": 9,
+          "t": "19:00",
+          "score": 16.2,
+          "gate": 0.323,
+          "components": {
+            "muf_mhz": 6.16,
+            "owf_mhz": 5.24,
+            "luf_mhz": 4.94,
+            "hops": 1.0,
+            "field": 0.595,
+            "aiming": 1.0,
+            "darkness": 0.429,
+            "geomagnetic": 0.769
+          }
+        }
+      ],
+      "rarity": {
+        "baseline": 0.405,
+        "today": null,
+        "reason": null
+      },
+      "interest_rank_score": 48.66
+    },
+    {
+      "station_id": "sw-7220-radio-romania-int-g-en",
+      "list_kind": "main",
+      "best_by_kp": [
+        {
+          "kp": 0,
+          "t": "00:00",
+          "score": 62.1,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.25,
+            "owf_mhz": 12.96,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 1.0
+          }
+        },
+        {
+          "kp": 1,
+          "t": "00:00",
+          "score": 62.7,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.9,
+            "owf_mhz": 12.66,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.977
+          }
+        },
+        {
+          "kp": 2,
+          "t": "00:00",
+          "score": 63.3,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.55,
+            "owf_mhz": 12.37,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.954
+          }
+        },
+        {
+          "kp": 3,
+          "t": "00:00",
+          "score": 64.0,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.2,
+            "owf_mhz": 12.07,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.931
+          }
+        },
+        {
+          "kp": 4,
+          "t": "00:00",
+          "score": 64.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 13.85,
+            "owf_mhz": 11.77,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.909
+          }
+        },
+        {
+          "kp": 5,
+          "t": "00:00",
+          "score": 65.4,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 13.5,
+            "owf_mhz": 11.48,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.886
+          }
+        },
+        {
+          "kp": 6,
+          "t": "00:00",
+          "score": 66.1,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 13.15,
+            "owf_mhz": 11.18,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.863
+          }
+        },
+        {
+          "kp": 7,
+          "t": "00:00",
+          "score": 66.8,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 12.81,
+            "owf_mhz": 10.88,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.84
+          }
+        },
+        {
+          "kp": 8,
+          "t": "00:00",
+          "score": 67.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 12.46,
+            "owf_mhz": 10.59,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.817
+          }
+        },
+        {
+          "kp": 9,
+          "t": "00:00",
+          "score": 68.4,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 12.11,
+            "owf_mhz": 10.29,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.794
+          }
+        }
+      ],
+      "rarity": {
+        "baseline": 0.617,
+        "today": null,
+        "reason": null
+      },
+      "interest_rank_score": 47.38
+    },
+    {
+      "station_id": "sw-13690-radio-romania-digital-s-xx",
+      "list_kind": "dx",
+      "best_by_kp": [
+        {
+          "kp": 0,
+          "t": "18:30",
+          "score": 74.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 16.54,
+            "owf_mhz": 14.06,
+            "luf_mhz": 4.49,
+            "hops": 1.0,
+            "field": 0.368,
+            "aiming": 1.0,
+            "darkness": 0.524,
+            "geomagnetic": 1.0
+          }
+        },
+        {
+          "kp": 1,
+          "t": "18:30",
+          "score": 74.7,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 16.26,
+            "owf_mhz": 13.82,
+            "luf_mhz": 4.49,
+            "hops": 1.0,
+            "field": 0.368,
+            "aiming": 1.0,
+            "darkness": 0.524,
+            "geomagnetic": 0.983
+          }
+        },
+        {
+          "kp": 2,
+          "t": "18:00",
+          "score": 74.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 16.56,
+            "owf_mhz": 14.08,
+            "luf_mhz": 6.54,
+            "hops": 1.0,
+            "field": 0.368,
+            "aiming": 1.0,
+            "darkness": 0.095,
+            "geomagnetic": 0.965
+          }
+        },
+        {
+          "kp": 3,
+          "t": "18:00",
+          "score": 74.7,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 16.27,
+            "owf_mhz": 13.83,
+            "luf_mhz": 6.54,
+            "hops": 1.0,
+            "field": 0.368,
+            "aiming": 1.0,
+            "darkness": 0.095,
+            "geomagnetic": 0.948
+          }
+        },
+        {
+          "kp": 4,
+          "t": "18:00",
+          "score": 71.9,
+          "gate": 0.963,
+          "components": {
+            "muf_mhz": 15.97,
+            "owf_mhz": 13.57,
+            "luf_mhz": 6.54,
+            "hops": 1.0,
+            "field": 0.368,
+            "aiming": 1.0,
+            "darkness": 0.095,
+            "geomagnetic": 0.931
+          }
+        },
+        {
+          "kp": 5,
+          "t": "18:00",
+          "score": 64.8,
+          "gate": 0.882,
+          "components": {
+            "muf_mhz": 15.67,
+            "owf_mhz": 13.32,
+            "luf_mhz": 6.54,
+            "hops": 1.0,
+            "field": 0.368,
+            "aiming": 1.0,
+            "darkness": 0.095,
+            "geomagnetic": 0.913
+          }
+        },
+        {
+          "kp": 6,
+          "t": "18:00",
+          "score": 56.8,
+          "gate": 0.798,
+          "components": {
+            "muf_mhz": 15.37,
+            "owf_mhz": 13.07,
+            "luf_mhz": 6.54,
+            "hops": 1.0,
+            "field": 0.368,
+            "aiming": 1.0,
+            "darkness": 0.095,
+            "geomagnetic": 0.896
+          }
+        },
+        {
+          "kp": 7,
+          "t": "18:00",
+          "score": 48.0,
+          "gate": 0.71,
+          "components": {
+            "muf_mhz": 15.08,
+            "owf_mhz": 12.82,
+            "luf_mhz": 6.54,
+            "hops": 1.0,
+            "field": 0.368,
+            "aiming": 1.0,
+            "darkness": 0.095,
+            "geomagnetic": 0.879
+          }
+        },
+        {
+          "kp": 8,
+          "t": "18:00",
+          "score": 38.7,
+          "gate": 0.619,
+          "components": {
+            "muf_mhz": 14.78,
+            "owf_mhz": 12.56,
+            "luf_mhz": 6.54,
+            "hops": 1.0,
+            "field": 0.368,
+            "aiming": 1.0,
+            "darkness": 0.095,
+            "geomagnetic": 0.861
+          }
+        },
+        {
+          "kp": 9,
+          "t": "18:00",
+          "score": 29.5,
+          "gate": 0.524,
+          "components": {
+            "muf_mhz": 14.48,
+            "owf_mhz": 12.31,
+            "luf_mhz": 6.54,
+            "hops": 1.0,
+            "field": 0.368,
+            "aiming": 1.0,
+            "darkness": 0.095,
+            "geomagnetic": 0.844
+          }
+        }
+      ],
+      "rarity": {
+        "baseline": 0.632,
+        "today": null,
+        "reason": null
+      },
+      "interest_rank_score": 56.65
+    },
+    {
+      "station_id": "sw-11975-radio-romania-int-g-xx",
+      "list_kind": "dx",
+      "best_by_kp": [
+        {
+          "kp": 0,
+          "t": "19:30",
+          "score": 74.9,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.25,
+            "owf_mhz": 12.96,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 1.0
+          }
+        },
+        {
+          "kp": 1,
+          "t": "19:00",
+          "score": 75.1,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.9,
+            "owf_mhz": 12.66,
+            "luf_mhz": 2.89,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 0.857,
+            "geomagnetic": 0.977
+          }
+        },
+        {
+          "kp": 2,
+          "t": "19:00",
+          "score": 75.2,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.55,
+            "owf_mhz": 12.37,
+            "luf_mhz": 2.89,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 0.857,
+            "geomagnetic": 0.954
+          }
+        },
+        {
+          "kp": 3,
+          "t": "19:00",
+          "score": 75.3,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.2,
+            "owf_mhz": 12.07,
+            "luf_mhz": 2.89,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 0.857,
+            "geomagnetic": 0.931
+          }
+        },
+        {
+          "kp": 4,
+          "t": "19:00",
+          "score": 69.4,
+          "gate": 0.927,
+          "components": {
+            "muf_mhz": 13.85,
+            "owf_mhz": 11.77,
+            "luf_mhz": 2.89,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 0.857,
+            "geomagnetic": 0.909
+          }
+        },
+        {
+          "kp": 5,
+          "t": "19:00",
+          "score": 59.0,
+          "gate": 0.816,
+          "components": {
+            "muf_mhz": 13.5,
+            "owf_mhz": 11.48,
+            "luf_mhz": 2.89,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 0.857,
+            "geomagnetic": 0.886
+          }
+        },
+        {
+          "kp": 6,
+          "t": "19:00",
+          "score": 47.2,
+          "gate": 0.698,
+          "components": {
+            "muf_mhz": 13.15,
+            "owf_mhz": 11.18,
+            "luf_mhz": 2.89,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 0.857,
+            "geomagnetic": 0.863
+          }
+        },
+        {
+          "kp": 7,
+          "t": "19:00",
+          "score": 34.7,
+          "gate": 0.574,
+          "components": {
+            "muf_mhz": 12.81,
+            "owf_mhz": 10.88,
+            "luf_mhz": 2.89,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 0.857,
+            "geomagnetic": 0.84
+          }
+        },
+        {
+          "kp": 8,
+          "t": "19:00",
+          "score": 22.6,
+          "gate": 0.443,
+          "components": {
+            "muf_mhz": 12.46,
+            "owf_mhz": 10.59,
+            "luf_mhz": 2.89,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 0.857,
+            "geomagnetic": 0.817
+          }
+        },
+        {
+          "kp": 9,
+          "t": "19:00",
+          "score": 12.2,
+          "gate": 0.305,
+          "components": {
+            "muf_mhz": 12.11,
+            "owf_mhz": 10.29,
+            "luf_mhz": 2.89,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 0.857,
+            "geomagnetic": 0.794
+          }
+        }
+      ],
+      "rarity": {
+        "baseline": 0.617,
+        "today": null,
+        "reason": null
+      },
+      "interest_rank_score": 56.28
+    },
+    {
+      "station_id": "sw-12030-radio-exterior-espa-a-n-xx",
+      "list_kind": "dx",
+      "best_by_kp": [
+        {
+          "kp": 0,
+          "t": "20:00",
+          "score": 75.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.74,
+            "owf_mhz": 12.53,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.392,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 1.0
+          }
+        },
+        {
+          "kp": 1,
+          "t": "20:00",
+          "score": 75.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.7,
+            "owf_mhz": 12.49,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.392,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.997
+          }
+        },
+        {
+          "kp": 2,
+          "t": "20:00",
+          "score": 75.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.65,
+            "owf_mhz": 12.45,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.392,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.994
+          }
+        },
+        {
+          "kp": 3,
+          "t": "20:00",
+          "score": 75.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.61,
+            "owf_mhz": 12.42,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.392,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.991
+          }
+        },
+        {
+          "kp": 4,
+          "t": "20:00",
+          "score": 75.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.56,
+            "owf_mhz": 12.38,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.392,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.988
+          }
+        },
+        {
+          "kp": 5,
+          "t": "20:00",
+          "score": 75.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.52,
+            "owf_mhz": 12.34,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.392,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.985
+          }
+        },
+        {
+          "kp": 6,
+          "t": "20:00",
+          "score": 75.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.48,
+            "owf_mhz": 12.3,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.392,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.982
+          }
+        },
+        {
+          "kp": 7,
+          "t": "20:00",
+          "score": 75.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.43,
+            "owf_mhz": 12.27,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.392,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.979
+          }
+        },
+        {
+          "kp": 8,
+          "t": "20:00",
+          "score": 75.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.39,
+            "owf_mhz": 12.23,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.392,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.976
+          }
+        },
+        {
+          "kp": 9,
+          "t": "20:00",
+          "score": 75.7,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.34,
+            "owf_mhz": 12.19,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.392,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.973
+          }
+        }
+      ],
+      "rarity": {
+        "baseline": 0.608,
+        "today": null,
+        "reason": null
+      },
+      "interest_rank_score": 56.09
+    },
+    {
+      "station_id": "sw-9580-radio-vaticana-site-xx",
+      "list_kind": "dx",
+      "best_by_kp": [
+        {
+          "kp": 0,
+          "t": "00:00",
+          "score": 77.1,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 12.24,
+            "owf_mhz": 10.4,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 1.0
+          }
+        },
+        {
+          "kp": 1,
+          "t": "00:00",
+          "score": 77.2,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 12.14,
+            "owf_mhz": 10.32,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.992
+          }
+        },
+        {
+          "kp": 2,
+          "t": "00:00",
+          "score": 77.3,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 12.04,
+            "owf_mhz": 10.23,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.984
+          }
+        },
+        {
+          "kp": 3,
+          "t": "00:00",
+          "score": 77.4,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 11.94,
+            "owf_mhz": 10.15,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.975
+          }
+        },
+        {
+          "kp": 4,
+          "t": "00:00",
+          "score": 77.5,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 11.84,
+            "owf_mhz": 10.06,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.967
+          }
+        },
+        {
+          "kp": 5,
+          "t": "00:00",
+          "score": 77.5,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 11.74,
+            "owf_mhz": 9.98,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.959
+          }
+        },
+        {
+          "kp": 6,
+          "t": "00:00",
+          "score": 77.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 11.64,
+            "owf_mhz": 9.89,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.951
+          }
+        },
+        {
+          "kp": 7,
+          "t": "00:00",
+          "score": 77.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 11.54,
+            "owf_mhz": 9.81,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.943
+          }
+        },
+        {
+          "kp": 8,
+          "t": "00:00",
+          "score": 77.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 11.44,
+            "owf_mhz": 9.72,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.934
+          }
+        },
+        {
+          "kp": 9,
+          "t": "00:00",
+          "score": 77.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 11.34,
+            "owf_mhz": 9.64,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.926
+          }
+        }
+      ],
+      "rarity": {
+        "baseline": 0.559,
+        "today": null,
+        "reason": null
+      },
+      "interest_rank_score": 54.53
+    },
+    {
+      "station_id": "sw-9710-radio-vaticana-site-xx",
+      "list_kind": "dx",
+      "best_by_kp": [
+        {
+          "kp": 0,
+          "t": "19:00",
+          "score": 75.9,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 12.65,
+            "owf_mhz": 10.75,
+            "luf_mhz": 5.17,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 0.381,
+            "geomagnetic": 1.0
+          }
+        },
+        {
+          "kp": 1,
+          "t": "19:00",
+          "score": 76.2,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 12.54,
+            "owf_mhz": 10.66,
+            "luf_mhz": 5.17,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 0.381,
+            "geomagnetic": 0.992
+          }
+        },
+        {
+          "kp": 2,
+          "t": "19:00",
+          "score": 76.4,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 12.44,
+            "owf_mhz": 10.57,
+            "luf_mhz": 5.17,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 0.381,
+            "geomagnetic": 0.984
+          }
+        },
+        {
+          "kp": 3,
+          "t": "19:00",
+          "score": 76.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 12.34,
+            "owf_mhz": 10.48,
+            "luf_mhz": 5.17,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 0.381,
+            "geomagnetic": 0.975
+          }
+        },
+        {
+          "kp": 4,
+          "t": "19:00",
+          "score": 76.8,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 12.23,
+            "owf_mhz": 10.4,
+            "luf_mhz": 5.17,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 0.381,
+            "geomagnetic": 0.967
+          }
+        },
+        {
+          "kp": 5,
+          "t": "19:00",
+          "score": 77.0,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 12.13,
+            "owf_mhz": 10.31,
+            "luf_mhz": 5.17,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 0.381,
+            "geomagnetic": 0.959
+          }
+        },
+        {
+          "kp": 6,
+          "t": "19:00",
+          "score": 77.1,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 12.02,
+            "owf_mhz": 10.22,
+            "luf_mhz": 5.17,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 0.381,
+            "geomagnetic": 0.951
+          }
+        },
+        {
+          "kp": 7,
+          "t": "19:00",
+          "score": 77.3,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 11.92,
+            "owf_mhz": 10.13,
+            "luf_mhz": 5.17,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 0.381,
+            "geomagnetic": 0.943
+          }
+        },
+        {
+          "kp": 8,
+          "t": "19:00",
+          "score": 77.4,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 11.82,
+            "owf_mhz": 10.04,
+            "luf_mhz": 5.17,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 0.381,
+            "geomagnetic": 0.934
+          }
+        },
+        {
+          "kp": 9,
+          "t": "19:00",
+          "score": 77.5,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 11.71,
+            "owf_mhz": 9.96,
+            "luf_mhz": 5.17,
+            "hops": 1.0,
+            "field": 0.441,
+            "aiming": 1.0,
+            "darkness": 0.381,
+            "geomagnetic": 0.926
+          }
+        }
+      ],
+      "rarity": {
+        "baseline": 0.559,
+        "today": null,
+        "reason": null
+      },
+      "interest_rank_score": 53.89
+    },
+    {
+      "station_id": "sw-9690-radio-exterior-espa-a-n-xx",
+      "list_kind": "dx",
+      "best_by_kp": [
+        {
+          "kp": 0,
+          "t": "20:00",
+          "score": 72.0,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.74,
+            "owf_mhz": 12.53,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.392,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 1.0
+          }
+        },
+        {
+          "kp": 1,
+          "t": "20:00",
+          "score": 72.1,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.7,
+            "owf_mhz": 12.49,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.392,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.997
+          }
+        },
+        {
+          "kp": 2,
+          "t": "20:00",
+          "score": 72.1,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.65,
+            "owf_mhz": 12.45,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.392,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.994
+          }
+        },
+        {
+          "kp": 3,
+          "t": "20:00",
+          "score": 72.2,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.61,
+            "owf_mhz": 12.42,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.392,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.991
+          }
+        },
+        {
+          "kp": 4,
+          "t": "20:00",
+          "score": 72.3,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.56,
+            "owf_mhz": 12.38,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.392,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.988
+          }
+        },
+        {
+          "kp": 5,
+          "t": "20:00",
+          "score": 72.3,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.52,
+            "owf_mhz": 12.34,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.392,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.985
+          }
+        },
+        {
+          "kp": 6,
+          "t": "20:00",
+          "score": 72.4,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.48,
+            "owf_mhz": 12.3,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.392,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.982
+          }
+        },
+        {
+          "kp": 7,
+          "t": "20:00",
+          "score": 72.5,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.43,
+            "owf_mhz": 12.27,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.392,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.979
+          }
+        },
+        {
+          "kp": 8,
+          "t": "20:00",
+          "score": 72.5,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.39,
+            "owf_mhz": 12.23,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.392,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.976
+          }
+        },
+        {
+          "kp": 9,
+          "t": "20:00",
+          "score": 72.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.34,
+            "owf_mhz": 12.19,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.392,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.973
+          }
+        }
+      ],
+      "rarity": {
+        "baseline": 0.608,
+        "today": null,
+        "reason": null
+      },
+      "interest_rank_score": 53.49
+    },
+    {
+      "station_id": "sw-9500-radio-romania-int-g-xx",
+      "list_kind": "dx",
+      "best_by_kp": [
+        {
+          "kp": 0,
+          "t": "20:00",
+          "score": 70.3,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.25,
+            "owf_mhz": 12.96,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 1.0
+          }
+        },
+        {
+          "kp": 1,
+          "t": "20:00",
+          "score": 70.9,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.9,
+            "owf_mhz": 12.66,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.977
+          }
+        },
+        {
+          "kp": 2,
+          "t": "20:00",
+          "score": 71.4,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.55,
+            "owf_mhz": 12.37,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.954
+          }
+        },
+        {
+          "kp": 3,
+          "t": "20:00",
+          "score": 72.0,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.2,
+            "owf_mhz": 12.07,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.931
+          }
+        },
+        {
+          "kp": 4,
+          "t": "20:00",
+          "score": 72.5,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 13.85,
+            "owf_mhz": 11.77,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.909
+          }
+        },
+        {
+          "kp": 5,
+          "t": "20:00",
+          "score": 73.1,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 13.5,
+            "owf_mhz": 11.48,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.886
+          }
+        },
+        {
+          "kp": 6,
+          "t": "20:00",
+          "score": 73.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 13.15,
+            "owf_mhz": 11.18,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.863
+          }
+        },
+        {
+          "kp": 7,
+          "t": "20:00",
+          "score": 74.1,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 12.81,
+            "owf_mhz": 10.88,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.84
+          }
+        },
+        {
+          "kp": 8,
+          "t": "20:00",
+          "score": 74.5,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 12.46,
+            "owf_mhz": 10.59,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.817
+          }
+        },
+        {
+          "kp": 9,
+          "t": "20:00",
+          "score": 74.8,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 12.11,
+            "owf_mhz": 10.29,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.383,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.794
+          }
+        }
+      ],
+      "rarity": {
+        "baseline": 0.617,
+        "today": null,
+        "reason": null
+      },
+      "interest_rank_score": 53.44
+    },
+    {
+      "station_id": "sw-9790-radio-taiwan-int-/BUL-s-xx",
+      "list_kind": "dx",
+      "best_by_kp": [
+        {
+          "kp": 0,
+          "t": "19:00",
+          "score": 70.3,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.34,
+            "owf_mhz": 13.04,
+            "luf_mhz": 2.89,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 0.857,
+            "geomagnetic": 1.0
+          }
+        },
+        {
+          "kp": 1,
+          "t": "19:00",
+          "score": 70.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.16,
+            "owf_mhz": 12.89,
+            "luf_mhz": 2.89,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 0.857,
+            "geomagnetic": 0.988
+          }
+        },
+        {
+          "kp": 2,
+          "t": "19:00",
+          "score": 70.9,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.99,
+            "owf_mhz": 12.74,
+            "luf_mhz": 2.89,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 0.857,
+            "geomagnetic": 0.977
+          }
+        },
+        {
+          "kp": 3,
+          "t": "19:00",
+          "score": 71.2,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.81,
+            "owf_mhz": 12.59,
+            "luf_mhz": 2.89,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 0.857,
+            "geomagnetic": 0.965
+          }
+        },
+        {
+          "kp": 4,
+          "t": "19:00",
+          "score": 71.5,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.63,
+            "owf_mhz": 12.43,
+            "luf_mhz": 2.89,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 0.857,
+            "geomagnetic": 0.953
+          }
+        },
+        {
+          "kp": 5,
+          "t": "19:00",
+          "score": 71.8,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.45,
+            "owf_mhz": 12.28,
+            "luf_mhz": 2.89,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 0.857,
+            "geomagnetic": 0.942
+          }
+        },
+        {
+          "kp": 6,
+          "t": "19:00",
+          "score": 72.1,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.27,
+            "owf_mhz": 12.13,
+            "luf_mhz": 2.89,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 0.857,
+            "geomagnetic": 0.93
+          }
+        },
+        {
+          "kp": 7,
+          "t": "19:00",
+          "score": 72.4,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.09,
+            "owf_mhz": 11.98,
+            "luf_mhz": 2.89,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 0.857,
+            "geomagnetic": 0.918
+          }
+        },
+        {
+          "kp": 8,
+          "t": "19:00",
+          "score": 72.7,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 13.91,
+            "owf_mhz": 11.83,
+            "luf_mhz": 2.89,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 0.857,
+            "geomagnetic": 0.907
+          }
+        },
+        {
+          "kp": 9,
+          "t": "19:00",
+          "score": 73.0,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 13.73,
+            "owf_mhz": 11.67,
+            "luf_mhz": 2.89,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 0.857,
+            "geomagnetic": 0.895
+          }
+        }
+      ],
+      "rarity": {
+        "baseline": 0.619,
+        "today": null,
+        "reason": null
+      },
+      "interest_rank_score": 53.17
+    },
+    {
+      "station_id": "sw-9525-iran-international-tv-/BUL-s-xx",
+      "list_kind": "dx",
+      "best_by_kp": [
+        {
+          "kp": 0,
+          "t": "22:00",
+          "score": 70.2,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.32,
+            "owf_mhz": 13.02,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 1.0
+          }
+        },
+        {
+          "kp": 1,
+          "t": "22:00",
+          "score": 70.5,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.14,
+            "owf_mhz": 12.87,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.988
+          }
+        },
+        {
+          "kp": 2,
+          "t": "22:00",
+          "score": 70.8,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.96,
+            "owf_mhz": 12.72,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.977
+          }
+        },
+        {
+          "kp": 3,
+          "t": "22:00",
+          "score": 71.1,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.78,
+            "owf_mhz": 12.56,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.965
+          }
+        },
+        {
+          "kp": 4,
+          "t": "22:00",
+          "score": 71.4,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.6,
+            "owf_mhz": 12.41,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.953
+          }
+        },
+        {
+          "kp": 5,
+          "t": "22:00",
+          "score": 71.7,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.42,
+            "owf_mhz": 12.26,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.942
+          }
+        },
+        {
+          "kp": 6,
+          "t": "22:00",
+          "score": 71.9,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.25,
+            "owf_mhz": 12.11,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.93
+          }
+        },
+        {
+          "kp": 7,
+          "t": "22:00",
+          "score": 72.2,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.07,
+            "owf_mhz": 11.96,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.918
+          }
+        },
+        {
+          "kp": 8,
+          "t": "22:00",
+          "score": 72.5,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 13.89,
+            "owf_mhz": 11.81,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.907
+          }
+        },
+        {
+          "kp": 9,
+          "t": "22:00",
+          "score": 72.8,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 13.71,
+            "owf_mhz": 11.65,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.895
+          }
+        }
+      ],
+      "rarity": {
+        "baseline": 0.619,
+        "today": null,
+        "reason": null
+      },
+      "interest_rank_score": 53.09
+    },
+    {
+      "station_id": "sw-9490-bible-voice-/BUL-s-xx",
+      "list_kind": "dx",
+      "best_by_kp": [
+        {
+          "kp": 0,
+          "t": "19:30",
+          "score": 70.1,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.32,
+            "owf_mhz": 13.02,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 1.0
+          }
+        },
+        {
+          "kp": 1,
+          "t": "19:30",
+          "score": 70.4,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.14,
+            "owf_mhz": 12.87,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.988
+          }
+        },
+        {
+          "kp": 2,
+          "t": "19:30",
+          "score": 70.7,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.96,
+            "owf_mhz": 12.72,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.977
+          }
+        },
+        {
+          "kp": 3,
+          "t": "19:30",
+          "score": 71.0,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.78,
+            "owf_mhz": 12.56,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.965
+          }
+        },
+        {
+          "kp": 4,
+          "t": "19:30",
+          "score": 71.3,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.6,
+            "owf_mhz": 12.41,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.953
+          }
+        },
+        {
+          "kp": 5,
+          "t": "19:30",
+          "score": 71.6,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.42,
+            "owf_mhz": 12.26,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.942
+          }
+        },
+        {
+          "kp": 6,
+          "t": "19:30",
+          "score": 71.9,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.25,
+            "owf_mhz": 12.11,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.93
+          }
+        },
+        {
+          "kp": 7,
+          "t": "19:30",
+          "score": 72.1,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.07,
+            "owf_mhz": 11.96,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.918
+          }
+        },
+        {
+          "kp": 8,
+          "t": "19:30",
+          "score": 72.4,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 13.89,
+            "owf_mhz": 11.81,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.907
+          }
+        },
+        {
+          "kp": 9,
+          "t": "19:30",
+          "score": 72.7,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 13.71,
+            "owf_mhz": 11.65,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.895
+          }
+        }
+      ],
+      "rarity": {
+        "baseline": 0.619,
+        "today": null,
+        "reason": null
+      },
+      "interest_rank_score": 53.02
+    },
+    {
+      "station_id": "sw-9425-iran-international-tv-/BUL-s-xx",
+      "list_kind": "dx",
+      "best_by_kp": [
+        {
+          "kp": 0,
+          "t": "22:00",
+          "score": 69.9,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.32,
+            "owf_mhz": 13.02,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 1.0
+          }
+        },
+        {
+          "kp": 1,
+          "t": "22:00",
+          "score": 70.2,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 15.14,
+            "owf_mhz": 12.87,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.988
+          }
+        },
+        {
+          "kp": 2,
+          "t": "22:00",
+          "score": 70.5,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.96,
+            "owf_mhz": 12.72,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.977
+          }
+        },
+        {
+          "kp": 3,
+          "t": "22:00",
+          "score": 70.8,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.78,
+            "owf_mhz": 12.56,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.965
+          }
+        },
+        {
+          "kp": 4,
+          "t": "22:00",
+          "score": 71.1,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.6,
+            "owf_mhz": 12.41,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.953
+          }
+        },
+        {
+          "kp": 5,
+          "t": "22:00",
+          "score": 71.4,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.42,
+            "owf_mhz": 12.26,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.942
+          }
+        },
+        {
+          "kp": 6,
+          "t": "22:00",
+          "score": 71.7,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.25,
+            "owf_mhz": 12.11,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.93
+          }
+        },
+        {
+          "kp": 7,
+          "t": "22:00",
+          "score": 72.0,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 14.07,
+            "owf_mhz": 11.96,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.918
+          }
+        },
+        {
+          "kp": 8,
+          "t": "22:00",
+          "score": 72.3,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 13.89,
+            "owf_mhz": 11.81,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.907
+          }
+        },
+        {
+          "kp": 9,
+          "t": "22:00",
+          "score": 72.5,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 13.71,
+            "owf_mhz": 11.65,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.381,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.895
+          }
+        }
+      ],
+      "rarity": {
+        "baseline": 0.619,
+        "today": null,
+        "reason": null
+      },
+      "interest_rank_score": 52.87
+    },
+    {
+      "station_id": "sw-7300-hcjb-r-akhbar-mufriha-/G-w-xx",
+      "list_kind": "dx",
+      "best_by_kp": [
+        {
+          "kp": 0,
+          "t": "23:00",
+          "score": 80.5,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 9.22,
+            "owf_mhz": 7.84,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.524,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 1.0
+          }
+        },
+        {
+          "kp": 1,
+          "t": "23:00",
+          "score": 80.9,
+          "gate": 1.0,
+          "components": {
+            "muf_mhz": 8.89,
+            "owf_mhz": 7.55,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.524,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.964
+          }
+        },
+        {
+          "kp": 2,
+          "t": "23:00",
+          "score": 79.7,
+          "gate": 0.984,
+          "components": {
+            "muf_mhz": 8.56,
+            "owf_mhz": 7.27,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.524,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.928
+          }
+        },
+        {
+          "kp": 3,
+          "t": "23:00",
+          "score": 63.4,
+          "gate": 0.813,
+          "components": {
+            "muf_mhz": 8.23,
+            "owf_mhz": 6.99,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.524,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.892
+          }
+        },
+        {
+          "kp": 4,
+          "t": "23:00",
+          "score": 43.5,
+          "gate": 0.627,
+          "components": {
+            "muf_mhz": 7.9,
+            "owf_mhz": 6.71,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.524,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.856
+          }
+        },
+        {
+          "kp": 5,
+          "t": "23:00",
+          "score": 23.5,
+          "gate": 0.425,
+          "components": {
+            "muf_mhz": 7.56,
+            "owf_mhz": 6.43,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.524,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.821
+          }
+        },
+        {
+          "kp": 6,
+          "t": "23:00",
+          "score": 8.4,
+          "gate": 0.204,
+          "components": {
+            "muf_mhz": 7.23,
+            "owf_mhz": 6.15,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.524,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.785
+          }
+        },
+        {
+          "kp": 7,
+          "t": "23:00",
+          "score": 0.0,
+          "gate": 0.0,
+          "components": {
+            "muf_mhz": 6.9,
+            "owf_mhz": 5.87,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.524,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.749
+          }
+        },
+        {
+          "kp": 8,
+          "t": "23:00",
+          "score": 0.0,
+          "gate": 0.0,
+          "components": {
+            "muf_mhz": 6.57,
+            "owf_mhz": 5.59,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.524,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.713
+          }
+        },
+        {
+          "kp": 9,
+          "t": "23:00",
+          "score": 0.0,
+          "gate": 0.0,
+          "components": {
+            "muf_mhz": 6.24,
+            "owf_mhz": 5.3,
+            "luf_mhz": 2.2,
+            "hops": 1.0,
+            "field": 0.524,
+            "aiming": 1.0,
+            "darkness": 1.0,
+            "geomagnetic": 0.677
+          }
+        }
+      ],
+      "rarity": {
+        "baseline": 0.476,
+        "today": null,
+        "reason": null
+      },
+      "interest_rank_score": 51.05
+    }
+  ]
+}

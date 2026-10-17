@@ -57,11 +57,11 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-11860-radio-romania-int-g-fr": {
-      "station_id": "sw-11860-radio-romania-int-g-fr",
+    "sw-11830-radio-romania-int-g-fr": {
+      "station_id": "sw-11830-radio-romania-int-g-fr",
       "name": "Radio Romania Int.",
       "band_class": "sw",
-      "freq_khz": 11860.0,
+      "freq_khz": 11830.0,
       "language": "fr",
       "distance_km": 1533.7,
       "bearing_deg": 99.9,
@@ -71,11 +71,11 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-11830-radio-romania-int-g-fr": {
-      "station_id": "sw-11830-radio-romania-int-g-fr",
+    "sw-11860-radio-romania-int-g-fr": {
+      "station_id": "sw-11860-radio-romania-int-g-fr",
       "name": "Radio Romania Int.",
       "band_class": "sw",
-      "freq_khz": 11830.0,
+      "freq_khz": 11860.0,
       "language": "fr",
       "distance_km": 1533.7,
       "bearing_deg": 99.9,
@@ -169,6 +169,20 @@
       "null_bearings_deg": null,
       "hints": []
     },
+    "sw-9585-bible-voice-/BUL-s-en": {
+      "station_id": "sw-9585-bible-voice-/BUL-s-en",
+      "name": "Bible Voice",
+      "band_class": "sw",
+      "freq_khz": 9585.0,
+      "language": "en",
+      "distance_km": 1545.4,
+      "bearing_deg": 119.4,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Sofia-Kostinbrod",
+      "null_bearings_deg": null,
+      "hints": []
+    },
     "sw-9570-radio-romania-digital-t-de": {
       "station_id": "sw-9570-radio-romania-digital-t-de",
       "name": "Radio Romania DIGITAL",
@@ -229,20 +243,6 @@
       "hints": [
         "Loop auf 183 Grad, Stoerer bei 273 oder 93 Grad ausnullbar"
       ]
-    },
-    "sw-9585-bible-voice-/BUL-s-en": {
-      "station_id": "sw-9585-bible-voice-/BUL-s-en",
-      "name": "Bible Voice",
-      "band_class": "sw",
-      "freq_khz": 9585.0,
-      "language": "en",
-      "distance_km": 1545.4,
-      "bearing_deg": 119.4,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Sofia-Kostinbrod",
-      "null_bearings_deg": null,
-      "hints": []
     },
     "sw-6145-kbs-world-radio-/G-w-fr": {
       "station_id": "sw-6145-kbs-world-radio-/G-w-fr",
@@ -384,6 +384,20 @@
       "null_bearings_deg": null,
       "hints": []
     },
+    "sw-9790-radio-taiwan-int-/BUL-s-xx": {
+      "station_id": "sw-9790-radio-taiwan-int-/BUL-s-xx",
+      "name": "Radio Taiwan Int.",
+      "band_class": "sw",
+      "freq_khz": 9790.0,
+      "language": null,
+      "distance_km": 1545.4,
+      "bearing_deg": 119.4,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Sofia-Kostinbrod",
+      "null_bearings_deg": null,
+      "hints": []
+    },
     "sw-9525-iran-international-tv-/BUL-s-xx": {
       "station_id": "sw-9525-iran-international-tv-/BUL-s-xx",
       "name": "Iran International TV",
@@ -412,20 +426,6 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-9790-radio-taiwan-int-/BUL-s-xx": {
-      "station_id": "sw-9790-radio-taiwan-int-/BUL-s-xx",
-      "name": "Radio Taiwan Int.",
-      "band_class": "sw",
-      "freq_khz": 9790.0,
-      "language": null,
-      "distance_km": 1545.4,
-      "bearing_deg": 119.4,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Sofia-Kostinbrod",
-      "null_bearings_deg": null,
-      "hints": []
-    },
     "sw-9425-iran-international-tv-/BUL-s-xx": {
       "station_id": "sw-9425-iran-international-tv-/BUL-s-xx",
       "name": "Iran International TV",
@@ -440,17 +440,17 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-9400-bible-voice-/BUL-s-xx": {
-      "station_id": "sw-9400-bible-voice-/BUL-s-xx",
-      "name": "Bible Voice",
+    "sw-7300-hcjb-r-akhbar-mufriha-/G-w-xx": {
+      "station_id": "sw-7300-hcjb-r-akhbar-mufriha-/G-w-xx",
+      "name": "HCJB R.Akhbar Mufriha",
       "band_class": "sw",
-      "freq_khz": 9400.0,
+      "freq_khz": 7300.0,
       "language": null,
-      "distance_km": 1545.4,
-      "bearing_deg": 119.4,
+      "distance_km": 662.7,
+      "bearing_deg": 286.8,
       "power_kw": 100.0,
       "source": "eibi",
-      "site_name": "Sofia-Kostinbrod",
+      "site_name": "Woofferton",
       "null_bearings_deg": null,
       "hints": []
     }
