@@ -197,6 +197,25 @@
       "null_bearings_deg": null,
       "hints": []
     },
+    "sw-1696-cross-la-garde-radio-wx-g-fr-en": {
+      "station_id": "sw-1696-cross-la-garde-radio-wx-g-fr-en",
+      "name": "CROSS La Garde Radio Wx",
+      "band_class": "mw",
+      "freq_khz": 1696.0,
+      "language": "fr",
+      "distance_km": 874.3,
+      "bearing_deg": 183.5,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "La Garde (Toulon)",
+      "null_bearings_deg": [
+        273.4722897101715,
+        93.47228971017145
+      ],
+      "hints": [
+        "Loop auf 183 Grad, Stoerer bei 273 oder 93 Grad ausnullbar"
+      ]
+    },
     "sw-9425-brother-stair-/BUL-s-en": {
       "station_id": "sw-9425-brother-stair-/BUL-s-en",
       "name": "Brother Stair",
@@ -224,25 +243,6 @@
       "site_name": "Sofia-Kostinbrod",
       "null_bearings_deg": null,
       "hints": []
-    },
-    "sw-1696-cross-la-garde-radio-wx-g-fr-en": {
-      "station_id": "sw-1696-cross-la-garde-radio-wx-g-fr-en",
-      "name": "CROSS La Garde Radio Wx",
-      "band_class": "mw",
-      "freq_khz": 1696.0,
-      "language": "fr",
-      "distance_km": 874.3,
-      "bearing_deg": 183.5,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "La Garde (Toulon)",
-      "null_bearings_deg": [
-        273.4722897101715,
-        93.47228971017145
-      ],
-      "hints": [
-        "Loop auf 183 Grad, Stoerer bei 273 oder 93 Grad ausnullbar"
-      ]
     },
     "sw-6145-kbs-world-radio-/G-w-fr": {
       "station_id": "sw-6145-kbs-world-radio-/G-w-fr",
@@ -333,6 +333,20 @@
       "name": "Radio Vaticana",
       "band_class": "sw",
       "freq_khz": 9580.0,
+      "language": null,
+      "distance_km": 1080.6,
+      "bearing_deg": 154.2,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Santa Maria di Galeria",
+      "null_bearings_deg": null,
+      "hints": []
+    },
+    "sw-9585-follow-the-bible-min-/CVA-xx": {
+      "station_id": "sw-9585-follow-the-bible-min-/CVA-xx",
+      "name": "Follow the Bible Min.",
+      "band_class": "sw",
+      "freq_khz": 9585.0,
       "language": null,
       "distance_km": 1080.6,
       "bearing_deg": 154.2,
@@ -437,20 +451,6 @@
       "power_kw": 100.0,
       "source": "eibi",
       "site_name": "Sofia-Kostinbrod",
-      "null_bearings_deg": null,
-      "hints": []
-    },
-    "sw-7300-hcjb-r-akhbar-mufriha-/G-w-xx": {
-      "station_id": "sw-7300-hcjb-r-akhbar-mufriha-/G-w-xx",
-      "name": "HCJB R.Akhbar Mufriha",
-      "band_class": "sw",
-      "freq_khz": 7300.0,
-      "language": null,
-      "distance_km": 662.7,
-      "bearing_deg": 286.8,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Woofferton",
       "null_bearings_deg": null,
       "hints": []
     }
