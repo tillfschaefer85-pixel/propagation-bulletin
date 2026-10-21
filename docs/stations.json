@@ -202,11 +202,11 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-9425-brother-stair-/BUL-s-en": {
-      "station_id": "sw-9425-brother-stair-/BUL-s-en",
+    "sw-9400-brother-stair-/BUL-s-en": {
+      "station_id": "sw-9400-brother-stair-/BUL-s-en",
       "name": "Brother Stair",
       "band_class": "sw",
-      "freq_khz": 9425.0,
+      "freq_khz": 9400.0,
       "language": "en",
       "distance_km": 1545.4,
       "bearing_deg": 119.4,
@@ -216,11 +216,11 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-9400-brother-stair-/BUL-s-en": {
-      "station_id": "sw-9400-brother-stair-/BUL-s-en",
+    "sw-9425-brother-stair-/BUL-s-en": {
+      "station_id": "sw-9425-brother-stair-/BUL-s-en",
       "name": "Brother Stair",
       "band_class": "sw",
-      "freq_khz": 9400.0,
+      "freq_khz": 9425.0,
       "language": "en",
       "distance_km": 1545.4,
       "bearing_deg": 119.4,
