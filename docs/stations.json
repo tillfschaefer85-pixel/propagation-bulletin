@@ -29,20 +29,6 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-9690-radio-exterior-espa-a-n-en": {
-      "station_id": "sw-9690-radio-exterior-espa-a-n-en",
-      "name": "Radio Exterior Espa�a",
-      "band_class": "sw",
-      "freq_khz": 9690.0,
-      "language": "en",
-      "distance_km": 1451.3,
-      "bearing_deg": 216.4,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Noblejas",
-      "null_bearings_deg": null,
-      "hints": []
-    },
     "sw-9620-radio-romania-int-t-en": {
       "station_id": "sw-9620-radio-romania-int-t-en",
       "name": "Radio Romania Int.",
@@ -82,6 +68,34 @@
       "power_kw": 100.0,
       "source": "eibi",
       "site_name": "Sofia-Kostinbrod",
+      "null_bearings_deg": null,
+      "hints": []
+    },
+    "sw-7600-e11-polish-spy-numbers-p-en": {
+      "station_id": "sw-7600-e11-polish-spy-numbers-p-en",
+      "name": "E11 Polish Spy Numbers",
+      "band_class": "sw",
+      "freq_khz": 7600.0,
+      "language": "en",
+      "distance_km": 993.2,
+      "bearing_deg": 76.8,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Puchaly",
+      "null_bearings_deg": null,
+      "hints": []
+    },
+    "sw-7317-e11-polish-spy-numbers-p-en": {
+      "station_id": "sw-7317-e11-polish-spy-numbers-p-en",
+      "name": "E11 Polish Spy Numbers",
+      "band_class": "sw",
+      "freq_khz": 7317.0,
+      "language": "en",
+      "distance_km": 993.2,
+      "bearing_deg": 76.8,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Puchaly",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -211,6 +225,34 @@
       "null_bearings_deg": null,
       "hints": []
     },
+    "sw-9705-radio-vaticana-site-en": {
+      "station_id": "sw-9705-radio-vaticana-site-en",
+      "name": "Radio Vaticana",
+      "band_class": "sw",
+      "freq_khz": 9705.0,
+      "language": "en",
+      "distance_km": 1080.6,
+      "bearing_deg": 154.2,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Santa Maria di Galeria",
+      "null_bearings_deg": null,
+      "hints": []
+    },
+    "sw-9705-radio-vaticana-site-fr": {
+      "station_id": "sw-9705-radio-vaticana-site-fr",
+      "name": "Radio Vaticana",
+      "band_class": "sw",
+      "freq_khz": 9705.0,
+      "language": "fr",
+      "distance_km": 1080.6,
+      "bearing_deg": 154.2,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Santa Maria di Galeria",
+      "null_bearings_deg": null,
+      "hints": []
+    },
     "mw-198-droitwich": {
       "station_id": "mw-198-droitwich",
       "name": "BBC Radio 4 (Droitwich)",
@@ -229,48 +271,6 @@
       "hints": [
         "Loop auf 287 Grad, Stoerer bei 17 oder 197 Grad ausnullbar"
       ]
-    },
-    "sw-6180-radio-romania-int-t-de": {
-      "station_id": "sw-6180-radio-romania-int-t-de",
-      "name": "Radio Romania Int.",
-      "band_class": "sw",
-      "freq_khz": 6180.0,
-      "language": "de",
-      "distance_km": 1600.1,
-      "bearing_deg": 108.0,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Tiganesti",
-      "null_bearings_deg": null,
-      "hints": []
-    },
-    "sw-6030-radio-romania-int-g-fr": {
-      "station_id": "sw-6030-radio-romania-int-g-fr",
-      "name": "Radio Romania Int.",
-      "band_class": "sw",
-      "freq_khz": 6030.0,
-      "language": "fr",
-      "distance_km": 1533.7,
-      "bearing_deg": 99.9,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Galbeni",
-      "null_bearings_deg": null,
-      "hints": []
-    },
-    "sw-6030-radio-romania-int-g-en": {
-      "station_id": "sw-6030-radio-romania-int-g-en",
-      "name": "Radio Romania Int.",
-      "band_class": "sw",
-      "freq_khz": 6030.0,
-      "language": "en",
-      "distance_km": 1533.7,
-      "bearing_deg": 99.9,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Galbeni",
-      "null_bearings_deg": null,
-      "hints": []
     },
     "sw-17780-bbc-/ASC-en": {
       "station_id": "sw-17780-bbc-/ASC-en",
@@ -311,6 +311,20 @@
       "power_kw": 100.0,
       "source": "eibi",
       "site_name": "Galbeni",
+      "null_bearings_deg": null,
+      "hints": []
+    },
+    "sw-12030-radio-exterior-espa-a-n-xx": {
+      "station_id": "sw-12030-radio-exterior-espa-a-n-xx",
+      "name": "Radio Exterior Espa�a",
+      "band_class": "sw",
+      "freq_khz": 12030.0,
+      "language": null,
+      "distance_km": 1451.3,
+      "bearing_deg": 216.4,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Noblejas",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -398,6 +412,20 @@
       "null_bearings_deg": null,
       "hints": []
     },
+    "sw-9400-bible-voice-/BUL-s-xx": {
+      "station_id": "sw-9400-bible-voice-/BUL-s-xx",
+      "name": "Bible Voice",
+      "band_class": "sw",
+      "freq_khz": 9400.0,
+      "language": null,
+      "distance_km": 1545.4,
+      "bearing_deg": 119.4,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Sofia-Kostinbrod",
+      "null_bearings_deg": null,
+      "hints": []
+    },
     "sw-7410-radio-vaticana-site-xx": {
       "station_id": "sw-7410-radio-vaticana-site-xx",
       "name": "Radio Vaticana",
@@ -423,34 +451,6 @@
       "power_kw": 100.0,
       "source": "eibi",
       "site_name": "Santa Maria di Galeria",
-      "null_bearings_deg": null,
-      "hints": []
-    },
-    "sw-6090-kbs-world-radio-/G-w-xx": {
-      "station_id": "sw-6090-kbs-world-radio-/G-w-xx",
-      "name": "KBS World Radio",
-      "band_class": "sw",
-      "freq_khz": 6090.0,
-      "language": null,
-      "distance_km": 662.7,
-      "bearing_deg": 286.8,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Woofferton",
-      "null_bearings_deg": null,
-      "hints": []
-    },
-    "sw-6040-kbs-world-radio-/G-w-xx": {
-      "station_id": "sw-6040-kbs-world-radio-/G-w-xx",
-      "name": "KBS World Radio",
-      "band_class": "sw",
-      "freq_khz": 6040.0,
-      "language": null,
-      "distance_km": 662.7,
-      "bearing_deg": 286.8,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Woofferton",
       "null_bearings_deg": null,
       "hints": []
     }
