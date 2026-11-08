@@ -183,6 +183,20 @@
       "null_bearings_deg": null,
       "hints": []
     },
+    "sw-7275-irrs-milano-/BUL-s-en": {
+      "station_id": "sw-7275-irrs-milano-/BUL-s-en",
+      "name": "IRRS Milano",
+      "band_class": "sw",
+      "freq_khz": 7275.0,
+      "language": "en",
+      "distance_km": 1545.4,
+      "bearing_deg": 119.4,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Sofia-Kostinbrod",
+      "null_bearings_deg": null,
+      "hints": []
+    },
     "sw-7290-irrs-milano-/BUL-s-en": {
       "station_id": "sw-7290-irrs-milano-/BUL-s-en",
       "name": "IRRS Milano",
@@ -208,20 +222,6 @@
       "power_kw": 100.0,
       "source": "eibi",
       "site_name": "Tiganesti",
-      "null_bearings_deg": null,
-      "hints": []
-    },
-    "sw-7275-irrs-milano-/BUL-s-en": {
-      "station_id": "sw-7275-irrs-milano-/BUL-s-en",
-      "name": "IRRS Milano",
-      "band_class": "sw",
-      "freq_khz": 7275.0,
-      "language": "en",
-      "distance_km": 1545.4,
-      "bearing_deg": 119.4,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Sofia-Kostinbrod",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -272,24 +272,19 @@
         "Loop auf 287 Grad, Stoerer bei 17 oder 197 Grad ausnullbar"
       ]
     },
-    "sw-1413-bbc-/OMA-a-en": {
-      "station_id": "sw-1413-bbc-/OMA-a-en",
+    "sw-7425-bbc-w-fr": {
+      "station_id": "sw-7425-bbc-w-fr",
       "name": "BBC",
-      "band_class": "mw",
-      "freq_khz": 1413.0,
-      "language": "en",
-      "distance_km": 5568.1,
-      "bearing_deg": 105.0,
+      "band_class": "sw",
+      "freq_khz": 7425.0,
+      "language": "fr",
+      "distance_km": 662.7,
+      "bearing_deg": 286.8,
       "power_kw": 100.0,
       "source": "eibi",
-      "site_name": "A'Seela",
-      "null_bearings_deg": [
-        195.01849432386996,
-        15.018494323869959
-      ],
-      "hints": [
-        "Loop auf 105 Grad, Stoerer bei 195 oder 15 Grad ausnullbar"
-      ]
+      "site_name": "Woofferton",
+      "null_bearings_deg": null,
+      "hints": []
     },
     "sw-11640-radio-romania-int-t-xx": {
       "station_id": "sw-11640-radio-romania-int-t-xx",
@@ -338,6 +333,20 @@
       "name": "Radio Vaticana",
       "band_class": "sw",
       "freq_khz": 9580.0,
+      "language": null,
+      "distance_km": 1080.6,
+      "bearing_deg": 154.2,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Santa Maria di Galeria",
+      "null_bearings_deg": null,
+      "hints": []
+    },
+    "sw-9585-follow-the-bible-min-/CVA-xx": {
+      "station_id": "sw-9585-follow-the-bible-min-/CVA-xx",
+      "name": "Follow the Bible Min.",
+      "band_class": "sw",
+      "freq_khz": 9585.0,
       "language": null,
       "distance_km": 1080.6,
       "bearing_deg": 154.2,
@@ -442,20 +451,6 @@
       "power_kw": 100.0,
       "source": "eibi",
       "site_name": "Sofia-Kostinbrod",
-      "null_bearings_deg": null,
-      "hints": []
-    },
-    "sw-7410-radio-vaticana-site-xx": {
-      "station_id": "sw-7410-radio-vaticana-site-xx",
-      "name": "Radio Vaticana",
-      "band_class": "sw",
-      "freq_khz": 7410.0,
-      "language": null,
-      "distance_km": 1080.6,
-      "bearing_deg": 154.2,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Santa Maria di Galeria",
       "null_bearings_deg": null,
       "hints": []
     }
