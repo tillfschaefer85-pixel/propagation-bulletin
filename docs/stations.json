@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "stations": {
-    "sw-12030-radio-exterior-espa-a-n-fr": {
-      "station_id": "sw-12030-radio-exterior-espa-a-n-fr",
+    "sw-12030-radio-exterior-espa-a-n-en": {
+      "station_id": "sw-12030-radio-exterior-espa-a-n-en",
       "name": "Radio Exterior Espa�a",
       "band_class": "sw",
       "freq_khz": 12030.0,
-      "language": "fr",
+      "language": "en",
       "distance_km": 1451.3,
       "bearing_deg": 216.4,
       "power_kw": 100.0,
@@ -57,12 +57,12 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-9690-radio-exterior-espa-a-n-fr": {
-      "station_id": "sw-9690-radio-exterior-espa-a-n-fr",
+    "sw-9690-radio-exterior-espa-a-n-en": {
+      "station_id": "sw-9690-radio-exterior-espa-a-n-en",
       "name": "Radio Exterior Espa�a",
       "band_class": "sw",
       "freq_khz": 9690.0,
-      "language": "fr",
+      "language": "en",
       "distance_km": 1451.3,
       "bearing_deg": 216.4,
       "power_kw": 100.0,
@@ -141,20 +141,6 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-6070-channel-292-r-de-en": {
-      "station_id": "sw-6070-channel-292-r-de-en",
-      "name": "Channel 292",
-      "band_class": "sw",
-      "freq_khz": 6070.0,
-      "language": "de",
-      "distance_km": 439.1,
-      "bearing_deg": 124.7,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Rohrbach (Channel 292)",
-      "null_bearings_deg": null,
-      "hints": []
-    },
     "sw-7425-bbc-w-fr": {
       "station_id": "sw-7425-bbc-w-fr",
       "name": "BBC",
@@ -166,6 +152,20 @@
       "power_kw": 100.0,
       "source": "eibi",
       "site_name": "Woofferton",
+      "null_bearings_deg": null,
+      "hints": []
+    },
+    "sw-6070-channel-292-r-de-en": {
+      "station_id": "sw-6070-channel-292-r-de-en",
+      "name": "Channel 292",
+      "band_class": "sw",
+      "freq_khz": 6070.0,
+      "language": "de",
+      "distance_km": 439.1,
+      "bearing_deg": 124.7,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Rohrbach (Channel 292)",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -210,25 +210,6 @@
       "site_name": "Galbeni",
       "null_bearings_deg": null,
       "hints": []
-    },
-    "mw-198-droitwich": {
-      "station_id": "mw-198-droitwich",
-      "name": "BBC Radio 4 (Droitwich)",
-      "band_class": "lw",
-      "freq_khz": 198.0,
-      "language": "en",
-      "distance_km": 621.5,
-      "bearing_deg": 287.3,
-      "power_kw": 500.0,
-      "source": "mwlw",
-      "site_name": null,
-      "null_bearings_deg": [
-        17.271052583283904,
-        197.2710525832839
-      ],
-      "hints": [
-        "Loop auf 287 Grad, Stoerer bei 17 oder 197 Grad ausnullbar"
-      ]
     },
     "sw-7290-irrs-milano-/BUL-s-en": {
       "station_id": "sw-7290-irrs-milano-/BUL-s-en",
@@ -278,6 +259,20 @@
       "band_class": "sw",
       "freq_khz": 7250.0,
       "language": "en",
+      "distance_km": 1600.1,
+      "bearing_deg": 108.0,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Tiganesti",
+      "null_bearings_deg": null,
+      "hints": []
+    },
+    "sw-7220-radio-romania-int-t-fr": {
+      "station_id": "sw-7220-radio-romania-int-t-fr",
+      "name": "Radio Romania Int.",
+      "band_class": "sw",
+      "freq_khz": 7220.0,
+      "language": "fr",
       "distance_km": 1600.1,
       "bearing_deg": 108.0,
       "power_kw": 100.0,
