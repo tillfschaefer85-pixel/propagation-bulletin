@@ -1,20 +1,6 @@
 {
   "schema_version": 1,
   "stations": {
-    "sw-12030-radio-exterior-espa-a-n-en": {
-      "station_id": "sw-12030-radio-exterior-espa-a-n-en",
-      "name": "Radio Exterior Espa�a",
-      "band_class": "sw",
-      "freq_khz": 12030.0,
-      "language": "en",
-      "distance_km": 1451.3,
-      "bearing_deg": 216.4,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Noblejas",
-      "null_bearings_deg": null,
-      "hints": []
-    },
     "sw-9705-radio-vaticana-site-en": {
       "station_id": "sw-9705-radio-vaticana-site-en",
       "name": "Radio Vaticana",
@@ -54,20 +40,6 @@
       "power_kw": 100.0,
       "source": "eibi",
       "site_name": "Tiganesti",
-      "null_bearings_deg": null,
-      "hints": []
-    },
-    "sw-9690-radio-exterior-espa-a-n-en": {
-      "station_id": "sw-9690-radio-exterior-espa-a-n-en",
-      "name": "Radio Exterior Espa�a",
-      "band_class": "sw",
-      "freq_khz": 9690.0,
-      "language": "en",
-      "distance_km": 1451.3,
-      "bearing_deg": 216.4,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Noblejas",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -127,17 +99,31 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-5875-mystery-for-joy-/G-w-en": {
-      "station_id": "sw-5875-mystery-for-joy-/G-w-en",
-      "name": "Mystery for Joy",
+    "sw-7600-e11-polish-spy-numbers-p-en": {
+      "station_id": "sw-7600-e11-polish-spy-numbers-p-en",
+      "name": "E11 Polish Spy Numbers",
       "band_class": "sw",
-      "freq_khz": 5875.0,
+      "freq_khz": 7600.0,
       "language": "en",
-      "distance_km": 662.7,
-      "bearing_deg": 286.8,
+      "distance_km": 993.2,
+      "bearing_deg": 76.8,
       "power_kw": 100.0,
       "source": "eibi",
-      "site_name": "Woofferton",
+      "site_name": "Puchaly",
+      "null_bearings_deg": null,
+      "hints": []
+    },
+    "sw-7317-e11-polish-spy-numbers-p-en": {
+      "station_id": "sw-7317-e11-polish-spy-numbers-p-en",
+      "name": "E11 Polish Spy Numbers",
+      "band_class": "sw",
+      "freq_khz": 7317.0,
+      "language": "en",
+      "distance_km": 993.2,
+      "bearing_deg": 76.8,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Puchaly",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -147,6 +133,20 @@
       "band_class": "sw",
       "freq_khz": 7425.0,
       "language": "fr",
+      "distance_km": 662.7,
+      "bearing_deg": 286.8,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Woofferton",
+      "null_bearings_deg": null,
+      "hints": []
+    },
+    "sw-5875-mystery-for-joy-/G-w-en": {
+      "station_id": "sw-5875-mystery-for-joy-/G-w-en",
+      "name": "Mystery for Joy",
+      "band_class": "sw",
+      "freq_khz": 5875.0,
+      "language": "en",
       "distance_km": 662.7,
       "bearing_deg": 286.8,
       "power_kw": 100.0,
@@ -435,17 +435,17 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-7410-radio-vaticana-site-xx": {
-      "station_id": "sw-7410-radio-vaticana-site-xx",
-      "name": "Radio Vaticana",
+    "sw-9400-bible-voice-/BUL-s-xx": {
+      "station_id": "sw-9400-bible-voice-/BUL-s-xx",
+      "name": "Bible Voice",
       "band_class": "sw",
-      "freq_khz": 7410.0,
+      "freq_khz": 9400.0,
       "language": null,
-      "distance_km": 1080.6,
-      "bearing_deg": 154.2,
+      "distance_km": 1545.4,
+      "bearing_deg": 119.4,
       "power_kw": 100.0,
       "source": "eibi",
-      "site_name": "Santa Maria di Galeria",
+      "site_name": "Sofia-Kostinbrod",
       "null_bearings_deg": null,
       "hints": []
     }
