@@ -1,34 +1,6 @@
 {
   "schema_version": 1,
   "stations": {
-    "sw-9705-radio-vaticana-site-en": {
-      "station_id": "sw-9705-radio-vaticana-site-en",
-      "name": "Radio Vaticana",
-      "band_class": "sw",
-      "freq_khz": 9705.0,
-      "language": "en",
-      "distance_km": 1080.6,
-      "bearing_deg": 154.2,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Santa Maria di Galeria",
-      "null_bearings_deg": null,
-      "hints": []
-    },
-    "sw-9705-radio-vaticana-site-fr": {
-      "station_id": "sw-9705-radio-vaticana-site-fr",
-      "name": "Radio Vaticana",
-      "band_class": "sw",
-      "freq_khz": 9705.0,
-      "language": "fr",
-      "distance_km": 1080.6,
-      "bearing_deg": 154.2,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Santa Maria di Galeria",
-      "null_bearings_deg": null,
-      "hints": []
-    },
     "sw-9770-radio-romania-int-t-en": {
       "station_id": "sw-9770-radio-romania-int-t-en",
       "name": "Radio Romania Int.",
@@ -57,6 +29,20 @@
       "null_bearings_deg": null,
       "hints": []
     },
+    "sw-9585-bible-voice-/BUL-s-en": {
+      "station_id": "sw-9585-bible-voice-/BUL-s-en",
+      "name": "Bible Voice",
+      "band_class": "sw",
+      "freq_khz": 9585.0,
+      "language": "en",
+      "distance_km": 1545.4,
+      "bearing_deg": 119.4,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Sofia-Kostinbrod",
+      "null_bearings_deg": null,
+      "hints": []
+    },
     "sw-9620-radio-romania-int-t-en": {
       "station_id": "sw-9620-radio-romania-int-t-en",
       "name": "Radio Romania Int.",
@@ -82,6 +68,34 @@
       "power_kw": 100.0,
       "source": "eibi",
       "site_name": "Tiganesti",
+      "null_bearings_deg": null,
+      "hints": []
+    },
+    "sw-9705-radio-vaticana-site-en": {
+      "station_id": "sw-9705-radio-vaticana-site-en",
+      "name": "Radio Vaticana",
+      "band_class": "sw",
+      "freq_khz": 9705.0,
+      "language": "en",
+      "distance_km": 1080.6,
+      "bearing_deg": 154.2,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Santa Maria di Galeria",
+      "null_bearings_deg": null,
+      "hints": []
+    },
+    "sw-9705-radio-vaticana-site-fr": {
+      "station_id": "sw-9705-radio-vaticana-site-fr",
+      "name": "Radio Vaticana",
+      "band_class": "sw",
+      "freq_khz": 9705.0,
+      "language": "fr",
+      "distance_km": 1080.6,
+      "bearing_deg": 154.2,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Santa Maria di Galeria",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -155,20 +169,6 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-7290-irrs-milano-/BUL-s-en": {
-      "station_id": "sw-7290-irrs-milano-/BUL-s-en",
-      "name": "IRRS Milano",
-      "band_class": "sw",
-      "freq_khz": 7290.0,
-      "language": "en",
-      "distance_km": 1545.4,
-      "bearing_deg": 119.4,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Sofia-Kostinbrod",
-      "null_bearings_deg": null,
-      "hints": []
-    },
     "sw-7310-radio-romania-int-t-en": {
       "station_id": "sw-7310-radio-romania-int-t-en",
       "name": "Radio Romania Int.",
@@ -188,6 +188,20 @@
       "name": "IRRS Milano",
       "band_class": "sw",
       "freq_khz": 7275.0,
+      "language": "en",
+      "distance_km": 1545.4,
+      "bearing_deg": 119.4,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Sofia-Kostinbrod",
+      "null_bearings_deg": null,
+      "hints": []
+    },
+    "sw-7290-irrs-milano-/BUL-s-en": {
+      "station_id": "sw-7290-irrs-milano-/BUL-s-en",
+      "name": "IRRS Milano",
+      "band_class": "sw",
+      "freq_khz": 7290.0,
       "language": "en",
       "distance_km": 1545.4,
       "bearing_deg": 119.4,
@@ -225,20 +239,6 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-6070-channel-292-r-de-en": {
-      "station_id": "sw-6070-channel-292-r-de-en",
-      "name": "Channel 292",
-      "band_class": "sw",
-      "freq_khz": 6070.0,
-      "language": "de",
-      "distance_km": 439.1,
-      "bearing_deg": 124.7,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Rohrbach (Channel 292)",
-      "null_bearings_deg": null,
-      "hints": []
-    },
     "sw-1413-bbc-/OMA-a-en": {
       "station_id": "sw-1413-bbc-/OMA-a-en",
       "name": "BBC",
@@ -258,19 +258,24 @@
         "Loop auf 105 Grad, Stoerer bei 195 oder 15 Grad ausnullbar"
       ]
     },
-    "sw-17780-bbc-/ASC-en": {
-      "station_id": "sw-17780-bbc-/ASC-en",
-      "name": "BBC",
-      "band_class": "sw",
-      "freq_khz": 17780.0,
-      "language": "en",
-      "distance_km": 6849.3,
-      "bearing_deg": 203.8,
+    "sw-1696-cross-la-garde-radio-wx-g-fr-en": {
+      "station_id": "sw-1696-cross-la-garde-radio-wx-g-fr-en",
+      "name": "CROSS La Garde Radio Wx",
+      "band_class": "mw",
+      "freq_khz": 1696.0,
+      "language": "fr",
+      "distance_km": 874.3,
+      "bearing_deg": 183.5,
       "power_kw": 100.0,
       "source": "eibi",
-      "site_name": "Ascension Island",
-      "null_bearings_deg": null,
-      "hints": []
+      "site_name": "La Garde (Toulon)",
+      "null_bearings_deg": [
+        273.4722897101715,
+        93.47228971017145
+      ],
+      "hints": [
+        "Loop auf 183 Grad, Stoerer bei 273 oder 93 Grad ausnullbar"
+      ]
     },
     "sw-873-nemzetis-gi-r-di-lh-de": {
       "station_id": "sw-873-nemzetis-gi-r-di-lh-de",
@@ -319,34 +324,6 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-9580-radio-vaticana-site-xx": {
-      "station_id": "sw-9580-radio-vaticana-site-xx",
-      "name": "Radio Vaticana",
-      "band_class": "sw",
-      "freq_khz": 9580.0,
-      "language": null,
-      "distance_km": 1080.6,
-      "bearing_deg": 154.2,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Santa Maria di Galeria",
-      "null_bearings_deg": null,
-      "hints": []
-    },
-    "sw-9710-radio-vaticana-site-xx": {
-      "station_id": "sw-9710-radio-vaticana-site-xx",
-      "name": "Radio Vaticana",
-      "band_class": "sw",
-      "freq_khz": 9710.0,
-      "language": null,
-      "distance_km": 1080.6,
-      "bearing_deg": 154.2,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Santa Maria di Galeria",
-      "null_bearings_deg": null,
-      "hints": []
-    },
     "sw-9810-radio-romania-int-g-xx": {
       "station_id": "sw-9810-radio-romania-int-g-xx",
       "name": "Radio Romania Int.",
@@ -358,6 +335,20 @@
       "power_kw": 100.0,
       "source": "eibi",
       "site_name": "Galbeni",
+      "null_bearings_deg": null,
+      "hints": []
+    },
+    "sw-9580-radio-vaticana-site-xx": {
+      "station_id": "sw-9580-radio-vaticana-site-xx",
+      "name": "Radio Vaticana",
+      "band_class": "sw",
+      "freq_khz": 9580.0,
+      "language": null,
+      "distance_km": 1080.6,
+      "bearing_deg": 154.2,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Santa Maria di Galeria",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -445,17 +436,31 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-9400-bible-voice-/BUL-s-xx": {
-      "station_id": "sw-9400-bible-voice-/BUL-s-xx",
-      "name": "Bible Voice",
+    "sw-9710-radio-vaticana-site-xx": {
+      "station_id": "sw-9710-radio-vaticana-site-xx",
+      "name": "Radio Vaticana",
       "band_class": "sw",
-      "freq_khz": 9400.0,
+      "freq_khz": 9710.0,
       "language": null,
-      "distance_km": 1545.4,
-      "bearing_deg": 119.4,
+      "distance_km": 1080.6,
+      "bearing_deg": 154.2,
       "power_kw": 100.0,
       "source": "eibi",
-      "site_name": "Sofia-Kostinbrod",
+      "site_name": "Santa Maria di Galeria",
+      "null_bearings_deg": null,
+      "hints": []
+    },
+    "sw-7410-radio-vaticana-site-xx": {
+      "station_id": "sw-7410-radio-vaticana-site-xx",
+      "name": "Radio Vaticana",
+      "band_class": "sw",
+      "freq_khz": 7410.0,
+      "language": null,
+      "distance_km": 1080.6,
+      "bearing_deg": 154.2,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Santa Maria di Galeria",
       "null_bearings_deg": null,
       "hints": []
     }
