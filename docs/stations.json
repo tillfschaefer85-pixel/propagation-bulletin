@@ -29,6 +29,20 @@
       "null_bearings_deg": null,
       "hints": []
     },
+    "sw-9690-radio-exterior-espa-a-n-fr": {
+      "station_id": "sw-9690-radio-exterior-espa-a-n-fr",
+      "name": "Radio Exterior Espa�a",
+      "band_class": "sw",
+      "freq_khz": 9690.0,
+      "language": "fr",
+      "distance_km": 1451.3,
+      "bearing_deg": 216.4,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Noblejas",
+      "null_bearings_deg": null,
+      "hints": []
+    },
     "sw-9620-radio-romania-int-t-en": {
       "station_id": "sw-9620-radio-romania-int-t-en",
       "name": "Radio Romania Int.",
@@ -68,34 +82,6 @@
       "power_kw": 100.0,
       "source": "eibi",
       "site_name": "Sofia-Kostinbrod",
-      "null_bearings_deg": null,
-      "hints": []
-    },
-    "sw-7600-e11-polish-spy-numbers-p-en": {
-      "station_id": "sw-7600-e11-polish-spy-numbers-p-en",
-      "name": "E11 Polish Spy Numbers",
-      "band_class": "sw",
-      "freq_khz": 7600.0,
-      "language": "en",
-      "distance_km": 993.2,
-      "bearing_deg": 76.8,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Puchaly",
-      "null_bearings_deg": null,
-      "hints": []
-    },
-    "sw-7317-e11-polish-spy-numbers-p-en": {
-      "station_id": "sw-7317-e11-polish-spy-numbers-p-en",
-      "name": "E11 Polish Spy Numbers",
-      "band_class": "sw",
-      "freq_khz": 7317.0,
-      "language": "en",
-      "distance_km": 993.2,
-      "bearing_deg": 76.8,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Puchaly",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -155,20 +141,6 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-7275-irrs-milano-/BUL-s-en": {
-      "station_id": "sw-7275-irrs-milano-/BUL-s-en",
-      "name": "IRRS Milano",
-      "band_class": "sw",
-      "freq_khz": 7275.0,
-      "language": "en",
-      "distance_km": 1545.4,
-      "bearing_deg": 119.4,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Sofia-Kostinbrod",
-      "null_bearings_deg": null,
-      "hints": []
-    },
     "sw-7290-irrs-milano-/BUL-s-en": {
       "station_id": "sw-7290-irrs-milano-/BUL-s-en",
       "name": "IRRS Milano",
@@ -194,6 +166,20 @@
       "power_kw": 100.0,
       "source": "eibi",
       "site_name": "Tiganesti",
+      "null_bearings_deg": null,
+      "hints": []
+    },
+    "sw-7275-irrs-milano-/BUL-s-en": {
+      "station_id": "sw-7275-irrs-milano-/BUL-s-en",
+      "name": "IRRS Milano",
+      "band_class": "sw",
+      "freq_khz": 7275.0,
+      "language": "en",
+      "distance_km": 1545.4,
+      "bearing_deg": 119.4,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Sofia-Kostinbrod",
       "null_bearings_deg": null,
       "hints": []
     },
@@ -244,25 +230,6 @@
         "Loop auf 105 Grad, Stoerer bei 195 oder 15 Grad ausnullbar"
       ]
     },
-    "sw-873-nemzetis-gi-r-di-lh-de": {
-      "station_id": "sw-873-nemzetis-gi-r-di-lh-de",
-      "name": "Nemzetis�gi R�di�",
-      "band_class": "mw",
-      "freq_khz": 873.0,
-      "language": "de",
-      "distance_km": 981.8,
-      "bearing_deg": 109.2,
-      "power_kw": 100.0,
-      "source": "eibi",
-      "site_name": "Lakihegy",
-      "null_bearings_deg": [
-        199.16788223406905,
-        19.167882234069054
-      ],
-      "hints": [
-        "Loop auf 109 Grad, Stoerer bei 199 oder 19 Grad ausnullbar"
-      ]
-    },
     "sw-6180-radio-romania-int-t-de": {
       "station_id": "sw-6180-radio-romania-int-t-de",
       "name": "Radio Romania Int.",
@@ -291,19 +258,38 @@
       "null_bearings_deg": null,
       "hints": []
     },
-    "sw-11640-radio-romania-int-t-xx": {
-      "station_id": "sw-11640-radio-romania-int-t-xx",
+    "sw-6030-radio-romania-int-g-en": {
+      "station_id": "sw-6030-radio-romania-int-g-en",
       "name": "Radio Romania Int.",
       "band_class": "sw",
-      "freq_khz": 11640.0,
-      "language": null,
-      "distance_km": 1600.1,
-      "bearing_deg": 108.0,
+      "freq_khz": 6030.0,
+      "language": "en",
+      "distance_km": 1533.7,
+      "bearing_deg": 99.9,
       "power_kw": 100.0,
       "source": "eibi",
-      "site_name": "Tiganesti",
+      "site_name": "Galbeni",
       "null_bearings_deg": null,
       "hints": []
+    },
+    "sw-1696-cross-la-garde-radio-wx-g-fr-en": {
+      "station_id": "sw-1696-cross-la-garde-radio-wx-g-fr-en",
+      "name": "CROSS La Garde Radio Wx",
+      "band_class": "mw",
+      "freq_khz": 1696.0,
+      "language": "fr",
+      "distance_km": 874.3,
+      "bearing_deg": 183.5,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "La Garde (Toulon)",
+      "null_bearings_deg": [
+        273.4722897101715,
+        93.47228971017145
+      ],
+      "hints": [
+        "Loop auf 183 Grad, Stoerer bei 273 oder 93 Grad ausnullbar"
+      ]
     },
     "sw-9810-radio-romania-int-g-xx": {
       "station_id": "sw-9810-radio-romania-int-g-xx",
@@ -414,6 +400,20 @@
       "power_kw": 100.0,
       "source": "eibi",
       "site_name": "Santa Maria di Galeria",
+      "null_bearings_deg": null,
+      "hints": []
+    },
+    "sw-11640-radio-romania-int-t-xx": {
+      "station_id": "sw-11640-radio-romania-int-t-xx",
+      "name": "Radio Romania Int.",
+      "band_class": "sw",
+      "freq_khz": 11640.0,
+      "language": null,
+      "distance_km": 1600.1,
+      "bearing_deg": 108.0,
+      "power_kw": 100.0,
+      "source": "eibi",
+      "site_name": "Tiganesti",
       "null_bearings_deg": null,
       "hints": []
     },
